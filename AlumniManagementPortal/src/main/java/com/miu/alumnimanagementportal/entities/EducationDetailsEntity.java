@@ -17,7 +17,7 @@ public class EducationDetailsEntity extends BaseEntity {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private String institutionName;
     private String degree;
-    private LocalDate passingYear;
+    private Date passingYear;
     private String cgpa;
     private String course;
 }

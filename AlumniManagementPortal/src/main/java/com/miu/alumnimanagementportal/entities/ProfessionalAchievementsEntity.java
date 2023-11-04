@@ -8,6 +8,7 @@ import lombok.Data;
 import org.modelmapper.internal.bytebuddy.asm.Advice;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @Entity
@@ -15,7 +16,7 @@ public class ProfessionalAchievementsEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String title;
-    private LocalDate year;
+    private Date year;
     private String description;
 
     //Relation remaining
