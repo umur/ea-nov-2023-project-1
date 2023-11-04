@@ -1,6 +1,5 @@
 package com.miu.alumnimanagementportal.common;
 
-import com.miu.lab4aop.dto.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -21,11 +20,4 @@ public class Converter {
         return modelMapper.map(source, destinationType);
     }
 
-    public <U, V> ApiResponse<U, V> generateResponse(U results, V errors) {
-        if (results != null) {
-            if ((results instanceof List<?>) && ((List) results).isEmpty()) return new ApiResponse<>(null, errors);
-            return new ApiResponse<>(results, null);
-        }
-        return new ApiResponse<>(null, errors);
-    }
 }
