@@ -48,6 +48,17 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<!--Generate metadata for developers to offer contextual help and "code completion" -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!--Add support for Spring Boot Actuator to monitor metrics and manage your API -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
