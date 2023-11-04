@@ -18,5 +18,7 @@ public class ProfessionalAchievementsEntity extends BaseEntity {
     private LocalDate year;
     private String description;
 
+    //Relation remaining
+
 
 }

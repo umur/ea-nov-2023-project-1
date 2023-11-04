@@ -16,4 +16,6 @@ public class JobApplicantsEntity extends BaseEntity {
     private String designation;
     private String companyName;
     private String endYear;
+
+    //relation onetoone
 }

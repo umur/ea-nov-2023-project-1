@@ -16,4 +16,5 @@ public class WorkExperienceEntity extends BaseEntity {
     private String designation;
     private String companyName;
     private String endYear;
+    // relation
 }
