@@ -30,6 +30,10 @@ public class UserEntity extends BaseEntity{
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<RoleEntity> roles;
 
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "profile_entity_id", unique = true)
+    private ProfileEntity profileEntity;
+
 
 //    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 //    private Profile profile;
