@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.project.alumni.entity.Job.Job;
-import com.project.alumni.entity.Job.JobApplication;
+import com.project.alumni.entity.Job.Application;
 
 @Getter
 @Setter
@@ -46,5 +46,5 @@ public class User {
     private Job job;
 
     @OneToMany(mappedBy = "user")
-    private List<JobApplication> jobApplications;
+    private List<Application> jobApplications;
 }

@@ -32,8 +32,8 @@ public class Job {
     private User user;
 
     @OneToOne(mappedBy = "job")
-    private JobPosting jobPosting;
+    private Posting jobPosting;
 
     @OneToMany(mappedBy = "job")
-    private List<JobApplication> jobApplications;
+    private List<Application> jobApplications;
 }
