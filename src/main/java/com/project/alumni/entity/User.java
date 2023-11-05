@@ -17,7 +17,7 @@ import com.project.alumni.entity.Job.Application;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-<<<<<<< HEAD
+
 @Table(name="users",
         uniqueConstraints = {
                 @UniqueConstraint(
@@ -26,9 +26,6 @@ import com.project.alumni.entity.Job.Application;
                 )
         }
 )
-=======
-@Table(name = "users")
->>>>>>> 49fa70425b0d6f68bc9a1c4d3d4f3c9d286700bd
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,15 +48,12 @@ public class User {
     @Column(name = "profile_pic")
     private String profilePic;
 
-<<<<<<< HEAD
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Address address;
 
-=======
     @OneToOne(mappedBy = "user")
     private Job job;
 
     @OneToMany(mappedBy = "user")
     private List<Application> jobApplications;
->>>>>>> 49fa70425b0d6f68bc9a1c4d3d4f3c9d286700bd
 }
