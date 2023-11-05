@@ -7,9 +7,11 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class NewsEntity extends BaseEntity{
+public class Survey extends BaseEntity {
     private String title;
-    private NewsType newsType;
     private String description;
+    private String feedback;
+    private String url;
+
 
 }

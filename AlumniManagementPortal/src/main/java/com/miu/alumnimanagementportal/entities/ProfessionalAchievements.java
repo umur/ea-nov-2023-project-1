@@ -6,16 +6,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 @Entity
-
-public class JobApplicantsEntity extends BaseEntity {
+public class ProfessionalAchievements extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String startYear;
-    private String designation;
-    private String companyName;
-    private String endYear;
+    private String title;
+    private Date year;
+    private String description;
 
-    //relation onetoone
+    //Relation remaining
+
+
 }

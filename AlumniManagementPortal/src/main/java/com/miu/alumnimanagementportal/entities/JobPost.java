@@ -9,7 +9,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class JobPostEntity extends BaseEntity {
+public class JobPost extends BaseEntity {
     @Id
     private Long id;
 
@@ -21,7 +21,7 @@ public class JobPostEntity extends BaseEntity {
 
     //owner of the job
     @OneToOne
-    private UserEntity owner;
+    private User owner;
 
     private boolean isPublished = false;
 

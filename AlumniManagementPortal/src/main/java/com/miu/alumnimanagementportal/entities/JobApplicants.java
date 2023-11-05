@@ -9,12 +9,13 @@ import lombok.Data;
 @Data
 @Entity
 
-public class WorkExperienceEntity extends BaseEntity {
+public class JobApplicants extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String startYear;
     private String designation;
     private String companyName;
     private String endYear;
-    // relation
+
+    //relation onetoone
 }

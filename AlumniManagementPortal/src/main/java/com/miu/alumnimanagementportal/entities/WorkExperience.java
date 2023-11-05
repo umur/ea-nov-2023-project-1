@@ -5,21 +5,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
-import org.modelmapper.internal.bytebuddy.asm.Advice;
-
-import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @Entity
-public class ProfessionalAchievementsEntity extends BaseEntity {
+
+public class WorkExperience extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String title;
-    private Date year;
-    private String description;
-
-    //Relation remaining
-
-
+    private String startYear;
+    private String designation;
+    private String companyName;
+    private String endYear;
+    // relation
 }
