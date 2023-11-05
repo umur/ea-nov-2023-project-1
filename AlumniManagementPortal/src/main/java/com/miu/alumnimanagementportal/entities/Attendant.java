@@ -1,12 +1,12 @@
 package com.miu.alumnimanagementportal.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Attendant extends BaseEntity{
     @OneToOne(orphanRemoval = true)
     @JoinColumn(name = "user_id")

@@ -1,12 +1,12 @@
 package com.miu.alumnimanagementportal.entities;
 
 import jakarta.persistence.Entity;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Survey extends BaseEntity {
     private String title;
     private String description;

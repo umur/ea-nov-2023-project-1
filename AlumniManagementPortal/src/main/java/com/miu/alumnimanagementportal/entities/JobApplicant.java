@@ -8,10 +8,8 @@ import lombok.Data;
 
 @Data
 @Entity
-
 public class JobApplicant extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private String startYear;
     private String designation;
     private String companyName;
