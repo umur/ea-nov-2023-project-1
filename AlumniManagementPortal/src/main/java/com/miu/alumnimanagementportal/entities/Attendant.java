@@ -7,7 +7,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Attendants extends BaseEntity{
+public class Attendant extends BaseEntity{
     @OneToOne
     @JoinColumn(name = "event_id")
     private Event event;
