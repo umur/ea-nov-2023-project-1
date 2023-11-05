@@ -55,5 +55,12 @@ public class UserServiceImpl implements UserService {
         return modelMapper.map(savedUser, UserFullDetailsDto.class);
     }
 
+    @Override
+    public UserFullDetailsDto getUserById(Long id) {
+        User user = userRepo.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException("User", "id", id));
+        return modelMapper.map(user, UserFullDetailsDto.class);
+    }
+
 
 } // End of UserServiceImpl class

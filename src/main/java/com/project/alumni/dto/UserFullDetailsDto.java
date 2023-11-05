@@ -23,7 +23,6 @@ public class UserFullDetailsDto {
     private String lastName;
     @NotEmpty
     private String email;
-    private String password;
     private String graduationYear;
     private String industry;
     private String educationalDetails;

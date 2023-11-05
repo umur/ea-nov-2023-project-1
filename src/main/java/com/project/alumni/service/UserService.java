@@ -10,10 +10,12 @@ public interface UserService {
     // with UserFullDetails
     public UserMinimalDto registerUser(UserMinimalDto minimalDto);
 
-    // Find all Users
     public List<UserFullDetailsDto> findAllUsers();
 
     // Update user details
     public UserFullDetailsDto updateUser(UserFullDetailsDto userFullDetailsDto, Long id);
 
-}
+    public UserFullDetailsDto getUserById(Long id);
+
+
+} // End of UserService class

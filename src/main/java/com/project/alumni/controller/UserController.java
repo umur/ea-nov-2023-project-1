@@ -43,5 +43,11 @@ public class UserController {
         return new ResponseEntity<>(newUserDetails, HttpStatus.OK);
     }
 
+    // Get user details by ID REST API
+    @GetMapping("/{id}")
+    public ResponseEntity<UserFullDetailsDto> getUserById(@PathVariable (name = "id") Long id){
+        return ResponseEntity.ok(userService.getUserById(id));
+    }
+
 
 } // End of UserController class
