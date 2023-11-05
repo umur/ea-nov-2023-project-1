@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserMinimalDto createUser(UserMinimalDto minimalDto) {
+    public UserMinimalDto registerUser(UserMinimalDto minimalDto) {
         // Convert Dto to Entity
         User user = modelMapper.map(minimalDto, User.class);
         User newUser = userRepo.save(user);

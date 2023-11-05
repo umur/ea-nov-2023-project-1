@@ -26,10 +26,10 @@ public class UserController {
           return ResponseEntity.ok(userService.findAllUsers());
       }
 
-    // create user REST api (http://localhost:8080/api/users/create)
-    @PostMapping("/create")
-    public ResponseEntity<UserMinimalDto> createUser(@RequestBody UserMinimalDto minimalDto){
-        return new ResponseEntity<>(userService.createUser(minimalDto), HttpStatus.CREATED);
+    // create user REST api (http://localhost:8080/api/users/register)
+    @PostMapping("/register")
+    public ResponseEntity<UserMinimalDto> registerUser(@RequestBody UserMinimalDto minimalDto){
+        return new ResponseEntity<>(userService.registerUser(minimalDto), HttpStatus.CREATED);
     }
 
 
