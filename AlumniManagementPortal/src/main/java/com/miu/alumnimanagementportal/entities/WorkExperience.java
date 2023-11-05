@@ -5,10 +5,8 @@ import lombok.Data;
 
 @Data
 @Entity
-
 public class WorkExperience extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private String startYear;
     private String designation;
     private String companyName;
