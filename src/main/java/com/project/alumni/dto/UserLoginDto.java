@@ -12,12 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserLoginDto {
-    private Long id;
-    // email should not be null or empty
-    @NotEmpty(message = "Email should not be null or empty")
-    @Email
-    private String email;
-    // Password should not be null or empty
-    @NotEmpty
+    @NotEmpty(message = "Username should not be null or empty")
+    private String usernameOrEmail;
+    @NotEmpty(message = "Password should not be null or empty")
     private String password;
 }
