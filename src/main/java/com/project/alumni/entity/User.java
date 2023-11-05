@@ -1,8 +1,6 @@
 package com.project.alumni.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -37,5 +35,8 @@ public class User {
     private String professionalAchievements;
     @Column(name = "profile_pic")
     private String profilePic;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    private Address address;
 
 }
