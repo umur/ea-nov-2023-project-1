@@ -1,9 +1,11 @@
 package com.project.alumni.repository.Job;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.ListCrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.project.alumni.entity.Job.Job;
 
-public interface JobRepository extends CrudRepository<Job, Long> {
+@Repository
+public interface JobRepository extends ListCrudRepository<Job, Long> {
 
 }
