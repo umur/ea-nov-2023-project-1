@@ -10,6 +10,7 @@ import java.util.Date;
 @MappedSuperclass
 public class BaseEntity implements Comparable<BaseEntity>, Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Version

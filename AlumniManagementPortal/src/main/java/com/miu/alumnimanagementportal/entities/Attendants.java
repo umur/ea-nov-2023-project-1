@@ -1,7 +1,6 @@
 package com.miu.alumnimanagementportal.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +10,7 @@ import lombok.Setter;
 public class Attendants extends BaseEntity{
     @OneToOne
     @JoinColumn(name = "event_id")
-    private EventEntity event;
+    private Event event;
 
 /*    @ManyToOne
     @JoinColumn(name = "user_id")
