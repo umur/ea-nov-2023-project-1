@@ -13,4 +13,7 @@ public interface UserService {
     // Find all Users
     public List<UserFullDetailsDto> findAllUsers();
 
+    // Update user details
+    public UserFullDetailsDto updateUser(UserFullDetailsDto userFullDetailsDto, Long id);
+
 }

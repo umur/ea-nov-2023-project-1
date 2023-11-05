@@ -32,5 +32,16 @@ public class UserController {
         return new ResponseEntity<>(userService.registerUser(minimalDto), HttpStatus.CREATED);
     }
 
+    // Update user details REST API (http://localhost:8080/api/users/update/{id})
+    @PutMapping("/update/{id}")
+    public ResponseEntity<UserFullDetailsDto> updateUserDetails(
+            @RequestBody UserFullDetailsDto userFullDetailsDto, @PathVariable (name = "id") Long id)
+    {
+
+        UserFullDetailsDto newUserDetails = userService.updateUser(userFullDetailsDto, id);
+
+        return new ResponseEntity<>(newUserDetails, HttpStatus.OK);
+    }
+
 
 } // End of UserController class

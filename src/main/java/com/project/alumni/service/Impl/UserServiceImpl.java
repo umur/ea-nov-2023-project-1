@@ -3,6 +3,7 @@ package com.project.alumni.service.Impl;
 import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.entity.User;
+import com.project.alumni.exceptions.ResourceNotFoundException;
 import com.project.alumni.repository.UserRepository;
 import com.project.alumni.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -36,6 +37,22 @@ public class UserServiceImpl implements UserService {
         List<User> users = userRepo.findAll();
         return users.stream().map((u) -> modelMapper.map(u, UserFullDetailsDto.class))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public UserFullDetailsDto updateUser(UserFullDetailsDto userFullDetailsDto, Long id) {
+        User user = userRepo.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException("User", "id", id));
+        user.setId(id);
+        user.setGraduationYear(userFullDetailsDto.getGraduationYear());
+        user.setEducationalDetails(userFullDetailsDto.getEducationalDetails());
+        user.setIndustry(userFullDetailsDto.getIndustry());
+        user.setProfessionalAchievements(userFullDetailsDto.getProfessionalAchievements());
+        user.setProfilePic(userFullDetailsDto.getProfilePic());
+
+        User savedUser = userRepo.save(user);
+
+        return modelMapper.map(savedUser, UserFullDetailsDto.class);
     }
 
 
