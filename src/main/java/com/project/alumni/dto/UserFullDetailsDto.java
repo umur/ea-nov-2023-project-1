@@ -1,6 +1,6 @@
-package com.project.alumni.entity;
+package com.project.alumni.dto;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -10,32 +10,27 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name="users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Getter
+@Setter
+public class UserFullDetailsDto {
     private Long id;
-    @Column(name = "firstName", nullable = false)
+    // First name should not be null or empty
+    // First name should have at least 2 Characters.
+    @NotEmpty
+    @Size(min = 2, message = "First name should have at least 2 characters")
     private String firstName;
-    @Column(name = "lastName", nullable = false)
+    @NotEmpty
+    @Size(min = 2, message = "First name should have at least 2 characters")
     private String lastName;
-    @Column(name = " email", unique = true, nullable = false)
+    @NotEmpty
     private String email;
-    @Column (name = "password", nullable = false)
     private String password;
-    @Column(name = "graduation_year")
     private LocalDateTime graduationYear;
     private String industry;
-    @Column(name = "educational_Details")
     private String educationalDetails;
-    @Column(name = "professional_achievements")
     private String professionalAchievements;
-    @Column(name = "profile_pic")
     private String profilePic;
 
 }
