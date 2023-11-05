@@ -1,6 +1,7 @@
 package com.miu.alumnimanagementportal.services.impl;
 
 import com.miu.alumnimanagementportal.dtos.EducationDetailsDto;
+import com.miu.alumnimanagementportal.dtos.RoleDto;
 import com.miu.alumnimanagementportal.dtos.SurveyDto;
 import com.miu.alumnimanagementportal.services.SurveyService;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +14,11 @@ import java.util.List;
 public class SurveyServiceImpl implements SurveyService {
     @Override
     public void create(EducationDetailsDto educationDetailsDto) {
+
+    }
+
+    @Override
+    public void create(RoleDto roleDto) {
 
     }
 
