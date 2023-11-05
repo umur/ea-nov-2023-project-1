@@ -8,15 +8,15 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Attendant extends BaseEntity{
-    @OneToOne
-    @JoinColumn(name = "event_id")
-    private Event event;
-
-/*    @ManyToOne
+    @OneToOne(orphanRemoval = true)
     @JoinColumn(name = "user_id")
-    private List<UserEntity> user;*/
+    private User user;
 
     @Column(columnDefinition = "boolean default false")
     private boolean is_confirmed;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "event_id", nullable = false)
+    private Event event;
 
 }

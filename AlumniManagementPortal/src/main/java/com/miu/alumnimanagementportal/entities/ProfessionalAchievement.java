@@ -8,8 +8,7 @@ import java.util.Date;
 @Data
 @Entity
 public class ProfessionalAchievement extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private String title;
     private Date year;
     private String description;

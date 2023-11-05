@@ -24,6 +24,6 @@ public class Profile extends BaseEntity {
     private Set<ProfessionalAchievement> professionalAchievements = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "profile", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<EducationDetail> educationDetails = new LinkedHashSet<>();
+    private Set<EducationDetails> educationDetails = new LinkedHashSet<>();
 
 }

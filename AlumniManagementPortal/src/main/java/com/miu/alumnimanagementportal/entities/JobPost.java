@@ -10,8 +10,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class JobPost extends BaseEntity {
-    @Id
-    private Long id;
 
     private String title;
     private String description;
@@ -26,7 +24,6 @@ public class JobPost extends BaseEntity {
     private boolean isPublished = false;
 
     //status of the job - open or closed
-    private String status;
-
+    private PostStatus status;
 
 }
