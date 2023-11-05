@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/jobs")
 @RequiredArgsConstructor
-public class JobController {
+public class JobsController {
     private final JobService jobService;
 
     @GetMapping
