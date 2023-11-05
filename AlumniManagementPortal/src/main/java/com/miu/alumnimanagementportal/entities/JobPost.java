@@ -1,11 +1,9 @@
 package com.miu.alumnimanagementportal.entities;
 
+import com.miu.alumnimanagementportal.common.enums.JobType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
 @Entity

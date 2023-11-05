@@ -1,4 +1,4 @@
-package com.miu.alumnimanagementportal.entities;
+package com.miu.alumnimanagementportal.common.enums;
 
 public enum NewsType {
 

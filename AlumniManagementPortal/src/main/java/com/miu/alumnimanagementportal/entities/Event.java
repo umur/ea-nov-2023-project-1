@@ -1,9 +1,8 @@
 package com.miu.alumnimanagementportal.entities;
 
+import com.miu.alumnimanagementportal.common.enums.EventType;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.Date;
