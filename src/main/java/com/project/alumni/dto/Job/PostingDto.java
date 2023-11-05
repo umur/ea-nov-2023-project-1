@@ -2,6 +2,7 @@ package com.project.alumni.dto.Job;
 
 import java.time.LocalDateTime;
 
+import com.project.alumni.entity.Job.Job;
 import com.project.alumni.entity.Job.PostingStatus;
 
 import lombok.Getter;
@@ -15,7 +16,7 @@ public class PostingDto {
     private LocalDateTime creationDate;
     private PostingStatus status;
 
-    private Long jobId;
+    private JobDto job;
     private Long posterId;
 
 }

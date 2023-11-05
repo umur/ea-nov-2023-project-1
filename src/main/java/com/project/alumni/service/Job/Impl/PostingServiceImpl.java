@@ -5,6 +5,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import com.project.alumni.dto.Job.PostingDto;
+import com.project.alumni.entity.Job.Job;
 import com.project.alumni.entity.Job.Posting;
 import com.project.alumni.repository.UserRepository;
 import com.project.alumni.repository.Job.JobRepository;
@@ -53,7 +54,8 @@ public class PostingServiceImpl implements PostingService {
             var user = userRepo.findById(updatedPosting.getPosterId()).orElse(null);
             dbPosting.get().setPoster(user);
 
-            var job = jobRepo.findById(updatedPosting.getJobId()).orElse(null);
+            // var job = jobRepo.findById(updatedPosting.getJobId()).orElse(null);
+            var job = mapper.map(updatedPosting.getJob(), Job.class)
             dbPosting.get().setJob(job);
 
             postingRepo.save(dbPosting.get());

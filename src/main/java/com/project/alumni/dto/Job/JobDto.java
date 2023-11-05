@@ -17,7 +17,7 @@ public class JobDto {
     private String name;
 
     private String description;
-    private List<String> requirements;
+    private String requirements;
 
     private Long userId;
 }
