@@ -47,7 +47,7 @@ public class JobServiceImpl implements JobService {
         if (dbJob.isPresent()) {
             dbJob.get().setDescription(updatedJob.getDescription());
             dbJob.get().setName(updatedJob.getName());
-            dbJob.get().setRequirements(updatedJob.getRequirements());
+            //dbJob.get().setRequirements(updatedJob.getRequirements());
             var user = userRepo.findById(updatedJob.getUserId()).orElse(null);
             dbJob.get().setUser(user);
             jobRepo.save(dbJob.get());

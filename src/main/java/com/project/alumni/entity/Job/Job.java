@@ -4,13 +4,7 @@ import java.util.List;
 
 import com.project.alumni.entity.User;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,7 +20,7 @@ public class Job {
     private String name;
 
     private String description;
-    private List<String> requirements;
+    //private List<String> requirements;
 
     @OneToOne
     private User user;
