@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import com.project.alumni.entity.Job.Job;
@@ -27,6 +26,7 @@ import com.project.alumni.entity.Job.Application;
         }
 )
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -39,7 +39,7 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
     @Column(name = "graduation_year")
-    private LocalDateTime graduationYear;
+    private String graduationYear;
     private String industry;
     @Column(name = "educational_Details")
     private String educationalDetails;
