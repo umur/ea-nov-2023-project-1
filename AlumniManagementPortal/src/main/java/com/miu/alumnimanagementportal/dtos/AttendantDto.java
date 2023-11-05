@@ -1,5 +1,7 @@
 package com.miu.alumnimanagementportal.dtos;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Value;
 
@@ -15,6 +17,7 @@ public class AttendantDto implements Serializable {
     Long version;
     Date createdDate;
     Date lastModifiedDate;
+    @NotNull
     UserDto user;
     boolean is_confirmed;
     @NotNull

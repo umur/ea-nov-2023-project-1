@@ -1,7 +1,6 @@
 package com.miu.alumnimanagementportal.dtos;
 
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Value;
 
 import java.io.Serializable;
@@ -17,13 +16,26 @@ public class UserDto implements Serializable {
     Long version;
     Date createdDate;
     Date lastModifiedDate;
-    String firstName;
-    String lastName;
-    String email;
-    String password;
     @NotNull
-    @Size(message = "This is mandatory", min = 1, max = 8)
+    @NotEmpty
+    @NotBlank
+    String firstName;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    String lastName;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    @Email
+    String email;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    @Size(message = "Password length should be between 5 and 10", min = 5, max = 10)
+    String password;
+
     Set<RoleDto> roles;
-    @NotNull(message = "This is mandatory")
+
     ProfileDto profile;
 }

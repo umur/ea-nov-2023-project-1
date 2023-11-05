@@ -22,7 +22,7 @@ public class SurveyDto implements Serializable {
     private Long id;
     private Long version;
     private Date createdDate;
-    @NotNull
+
     private Date lastModifiedDate;
     @NotNull
     @NotEmpty

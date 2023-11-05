@@ -14,11 +14,11 @@ import java.util.Date;
 @Value
 public class ProfessionalAchievementDto implements Serializable {
     Long id;
-    @NotNull
+
     Long version;
-    @NotNull
+
     Date createdDate;
-    @NotNull
+
     Date lastModifiedDate;
     @NotNull
     @NotEmpty
