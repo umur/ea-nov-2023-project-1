@@ -7,16 +7,16 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Attendants extends BaseEntity{
-    @OneToOne
-    @JoinColumn(name = "event_id")
-    private Event event;
-
-/*    @ManyToOne
+public class Attendant extends BaseEntity{
+    @OneToOne(orphanRemoval = true)
     @JoinColumn(name = "user_id")
-    private List<UserEntity> user;*/
+    private User user;
 
     @Column(columnDefinition = "boolean default false")
     private boolean is_confirmed;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "event_id", nullable = false)
+    private Event event;
 
 }

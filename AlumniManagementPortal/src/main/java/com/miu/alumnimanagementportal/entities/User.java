@@ -13,10 +13,6 @@ import java.util.Set;
 @Setter
 public class User extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "firstname", nullable = false)
     private String firstName;
     @Column(name = "lastname", nullable = false)
@@ -33,11 +29,8 @@ public class User extends BaseEntity{
     private Set<Role> roles;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "profile_entity_id", unique = true)
+    @JoinColumn(name = "profile_id", unique = true)
     private Profile profile;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Address> addresses = new ArrayList<>();
 
 
 //    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
