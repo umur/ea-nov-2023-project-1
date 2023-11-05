@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController // Combination of @Controller and @ResponseBody annotations
-@RequestMapping("/api/users") // Base URL for User REST API
+@RequestMapping("/api/users") // Base URL for product REST API
 public class UserController {
     private final UserService userService;
 
