@@ -2,8 +2,11 @@ package com.project.alumni.entity.Job;
 
 import java.time.LocalDateTime;
 
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
+
 import com.project.alumni.entity.User;
 
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

@@ -1,4 +1,4 @@
----Users---
+-- Users-- 
 INSERT INTO users (
         id,
         first_name,
@@ -131,8 +131,8 @@ VALUES (
         null,
         null
     );
----Users---
----Jobs---
+-- Users-- 
+-- Jobs-- 
 -- Jobs with Users
 INSERT INTO jobs (
         id,
@@ -146,21 +146,21 @@ VALUES (
         1,
         'Software Developer position for a tech startup.',
         'Software Developer',
-        'Bachelor\'s degree in Computer Science, 3 years of experience.'
+        'Bachelors degree in Computer Science, 3 years of experience.'
     ),
     (
         2,
         2,
         'Marketing Manager position for a growing company.',
         'Marketing Manager',
-        'Bachelor\'s degree in Marketing, 5 years of experience.'
+        'Bachelors degree in Marketing, 5 years of experience.'
     ),
     (
         3,
         3,
         'Accountant role at a reputable accounting firm.',
         'Accountant',
-        'Bachelor\'s degree in Accounting, CPA certification.'
+        'Bachelors degree in Accounting, CPA certification.'
     ),
     (
         4,
@@ -174,7 +174,7 @@ VALUES (
         5,
         'Graphic Designer role for a creative agency.',
         'Graphic Designer',
-        'Bachelor\'s degree in Graphic Design, proficiency in Adobe Creative Suite.'
+        'Bachelors degree in Graphic Design, proficiency in Adobe Creative Suite.'
     );
 -- Jobs without Users
 INSERT INTO jobs (
@@ -196,7 +196,7 @@ VALUES (
         null,
         'Data Analyst role at a data analytics company.',
         'Data Analyst',
-        'Bachelor\'s degree in Statistics, experience with data analysis tools.'
+        'Bachelors degree in Statistics, experience with data analysis tools.'
     ),
     (
         8,
@@ -210,7 +210,7 @@ VALUES (
         null,
         'Nurse position at a local hospital.',
         'Nurse',
-        'Bachelor\'s degree in Nursing, RN license.'
+        'Bachelors degree in Nursing, RN license.'
     ),
     (
         10,
@@ -219,8 +219,8 @@ VALUES (
         'Chef',
         'Culinary degree, experience in fine dining kitchens.'
     );
----Jobs---
----Job Applications---
+-- Jobs-- 
+-- Job Applications-- 
 INSERT INTO applications (status, id, job_id, user_id)
 VALUES (0, 1, 1, 1),
     (1, 2, 2, 2),
@@ -232,8 +232,8 @@ VALUES (0, 1, 1, 1),
     (0, 8, 8, 8),
     (1, 9, 9, 9),
     (0, 10, 10, 10);
--- Job Applications---
--- Job Postings ---
+-- Job Applications-- 
+-- Job Postings -- 
 INSERT INTO postings (status, creation_date, id, job_id, user_id)
 VALUES (0, '2023-11-01', 1, 1, 1),
     (0, '2023-11-02', 2, 2, 2),
@@ -245,4 +245,4 @@ VALUES (0, '2023-11-01', 1, 1, 1),
     (1, '2023-11-08', 8, 8, 8),
     (1, '2023-11-09', 9, 9, 9),
     (0, '2023-11-10', 10, 10, 10);
--- Job Postings ---
+-- Job Postings --
