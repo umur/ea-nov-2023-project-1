@@ -3,6 +3,7 @@ package com.project.alumni.controller;
 import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,13 +29,13 @@ public class UserController {
 
     // create user REST api (http://localhost:8080/api/users/register)
     @PostMapping("/register")
-    public ResponseEntity<UserMinimalDto> registerUser(@RequestBody UserMinimalDto minimalDto){
+    public ResponseEntity<UserMinimalDto> registerUser(@Valid @RequestBody UserMinimalDto minimalDto){
         return new ResponseEntity<>(userService.registerUser(minimalDto), HttpStatus.CREATED);
     }
 
     // Update user details REST API (http://localhost:8080/api/users/update/{id})
     @PutMapping("/update/{id}")
-    public ResponseEntity<UserFullDetailsDto> updateUserDetails(
+    public ResponseEntity<UserFullDetailsDto> updateUserDetails(@Valid
             @RequestBody UserFullDetailsDto userFullDetailsDto, @PathVariable (name = "id") Long id)
     {
 
