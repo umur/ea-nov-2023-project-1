@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(AlumniAPIException.class)
-    public ResponseEntity<ErrorDetails> handleBlogAPIException(AlumniAPIException exception,
+    public ResponseEntity<ErrorDetails> handleAlumniAPIException(AlumniAPIException exception,
                                                                WebRequest webRequest){
         ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(),
                 webRequest.getDescription(false));
