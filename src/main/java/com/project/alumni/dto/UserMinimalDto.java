@@ -19,7 +19,7 @@ public class UserMinimalDto {
     @Size(min = 2, message = "First name should have at least 2 characters")
     private String firstName;
     @NotEmpty
-    @Size(min = 2, message = "First name should have at least 2 characters")
+    @Size(min = 2, message = "Last name should have at least 2 characters")
     private String lastName;
     @NotEmpty
     private String email;
