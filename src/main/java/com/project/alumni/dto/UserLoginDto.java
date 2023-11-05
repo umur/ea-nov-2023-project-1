@@ -14,7 +14,7 @@ import lombok.Setter;
 public class UserLoginDto {
     private Long id;
     // email should not be null or empty
-    @NotEmpty
+    @NotEmpty(message = "Email should not be null or empty")
     @Email
     private String email;
     // Password should not be null or empty

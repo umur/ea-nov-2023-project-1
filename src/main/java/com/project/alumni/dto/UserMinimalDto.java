@@ -22,7 +22,7 @@ public class UserMinimalDto {
     @NotEmpty
     @Size(min = 2, message = "Last name should have at least 2 characters")
     private String lastName;
-    @NotEmpty
+    @NotEmpty(message = "Email should not be null or empty")
     @Email
     private String email;
     @NotEmpty
