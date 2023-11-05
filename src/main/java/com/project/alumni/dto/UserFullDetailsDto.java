@@ -1,5 +1,6 @@
 package com.project.alumni.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,7 @@ public class UserFullDetailsDto {
     @Size(min = 2, message = "Last name should have at least 2 characters")
     private String lastName;
     @NotEmpty
+    @Email
     private String email;
     private String graduationYear;
     private String industry;

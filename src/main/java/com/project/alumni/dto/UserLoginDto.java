@@ -1,5 +1,6 @@
 package com.project.alumni.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,6 +15,7 @@ public class UserLoginDto {
     private Long id;
     // email should not be null or empty
     @NotEmpty
+    @Email
     private String email;
     // Password should not be null or empty
     @NotEmpty
