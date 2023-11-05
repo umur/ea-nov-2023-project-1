@@ -234,7 +234,7 @@ VALUES (0, 1, 1, 1),
     (0, 10, 10, 10);
 -- Job Applications-- 
 -- Job Postings -- 
-INSERT INTO postings (status, creation_date, id, job_id, user_id)
+INSERT INTO postings (status, creation_date, id, job_id, poster_id)
 VALUES (0, '2023-11-01', 1, 1, 1),
     (0, '2023-11-02', 2, 2, 2),
     (1, '2023-11-03', 3, 3, 3),

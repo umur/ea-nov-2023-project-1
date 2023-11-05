@@ -25,6 +25,8 @@ public class PostingServiceImpl implements PostingService {
 
     @Override
     public void save(PostingDto postingDto) {
+        var job = jobRepo.save(mapper.map(postingDto.getJob(), Job.class));
+        postingDto.getJob().setId(job.getId());
         postingRepo.save(mapper.map(postingDto, Posting.class));
     }
 
@@ -56,8 +58,8 @@ public class PostingServiceImpl implements PostingService {
 
             // var job = jobRepo.findById(updatedPosting.getJobId()).orElse(null);
             var job = mapper.map(updatedPosting.getJob(), Job.class);
+            jobRepo.save(job);
             dbPosting.get().setJob(job);
-
             postingRepo.save(dbPosting.get());
         }
     }
