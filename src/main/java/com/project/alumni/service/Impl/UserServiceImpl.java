@@ -1,11 +1,17 @@
 package com.project.alumni.service.Impl;
 
+import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.entity.User;
 import com.project.alumni.repository.UserRepository;
 import com.project.alumni.service.UserService;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
 public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
 
@@ -23,6 +29,13 @@ public class UserServiceImpl implements UserService {
         User newUser = userRepo.save(user);
         // Convert Entity to Dto
         return modelMapper.map(newUser, UserMinimalDto.class);
+    }
+
+    @Override
+    public List<UserFullDetailsDto> findAllUsers() {
+        List<User> users = userRepo.findAll();
+        return users.stream().map((c) -> modelMapper.map(c, UserFullDetailsDto.class))
+                .collect(Collectors.toList());
     }
 
 
