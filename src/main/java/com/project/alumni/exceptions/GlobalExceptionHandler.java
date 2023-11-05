@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ControllerAdvice
-public class GlobalExceptionHandler extends ResponseEntityExceptionHandler implements IGlobalExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     // handle specific exceptions
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -43,18 +43,15 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler imple
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @Override
-    public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-                                                                  HttpHeaders headers,
-                                                                  HttpStatus status,
-                                                                  WebRequest request) {
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception,
+                                                                        WebRequest webRequest){
         Map<String, String> errors = new HashMap<>();
-        ex.getBindingResult().getAllErrors().forEach((error) ->{
+        exception.getBindingResult().getAllErrors().forEach((error) ->{
             String fieldName = ((FieldError)error).getField();
             String message = error.getDefaultMessage();
             errors.put(fieldName, message);
         });
-
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
 }
