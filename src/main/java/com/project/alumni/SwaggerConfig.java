@@ -12,7 +12,7 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI registrationOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("Alumni Portel")
+                .info(new Info().title("Alumni Portal")
                         .description("Alumni Management Portal")
                         .version("1.0"));
     }
