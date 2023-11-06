@@ -19,6 +19,6 @@ public class Course {
     private Long id;
     private String name;
 
-    @OneToMany
-    private User users;
+    //@OneToMany
+    //private User users;
 }

@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.project.alumni.entity.Job.Job;
 import com.project.alumni.entity.Job.Posting;
+import com.project.alumni.entity.Event.Event;
 import com.project.alumni.entity.Job.Application;
 
 @Getter
@@ -49,8 +50,8 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Address address;
 
-    @OneToMany
-    private Course courses;
+    //@OneToMany
+    //private Course courses;
 
     @OneToOne(mappedBy = "user")
     private Job job;
@@ -60,5 +61,17 @@ public class User {
 
     @OneToMany(mappedBy = "poster")
     private List<Posting> jobPostings;
+
+
+    @ManyToMany
+    @JoinTable(name = "user_organizing_event", joinColumns = @JoinColumn(name = "organizerId"), inverseJoinColumns = @JoinColumn(name = "eventId"))
+    private List<Event> organized;
+    @ManyToMany
+    @JoinTable(name = "user_attending_event", joinColumns = @JoinColumn(name = "attendeeId"), inverseJoinColumns = @JoinColumn(name = "eventId"))
+    private List<Event> attended;
+    @ManyToMany
+    @JoinTable(name = "user_rsvped_event", joinColumns = @JoinColumn(name = "rsvperId"), inverseJoinColumns = @JoinColumn(name = "eventId"))
+    private List<Event> rsvped;
+
 
 }
