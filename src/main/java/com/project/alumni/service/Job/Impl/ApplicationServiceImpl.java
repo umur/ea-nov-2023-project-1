@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.alumni.dto.Job.ApplicationDto;
 import com.project.alumni.entity.Job.Application;
+import com.project.alumni.entity.Job.ApplicationStatus;
 import com.project.alumni.repository.UserRepository;
 import com.project.alumni.repository.Job.ApplicationRepository;
 import com.project.alumni.repository.Job.JobRepository;
@@ -53,6 +54,9 @@ public class ApplicationServiceImpl implements ApplicationService {
             dbApplication.get().setUser(user);
 
             var job = jobRepo.findById(updatedApplication.getJobId()).orElse(null);
+            if (updatedApplication.getStatus().equals(ApplicationStatus.Accepted)) {
+                job.setUser(user);
+            }
             dbApplication.get().setJob(job);
 
             applicationRepo.save(dbApplication.get());

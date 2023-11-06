@@ -2,16 +2,15 @@ package com.project.alumni.entity.Job;
 
 import java.time.LocalDateTime;
 
-import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
-
 import com.project.alumni.entity.User;
 
-import jakarta.persistence.Convert;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -32,8 +31,8 @@ public class Posting {
     @OneToOne
     private Job job;
 
-    @OneToOne
-    @JoinColumn(name = "userId")
+    @ManyToOne
+    @JoinColumn(name = "posterId")
     private User poster;
 
 }
