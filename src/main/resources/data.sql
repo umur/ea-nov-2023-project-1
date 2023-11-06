@@ -1,3 +1,16 @@
+INSERT INTO news_and_announcements (id, type, title, content,deleted)
+VALUES
+    (1, 'NEWS', 'Welcome to the new website!', 'We are happy to announce the launch of our new website. We hope you like it!',0),
+    (2, 'Announcement', 'New office opening', 'We are opening a new office in London. Come and visit us!',0);
+
+INSERT INTO insights (id, title, description,deleted)
+VALUES (1, 'Insight 1', 'This is the first insight',0),
+       (2, 'Insight 2', 'This is the second insight', 0);
+
+INSERT INTO survey (id, title, description, start_date, end_date,deleted)
+VALUES (1, 'Survey 1', 'This is the first survey', '2020-01-01', '2020-01-31',0),
+       (2, 'Survey 2', 'This is the second survey', '2020-02-01', '2020-02-28',0);
+
 INSERT INTO addresses (id,
                        city,
                        state,
@@ -516,3 +529,8 @@ values (1, 1, 1, 'text', 'hello', '2023-11-01'),
        (18, 3, 4, 'text', 'hi', '2023-11-18'),
        (19, 3, 1, 'text', 'how are you?', '2023-11-19'),
        (20, 3, 4, 'text', 'I am fine', '2023-11-20');
+
+INSERT INTO survey_answer (id, survey_id, user_id, answer,deleted)
+VALUES
+    (1,1,1,"Hello",0),
+    (2,1,2,"Hello",0);

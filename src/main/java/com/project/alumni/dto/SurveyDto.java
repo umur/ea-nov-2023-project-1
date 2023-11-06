@@ -7,14 +7,11 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class NewsAndAnnouncementDto {
-
+public class SurveyDto {
     private Long id;
-
-    private String type;
-
     private String title;
-    private String content;
-    private Date publishDate;
-
+    private String description;
+    private Date startDate;
+    private Date endDate;
+    private UserFullDetailsDto user;
 }

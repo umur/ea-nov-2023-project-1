@@ -27,8 +27,10 @@ public class NewsAndAnnouncementServiceImp implements NewsAndAnnouncementService
     public List<NewsAndAnnouncementDto> findAll() {
         List<NewsAndAnnouncements> newsAndAnnouncements = newsAndAnnouncementsRepo.findAll();
         var res = new ArrayList<NewsAndAnnouncementDto>();
-        newsAndAnnouncements.forEach(newsAndAnnouncement ->{
-            res.add(modelMapper.map(newsAndAnnouncement, NewsAndAnnouncementDto.class));
+        newsAndAnnouncements.forEach(e ->{
+            if (e.getDeleted() == 0) {
+                res.add(modelMapper.map(e, NewsAndAnnouncementDto.class));
+            }
         });
         return res;
     }
@@ -36,23 +38,30 @@ public class NewsAndAnnouncementServiceImp implements NewsAndAnnouncementService
     @Override
     public NewsAndAnnouncementDto findById(Long id) {
         var res = newsAndAnnouncementsRepo.findById(id);
+        if (!res.isPresent() || res.get().getDeleted() == 1){
+            return null;
+        }
         return modelMapper.map(res, NewsAndAnnouncementDto.class);
     }
 
     @Override
     public void update(Long id, NewsAndAnnouncementDto newsAndAnnouncementDto) {
         var newsAndAnnouncements = newsAndAnnouncementsRepo.findById(id);
-        if(newsAndAnnouncements.isPresent()){
+        if(newsAndAnnouncements.isPresent() && newsAndAnnouncements.get().getDeleted() == 0){
             NewsAndAnnouncements var1 = modelMapper.map(newsAndAnnouncementDto, NewsAndAnnouncements.class);
             var1.setId(id);
             var1.setTitle(newsAndAnnouncementDto.getTitle());
             var1.setContent(newsAndAnnouncementDto.getContent());
             var1.setPublishDate(newsAndAnnouncementDto.getPublishDate());
+            newsAndAnnouncementsRepo.save(var1);
         }
     }
 
     @Override
     public void delete(Long id) {
-        newsAndAnnouncementsRepo.deleteById(id);
+        var newsAndAnnouncements = newsAndAnnouncementsRepo.findById(id);
+        if(newsAndAnnouncements.isPresent()){
+            newsAndAnnouncements.get().setDeleted(1);
+        }
     }
 }

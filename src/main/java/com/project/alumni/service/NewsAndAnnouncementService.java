@@ -1,9 +1,6 @@
 package com.project.alumni.service;
 
 import com.project.alumni.dto.NewsAndAnnouncementDto;
-import com.project.alumni.entity.NewsAndAnnouncements;
-import lombok.Getter;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
