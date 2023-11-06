@@ -58,7 +58,9 @@ public class PostingServiceImpl implements PostingService {
 
             // var job = jobRepo.findById(updatedPosting.getJobId()).orElse(null);
             var job = mapper.map(updatedPosting.getJob(), Job.class);
+
             jobRepo.save(job);
+
             dbPosting.get().setJob(job);
             postingRepo.save(dbPosting.get());
         }
