@@ -39,7 +39,7 @@ public class JobPostController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateJobPostById(@Valid @PathVariable Long id, @RequestBody JobPostDto jobPostDto) {
+    public ResponseEntity<?> updateJobPostById( @PathVariable Long id,@Valid @RequestBody JobPostDto jobPostDto) {
         return converter.buildReposeEntity(Map.of("data", jobPostService.update(jobPostDto,id)), HttpStatus.OK);
     }
 

@@ -37,7 +37,7 @@ public class NewsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateNewsById(@Valid @PathVariable Long id, @RequestBody NewsDto newsDto) {
+    public ResponseEntity<?> updateNewsById( @PathVariable Long id, @Valid @RequestBody NewsDto newsDto) {
         return converter.buildReposeEntity(Map.of("data", newsService.update(newsDto,id)), HttpStatus.OK);
     }
 
