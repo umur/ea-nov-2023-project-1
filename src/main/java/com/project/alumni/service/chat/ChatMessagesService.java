@@ -1,7 +1,7 @@
-package com.project.alumni.service;
+package com.project.alumni.service.chat;
 
 
-import com.project.alumni.dto.ChatMessagesDto;
+import com.project.alumni.dto.chat.ChatMessagesDto;
 
 import java.util.List;
 
