@@ -18,13 +18,6 @@ public interface UserService {
 
     public UserFullDetailsDto getUserById(Long id);
 
-    public List<UserFullDetailsDto> searchUsers(String query);
-
-    /**
-     * Return all users by a given selected address.
-     */
-
     List<UserFullDetailsDto> getUsersByAddress(Long addressId);
-
 
 } // End of UserService class

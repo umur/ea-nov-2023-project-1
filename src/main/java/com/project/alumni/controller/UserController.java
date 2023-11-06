@@ -19,25 +19,24 @@ public class UserController {
         this.userService = userService;
     }
 
-      /*
-    Implement CRUD operations for the domains.*/
-      // Get all users REST API
-      @GetMapping
-      public ResponseEntity<List<UserFullDetailsDto>> getAllUsers(){
-          return ResponseEntity.ok(userService.findAllUsers());
-      }
+    /*
+  Implement CRUD operations for the domains.*/
+    // Get all users REST API
+    @GetMapping
+    public ResponseEntity<List<UserFullDetailsDto>> getAllUsers() {
+        return ResponseEntity.ok(userService.findAllUsers());
+    }
 
     // create user REST api (http://localhost:8080/api/users/register)
     @PostMapping("/register")
-    public ResponseEntity<UserMinimalDto> registerUser(@Valid @RequestBody UserMinimalDto minimalDto){
+    public ResponseEntity<UserMinimalDto> registerUser(@Valid @RequestBody UserMinimalDto minimalDto) {
         return new ResponseEntity<>(userService.registerUser(minimalDto), HttpStatus.CREATED);
     }
 
     // Update user details REST API (http://localhost:8080/api/users/update/{id})
     @PutMapping("/update/{id}")
     public ResponseEntity<UserFullDetailsDto> updateUserDetails(@Valid
-            @RequestBody UserFullDetailsDto userFullDetailsDto, @PathVariable (name = "id") Long id)
-    {
+                                                                @RequestBody UserFullDetailsDto userFullDetailsDto, @PathVariable(name = "id") Long id) {
 
         UserFullDetailsDto newUserDetails = userService.updateUser(userFullDetailsDto, id);
 
@@ -46,19 +45,13 @@ public class UserController {
 
     // Get user details by ID REST API
     @GetMapping("/profile/{id}")
-    public ResponseEntity<UserFullDetailsDto> getUserProfile(@PathVariable (name = "id") Long id){
+    public ResponseEntity<UserFullDetailsDto> getUserProfile(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(userService.getUserById(id));
-    }
-
-    // Search users by industry and graduation year REST API
-    @GetMapping("/search")
-    public ResponseEntity<List<UserFullDetailsDto>> searchUsers(@RequestParam ("query") String query){
-       return ResponseEntity.ok(userService.searchUsers(query));
     }
 
     // Get users by addresses REST API (http://localhost:8080/api/users/address/1)
     @GetMapping("/address/{id}")
-    public ResponseEntity<List<UserFullDetailsDto>> getUsersByAddress(@PathVariable (name= "id") Long addressId){
+    public ResponseEntity<List<UserFullDetailsDto>> getUsersByAddress(@PathVariable(name = "id") Long addressId) {
         List<UserFullDetailsDto> userDtos = userService.getUsersByAddress(addressId);
         return ResponseEntity.ok(userDtos);
     }

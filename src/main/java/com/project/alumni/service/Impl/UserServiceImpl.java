@@ -75,13 +75,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserFullDetailsDto> searchUsers(String query) {
-        List<User> users = userRepo.searchUsers(query);
-        return users.stream().map((u) -> modelMapper.map(u, UserFullDetailsDto.class))
-                .collect(Collectors.toList());
-    }
-
-    @Override
     public List<UserFullDetailsDto> getUsersByAddress(Long addressId) {
         // Get address by Id from the database.
         Address address = addressRepo.findById(addressId).orElseThrow(() ->
