@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 import com.project.alumni.entity.Job.Job;
 import com.project.alumni.entity.Job.Posting;
@@ -29,7 +30,7 @@ public class User {
     private String firstName;
     @Column(name = "lastName", nullable = false)
     private String lastName;
-    @Column(name = "username", nullable = false)
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
     @Column(name = " email", nullable = false)
     private String email;
@@ -56,4 +57,5 @@ public class User {
 
     @OneToMany(mappedBy = "poster")
     private List<Posting> jobPostings;
+    
 }
