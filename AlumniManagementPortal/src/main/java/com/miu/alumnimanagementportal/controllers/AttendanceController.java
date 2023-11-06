@@ -34,7 +34,7 @@ public class AttendanceController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateAttendantById(@Valid @PathVariable Long id, @RequestBody AttendantDto attendantDto) {
+    public ResponseEntity<?> updateAttendantById( @PathVariable Long id,@Valid @RequestBody AttendantDto attendantDto) {
         return converter.buildReposeEntity(Map.of("data", attendantService.update(attendantDto,id)), HttpStatus.OK);
     }
 

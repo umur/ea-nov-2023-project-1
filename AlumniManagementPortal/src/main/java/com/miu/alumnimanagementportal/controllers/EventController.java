@@ -39,7 +39,7 @@ public class EventController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateEventById(@Valid @PathVariable Long id, @RequestBody EventDto eventDto) {
+    public ResponseEntity<?> updateEventById( @PathVariable Long id,@Valid @RequestBody EventDto eventDto) {
         return converter.buildReposeEntity(Map.of("data", eventService.update(eventDto,id)), HttpStatus.OK);
     }
 
