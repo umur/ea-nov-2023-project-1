@@ -12,7 +12,7 @@ public class JobPost extends BaseEntity {
     private String title;
     private String description;
 
-    //enum - parttime, full-time, contract, remote
+
     private JobType jobType;
 
     //owner of the job
@@ -23,5 +23,11 @@ public class JobPost extends BaseEntity {
 
     //status of the job - open or closed
     private PostStatus status;
+
+    private String location;
+    private String companyName;
+    private String city;
+    private String state;
+
 
 }

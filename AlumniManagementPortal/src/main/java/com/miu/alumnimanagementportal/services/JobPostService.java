@@ -2,7 +2,7 @@ package com.miu.alumnimanagementportal.services;
 
 
 import com.miu.alumnimanagementportal.dtos.JobPostDto;
-import com.miu.alumnimanagementportal.dtos.JobPostDto;
+import com.miu.alumnimanagementportal.dtos.JobPostsByFilterDto;
 
 import java.util.List;
 
@@ -16,4 +16,6 @@ public interface JobPostService {
     JobPostDto getjobPostById(Long id);
 
     void delete(Long id);
+
+    List<JobPostDto>  getJobPostsByFilter(JobPostsByFilterDto jobPostsByFilterDto);
 }
