@@ -1,5 +1,6 @@
-package com.project.alumni.entity;
+package com.project.alumni.entity.chat;
 
+import com.project.alumni.entity.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

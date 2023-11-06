@@ -1,7 +1,7 @@
-package com.project.alumni.controller;
+package com.project.alumni.controller.chat;
 
-import com.project.alumni.dto.ChatMessagesDto;
-import com.project.alumni.service.ChatMessagesService;
+import com.project.alumni.dto.chat.ChatMessagesDto;
+import com.project.alumni.service.chat.ChatMessagesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

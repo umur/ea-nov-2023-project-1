@@ -1,6 +1,7 @@
-package com.project.alumni.dto;
+package com.project.alumni.dto.chat;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.project.alumni.dto.UserLoginDto;
 import com.project.alumni.entity.User;
 
 import lombok.Getter;
