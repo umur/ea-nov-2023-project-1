@@ -49,6 +49,9 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Address address;
 
+    @OneToMany
+    private Course courses;
+
     @OneToOne(mappedBy = "user")
     private Job job;
 
