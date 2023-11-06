@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.time.Year;
+
 import java.util.List;
 import java.util.Set;
 
@@ -49,7 +49,7 @@ public class User {
     private String profilePic;
 
     @Embedded
-    private Address location;
+    private Address address;
 
     @ManyToMany
     @JoinTable(

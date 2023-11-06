@@ -1,5 +1,6 @@
 package com.project.alumni.dto;
 
+import com.project.alumni.entity.Address;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -23,6 +24,7 @@ public class UserFullDetailsDto {
     private String lastName;
     private String username;
     private String email;
+    private Address address;
     private String gradYear;
     private String industry;
     private String educationalDetails;

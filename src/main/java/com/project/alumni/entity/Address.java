@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Embeddable
 public class Address {
-    private String location;
-    private String zip;
     private String city;
+    private String zip;
+    private String state;
 }

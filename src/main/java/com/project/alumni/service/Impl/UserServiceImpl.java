@@ -2,6 +2,7 @@ package com.project.alumni.service.Impl;
 
 import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
+import com.project.alumni.entity.Address;
 import com.project.alumni.entity.User;
 import com.project.alumni.exceptions.ResourceNotFoundException;
 import com.project.alumni.repository.UserRepository;
@@ -45,6 +46,7 @@ public class UserServiceImpl implements UserService {
                 new ResourceNotFoundException("User", "id", id));
         user.setId(id);
         user.setGradYear(userFullDetailsDto.getGradYear());
+        user.setAddress(userFullDetailsDto.getAddress());
         user.setEducationalDetails(userFullDetailsDto.getEducationalDetails());
         user.setIndustry(userFullDetailsDto.getIndustry());
         user.setProfessionalAchievements(userFullDetailsDto.getProfessionalAchievements());
