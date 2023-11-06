@@ -43,6 +43,17 @@ public class User implements UserDetails {
     @JoinTable(name = "user_roles")
     protected List<Role> roles;
 
+    @ManyToMany
+    @JoinTable(
+            name="user_group",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "group_id")
+    )
+    private List<MessageGroup> groups;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Message> messages;
+
     public User() {
     }
 

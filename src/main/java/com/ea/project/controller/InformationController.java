@@ -1,6 +1,5 @@
 package com.ea.project.controller;
 
-
 import com.ea.project.dto.InformationDto;
 import com.ea.project.entity.Information;
 import com.ea.project.service.InformationService;
