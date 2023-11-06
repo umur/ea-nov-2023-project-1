@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -31,6 +32,16 @@ public class User extends BaseEntity{
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "profile_id", unique = true)
     private Profile profile;
+
+
+    private boolean is_active = true;
+
+    private boolean is_locked = false;
+
+    private int loginCount = 0;
+
+    private LocalDateTime lastLockedDateTime;
+
 
 
 //    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)

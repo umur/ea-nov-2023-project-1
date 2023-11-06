@@ -2,7 +2,9 @@ package com.miu.alumnimanagementportal.controllers;
 
 import com.miu.alumnimanagementportal.common.Converter;
 import com.miu.alumnimanagementportal.dtos.ProfileDto;
+import com.miu.alumnimanagementportal.dtos.UserActivationDto;
 import com.miu.alumnimanagementportal.dtos.UserDto;
+import com.miu.alumnimanagementportal.dtos.UserLoginInfoDto;
 import com.miu.alumnimanagementportal.services.ProfileService;
 import com.miu.alumnimanagementportal.services.UserService;
 import jakarta.validation.Valid;
@@ -21,6 +23,13 @@ public class UserController {
     private final UserService userService;
     private final Converter converter;
     private final ProfileService profileService;
+
+
+    @PostMapping("/activate/{id}")
+    public ResponseEntity<?> activate(@PathVariable Long id) {
+        userService.update(new UserActivationDto(), id);
+        return converter.buildReposeEntity(Map.of("message", "User activated successfully"), HttpStatus.ACCEPTED);
+    }
 
     @PostMapping("/registration")
     public ResponseEntity<?> register(@Valid @RequestBody UserDto userDto) {
@@ -79,5 +88,10 @@ public class UserController {
         return converter.buildReposeEntity(Map.of("message", "Profile Deleted successfully"), HttpStatus.ACCEPTED);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@Valid @RequestBody UserLoginInfoDto userLoginInfoDto) {
+        userService.login(userLoginInfoDto);
+        return converter.buildReposeEntity(Map.of("message", "User logged in successfully"), HttpStatus.ACCEPTED);
+    }
 
 }
