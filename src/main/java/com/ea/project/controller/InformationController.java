@@ -1,7 +1,6 @@
 package com.ea.project.controller;
 
 import com.ea.project.dto.InformationDto;
-import com.ea.project.entity.Information;
 import com.ea.project.service.InformationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/information")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class InformationController {
     @Autowired
     private final InformationService informationService;
@@ -27,7 +27,7 @@ public class InformationController {
     }
 
     @PostMapping
-    public void creat(@RequestBody Information information){
+    public void creat(@RequestBody InformationDto information){
         informationService.create(information);
     }
 
@@ -37,6 +37,6 @@ public class InformationController {
     }
 
     @PutMapping("/{id}")
-    public void update(@RequestBody Information information){informationService.update(information);
+    public void update(@RequestBody InformationDto information){informationService.update(information);
     }
 }

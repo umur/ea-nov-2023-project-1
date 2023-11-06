@@ -1,6 +1,9 @@
 package com.ea.project.dto;
 
+import com.ea.project.entity.Announcement;
+import com.ea.project.entity.Information;
 import com.ea.project.entity.Replay;
+import org.modelmapper.ModelMapper;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,4 +25,8 @@ public class InformationDto {
 
     //news
     private String title;
+
+    public Information getInformation(ModelMapper modelMapper) {
+        return modelMapper.map(this, Announcement.class);
+    }
 }
