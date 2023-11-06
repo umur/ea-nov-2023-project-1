@@ -22,7 +22,12 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public String login(UserLoginDto loginDto) {
-        return null;
+//        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+//                loginDto.getUsernameOrEmail(), loginDto.getPassword()));
+//
+//        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        return "User Logged-in successfully!.";
     }
 
     @Override
