@@ -47,8 +47,8 @@ public class User {
     @Column(name = "profile_pic")
     private String profilePic;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
-    private Address address;
+    @Embedded
+    private Address location;
 
     //@OneToMany
     //private Course courses;
