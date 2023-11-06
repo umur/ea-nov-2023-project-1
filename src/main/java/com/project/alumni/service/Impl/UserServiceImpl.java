@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepo.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("User", "id", id));
         user.setId(id);
-        user.setGraduationYear(userFullDetailsDto.getGraduationYear());
+        user.setGraduationYear(userFullDetailsDto.getGradYear());
         user.setEducationalDetails(userFullDetailsDto.getEducationalDetails());
         user.setIndustry(userFullDetailsDto.getIndustry());
         user.setProfessionalAchievements(userFullDetailsDto.getProfessionalAchievements());
@@ -61,6 +61,14 @@ public class UserServiceImpl implements UserService {
                 new ResourceNotFoundException("User", "id", id));
         return modelMapper.map(user, UserFullDetailsDto.class);
     }
+
+    @Override
+    public List<UserFullDetailsDto> searchUsers(String query) {
+        List<User> users = userRepo.searchUsers(query);
+        return users.stream().map((u) -> modelMapper.map(u, UserFullDetailsDto.class))
+                .collect(Collectors.toList());
+    }
+
 
 
 } // End of UserServiceImpl class

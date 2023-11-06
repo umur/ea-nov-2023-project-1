@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import java.time.Year;
 import java.util.List;
-import java.util.Set;
+
 
 import com.project.alumni.entity.Job.Job;
 import com.project.alumni.entity.Job.Posting;
@@ -37,7 +37,7 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
     @Column(name = "graduation_year")
-    private String graduationYear;
+    private Year graduationYear;
     private String industry;
     @Column(name = "educational_Details")
     private String educationalDetails;
@@ -45,6 +45,8 @@ public class User {
     private String professionalAchievements;
     @Column(name = "profile_pic")
     private String profilePic;
+
+    private String gradYear = String.valueOf(graduationYear);
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Address address;

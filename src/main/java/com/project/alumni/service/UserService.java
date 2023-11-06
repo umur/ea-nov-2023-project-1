@@ -2,6 +2,7 @@ package com.project.alumni.service;
 
 import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
+import com.project.alumni.entity.User;
 
 import java.util.List;
 
@@ -16,6 +17,8 @@ public interface UserService {
     public UserFullDetailsDto updateUser(UserFullDetailsDto userFullDetailsDto, Long id);
 
     public UserFullDetailsDto getUserById(Long id);
+
+    public List<UserFullDetailsDto> searchUsers(String query);
 
 
 } // End of UserService class

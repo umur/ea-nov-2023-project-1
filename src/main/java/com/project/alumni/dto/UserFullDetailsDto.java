@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+import java.time.Year;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -20,10 +23,11 @@ public class UserFullDetailsDto {
     private String lastName;
     private String username;
     private String email;
-    private String graduationYear;
+    private Year gradYear;
     private String industry;
     private String educationalDetails;
     private String professionalAchievements;
     private String profilePic;
+
 
 }

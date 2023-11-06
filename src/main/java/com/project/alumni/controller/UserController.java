@@ -50,5 +50,11 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
+    // Search users by industry and graduation year REST API
+    @GetMapping("/search")
+    public ResponseEntity<List<UserFullDetailsDto>> searchUsers(@RequestParam ("query") String query){
+       return ResponseEntity.ok(userService.searchUsers(query));
+    }
+
 
 } // End of UserController class
