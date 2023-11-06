@@ -20,4 +20,6 @@ public abstract class Information {
 
     private String content;
     private String author;
+
+    private String type;
 }
