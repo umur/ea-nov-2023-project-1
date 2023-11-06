@@ -11,6 +11,11 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
     @Override
+    public UserDto register(UserDto userDto) {
+        return null;
+    }
+
+    @Override
     public void create(UserDto userDto) {
 
     }

@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface UserService {
 
+    UserDto register(UserDto userDto);
+
     void create(UserDto userDto);
 
     List<UserDto> findAll();
