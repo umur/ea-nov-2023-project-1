@@ -36,7 +36,7 @@ public class User extends BaseEntity{
 
     private boolean is_active = true;
 
-    private boolean is_locked = true;
+    private boolean is_locked = false;
 
     private int loginCount = 0;
 
