@@ -22,6 +22,9 @@ public class UserMinimalDto {
     @NotEmpty
     @Size(min = 2, message = "Last name should have at least 2 characters")
     private String lastName;
+    @NotEmpty(message = "Username should not be null or empty")
+    @Size(min = 2, message = "Username should have at least 2 characters")
+    private String username;
     @NotEmpty(message = "Email should not be null or empty")
     @Email
     private String email;

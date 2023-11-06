@@ -1,6 +1,7 @@
 package com.project.alumni.service.Impl;
 
 import com.project.alumni.dto.UserLoginDto;
+import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.service.AuthService;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,11 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public String login(UserLoginDto loginDto) {
+        return null;
+    }
+
+    @Override
+    public String register(UserMinimalDto registerDto) {
         return null;
     }
 }

@@ -34,6 +34,8 @@ public class User {
     private String firstName;
     @Column(name = "lastName", nullable = false)
     private String lastName;
+    @Column(name = "username", nullable = false)
+    private String username;
     @Column(name = " email", nullable = false)
     private String email;
     @Column(name = "password", nullable = false)
