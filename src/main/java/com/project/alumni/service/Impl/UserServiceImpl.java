@@ -1,11 +1,11 @@
 package com.project.alumni.service.Impl;
 
-import com.project.alumni.dto.AddressDto;
 import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.entity.Address;
 import com.project.alumni.entity.User;
 import com.project.alumni.exceptions.ResourceNotFoundException;
+import com.project.alumni.repository.AddressRepository;
 import com.project.alumni.repository.UserRepository;
 import com.project.alumni.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -18,10 +18,13 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
     private final UserRepository userRepo;
+    private final AddressRepository addressRepo;
 
-    public UserServiceImpl(ModelMapper modelMapper, UserRepository userRepo) {
+    public UserServiceImpl(ModelMapper modelMapper, UserRepository userRepo,
+                           AddressRepository addressRepo) {
         this.modelMapper = modelMapper;
         this.userRepo = userRepo;
+        this.addressRepo = addressRepo;
     }
 
     @Override
@@ -44,12 +47,20 @@ public class UserServiceImpl implements UserService {
     public UserFullDetailsDto updateUser(UserFullDetailsDto userFullDetailsDto, Long id) {
         User user = userRepo.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("User", "id", id));
+
+        // Get Address by Id from the database.
+        Address address = addressRepo.findById(userFullDetailsDto.getAddressId()).orElseThrow(() ->
+                new ResourceNotFoundException("Category", "id", userFullDetailsDto.getAddressId()));
+
         user.setId(id);
         user.setGradYear(userFullDetailsDto.getGradYear());
         user.setEducationalDetails(userFullDetailsDto.getEducationalDetails());
         user.setIndustry(userFullDetailsDto.getIndustry());
         user.setProfessionalAchievements(userFullDetailsDto.getProfessionalAchievements());
         user.setProfilePic(userFullDetailsDto.getProfilePic());
+
+        // Set address before saving user to the database.
+        user.setAddress(address);
 
         User savedUser = userRepo.save(user);
 
@@ -70,6 +81,17 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<UserFullDetailsDto> getUsersByAddress(Long addressId) {
+        // Get address by Id from the database.
+        Address address = addressRepo.findById(addressId).orElseThrow(() ->
+                new ResourceNotFoundException("Address", "id", addressId));
+
+        List<User> users = userRepo.findByAddressId(addressId);
+
+        return users.stream().map(u -> modelMapper.map(u, UserFullDetailsDto.class))
+                .collect(Collectors.toList());
+    }
 
 
 } // End of UserServiceImpl class

@@ -14,4 +14,9 @@ public interface UserRepository extends ListCrudRepository<User, Long> {
             "Or u.gradYear LIKE CONCAT('%', :query, '%')")
     List<User> searchUsers(String query);
 
+    /**
+     * Return all users by a given selected Address.
+     */
+    List<User> findByAddressId(Long addressId);
+
 }
