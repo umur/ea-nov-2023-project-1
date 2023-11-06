@@ -21,14 +21,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import java.util.Arrays;
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
@@ -47,7 +39,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         if (!securityEnabled) {
-            http.authorizeRequests().anyRequest().permitAll();
+            http.csrf(AbstractHttpConfigurer::disable).cors().and()
+                    .exceptionHandling((exceptionHandling) ->
+                            exceptionHandling.authenticationEntryPoint(new AlumniAuthenticationEntryPoint()))
+                    .authorizeHttpRequests(request -> request
+                            .anyRequest().permitAll());
             return http.build();
         }
         http.csrf(AbstractHttpConfigurer::disable).cors().and()

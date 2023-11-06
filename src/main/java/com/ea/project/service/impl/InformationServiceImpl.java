@@ -19,8 +19,8 @@ public class InformationServiceImpl implements InformationService {
     private final ModelMapper modelMapper;
 
     @Override
-    public void create(Information information) {
-        informationRepo.save(information);
+    public void create(InformationDto information) {
+        informationRepo.save(information.getInformation(modelMapper));
     }
 
     @Override
@@ -29,8 +29,8 @@ public class InformationServiceImpl implements InformationService {
     }
 
     @Override
-    public void update(Information information) {
-        informationRepo.save(information);
+    public void update(InformationDto information) {
+        informationRepo.save(information.getInformation(modelMapper));
     }
 
     @Override
