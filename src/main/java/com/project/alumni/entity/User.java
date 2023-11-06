@@ -37,7 +37,7 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
     @Column(name = "graduation_year")
-    private Year graduationYear;
+    private Year gradYear;
     private String industry;
     @Column(name = "educational_Details")
     private String educationalDetails;
@@ -45,8 +45,6 @@ public class User {
     private String professionalAchievements;
     @Column(name = "profile_pic")
     private String profilePic;
-
-    private String gradYear = String.valueOf(graduationYear);
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Address address;
