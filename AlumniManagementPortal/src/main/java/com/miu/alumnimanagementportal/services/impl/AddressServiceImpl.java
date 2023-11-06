@@ -8,10 +8,12 @@ import com.miu.alumnimanagementportal.exceptions.ResourceNotFoundException;
 import com.miu.alumnimanagementportal.repositories.AddressRepository;
 import com.miu.alumnimanagementportal.services.AddressService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @RequiredArgsConstructor
@@ -19,6 +21,8 @@ import java.util.Optional;
 public class AddressServiceImpl implements AddressService {
     private final AddressRepository addressRepository;
     private final Converter converter;
+
+
     @Override
     public void create(AddressDto address) {
         Optional.ofNullable(address.getId()).ifPresent(id -> {
@@ -31,7 +35,11 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public List<AddressDto> findAll() {
-        return null;
+        return this.addressRepository.findAll()
+                .stream()
+                .map((element) -> converter.convert(element, AddressDto.class))
+                .collect(Collectors.toList());
+
     }
 
     @Override
@@ -46,11 +54,17 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public AddressDto getAddressById(Long id) {
-        return null;
+        return Optional.ofNullable(id)
+                .map(addressRepository::findById)
+                .map(element -> converter.convert(element, AddressDto.class))
+                .orElseThrow(() -> new ResourceNotFoundException("Address with id " + id + " not found"));
     }
 
     @Override
     public void delete(Long address) {
-
+        if (!addressRepository.existsById(address)) {
+            throw new ResourceNotFoundException("Address with id " + address + " not found");
+        }
+        addressRepository.deleteById(address);
     }
 }

@@ -13,7 +13,7 @@ public interface JobPostService {
 
     JobPostDto update(JobPostDto jobPostDto, Long id);
 
-    JobPostDto getAddress(Long id);
+    JobPostDto getjobPostById(Long id);
 
     void delete(Long id);
 }
