@@ -9,7 +9,7 @@ import java.util.Set;
 @Data
 @Entity
 public class Profile extends BaseEntity {
-    @OneToOne(mappedBy = "profile", optional = false, orphanRemoval = true)
+    @OneToOne
     private User user;
     @OneToOne
     @JoinColumn(name = "address_id")
