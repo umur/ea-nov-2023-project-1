@@ -11,7 +11,9 @@ public interface UserRepository extends ListCrudRepository<User, Long> {
 
     @Query("SELECT u FROM User u WHERE " +
             "u.industry LIKE CONCAT('%',:query, '%')" +
-            "Or u.gradYear LIKE CONCAT('%', :query, '%')")
+            "Or u.gradYear LIKE CONCAT('%', :query, '%')" +
+            "Or u.address.city LIKE CONCAT('%', :query, '%')" +
+            "Or u.address.state LIKE CONCAT('%', :query, '%')")
     List<User> searchUsers(String query);
 
     /**
