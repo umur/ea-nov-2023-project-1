@@ -32,7 +32,7 @@ public class WorkExperience {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateWorkExperienceById(@Valid @PathVariable Long id, @RequestBody WorkExperienceDto workExperienceDto) {
+    public ResponseEntity<?> updateWorkExperienceById( @PathVariable Long id,@Valid @RequestBody WorkExperienceDto workExperienceDto) {
         return converter.buildReposeEntity(Map.of("data", workExperienceService.update(workExperienceDto,id)), HttpStatus.OK);
     }
 

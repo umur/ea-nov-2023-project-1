@@ -45,7 +45,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateUserById(@Valid @PathVariable Long id, @RequestBody UserDto userDto) {
+    public ResponseEntity<?> updateUserById( @PathVariable Long id,@Valid @RequestBody UserDto userDto) {
         return converter.buildReposeEntity(Map.of("data", userService.update(userDto, id)), HttpStatus.OK);
     }
 
@@ -68,7 +68,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}/profile")
-    public ResponseEntity<?> updateProfileById(@Valid @PathVariable Long id, @RequestBody ProfileDto profileDto) {
+    public ResponseEntity<?> updateProfileById( @PathVariable Long id,@Valid @RequestBody ProfileDto profileDto) {
         return converter.buildReposeEntity(Map.of("data", profileService.update(profileDto, id)), HttpStatus.OK);
     }
 
