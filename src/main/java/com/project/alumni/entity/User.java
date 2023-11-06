@@ -48,7 +48,8 @@ public class User {
     @Column(name = "profile_pic")
     private String profilePic;
 
-    @Embedded
+    @OneToOne
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     @ManyToMany

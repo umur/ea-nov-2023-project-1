@@ -1,5 +1,6 @@
 package com.project.alumni.service.Impl;
 
+import com.project.alumni.dto.AddressDto;
 import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.entity.Address;
@@ -16,7 +17,6 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
-
     private final UserRepository userRepo;
 
     public UserServiceImpl(ModelMapper modelMapper, UserRepository userRepo) {
@@ -46,7 +46,6 @@ public class UserServiceImpl implements UserService {
                 new ResourceNotFoundException("User", "id", id));
         user.setId(id);
         user.setGradYear(userFullDetailsDto.getGradYear());
-        user.setAddress(userFullDetailsDto.getAddress());
         user.setEducationalDetails(userFullDetailsDto.getEducationalDetails());
         user.setIndustry(userFullDetailsDto.getIndustry());
         user.setProfessionalAchievements(userFullDetailsDto.getProfessionalAchievements());

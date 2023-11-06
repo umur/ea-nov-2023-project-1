@@ -24,12 +24,10 @@ public class UserFullDetailsDto {
     private String lastName;
     private String username;
     private String email;
-    private Address address;
+    private AddressDto address;
     private String gradYear;
     private String industry;
     private String educationalDetails;
     private String professionalAchievements;
     private String profilePic;
-
-
 }
