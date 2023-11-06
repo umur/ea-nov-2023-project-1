@@ -37,7 +37,7 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
     @Column(name = "graduation_year")
-    private Year gradYear;
+    private String gradYear;
     private String industry;
     @Column(name = "educational_Details")
     private String educationalDetails;

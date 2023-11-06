@@ -23,7 +23,7 @@ public class UserFullDetailsDto {
     private String lastName;
     private String username;
     private String email;
-    private Year gradYear;
+    private String gradYear;
     private String industry;
     private String educationalDetails;
     private String professionalAchievements;
