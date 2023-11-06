@@ -1,6 +1,7 @@
 package com.miu.alumnimanagementportal.dtos;
 
 import jakarta.validation.constraints.*;
+import lombok.Data;
 import lombok.Value;
 
 import java.io.Serializable;
@@ -10,7 +11,7 @@ import java.util.Set;
 /**
  * DTO for {@link com.miu.alumnimanagementportal.entities.User}
  */
-@Value
+@Data
 public class UserDto implements Serializable {
     Long id;
     Long version;

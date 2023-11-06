@@ -2,6 +2,8 @@ package com.miu.alumnimanagementportal.common;
 
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,4 +22,7 @@ public class Converter {
         return modelMapper.map(source, destinationType);
     }
 
+    public <T> ResponseEntity<T> buildReposeEntity(T message, HttpStatus status) {
+        return new ResponseEntity<>(message, status);
+    }
 }

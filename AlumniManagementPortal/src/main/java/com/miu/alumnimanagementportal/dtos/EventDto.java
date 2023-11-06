@@ -4,6 +4,7 @@ import com.miu.alumnimanagementportal.common.enums.EventType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 import lombok.Value;
 
 import java.io.Serializable;
@@ -13,7 +14,7 @@ import java.util.Date;
 /**
  * DTO for {@link com.miu.alumnimanagementportal.entities.Event}
  */
-@Value
+@Data
 public class EventDto implements Serializable {
     Long id;
     Long version;

@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
 import lombok.Value;
 
 import java.io.Serializable;
@@ -12,7 +13,7 @@ import java.util.Date;
 /**
  * DTO for {@link com.miu.alumnimanagementportal.entities.EducationDetails}
  */
-@Value
+@Data
 public class EducationDetailsDto implements Serializable {
     Long id;
     Long version;

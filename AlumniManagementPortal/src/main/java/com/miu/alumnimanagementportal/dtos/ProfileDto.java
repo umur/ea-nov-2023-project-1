@@ -3,6 +3,7 @@ package com.miu.alumnimanagementportal.dtos;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 import lombok.Value;
 
 import java.io.Serializable;
@@ -12,7 +13,7 @@ import java.util.Set;
 /**
  * DTO for {@link com.miu.alumnimanagementportal.entities.Profile}
  */
-@Value
+@Data
 public class ProfileDto implements Serializable {
     Long id;
     Long version;
