@@ -16,7 +16,8 @@ import java.time.LocalDateTime;
 public abstract class Information {
     @Id
     private int id;
-    private LocalDateTime dateTime;
+    private LocalDateTime updateDateTime;
 
     private String content;
+    private String author;
 }
