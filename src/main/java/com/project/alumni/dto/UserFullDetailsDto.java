@@ -18,6 +18,7 @@ public class UserFullDetailsDto {
     // First name should have at least 2 Characters.
     private String firstName;
     private String lastName;
+    private String username;
     private String email;
     private String graduationYear;
     private String industry;
