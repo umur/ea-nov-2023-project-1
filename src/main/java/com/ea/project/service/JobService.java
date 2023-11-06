@@ -12,4 +12,9 @@ public interface JobService {
     public List<Job> getAllJobs();
     public Job getJob(Long id);
 
+    public void deleteJob(Long id);
+    public void partialupdateJob(Long id,Job job);
+
+    public void updateJob(Long id , Job newJob);
+
 }

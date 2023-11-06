@@ -10,8 +10,8 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-@PreAuthorize("hasAuthority('ADMIN')")
+//@CrossOrigin(origins = "*", allowedHeaders = "*")
+//@PreAuthorize("hasAuthority('ADMIN')")
 @RequestMapping("/jobs")
 public class JobController {
     private final JobService jobService;
@@ -19,7 +19,7 @@ public class JobController {
     @PostMapping
     public Job addJob(@RequestBody Job job)
     {
-        System.out.println("post job");
+        System.out.println("post job "+job);
         return jobService.save(job);
     }
 
@@ -35,5 +35,22 @@ public class JobController {
     {
         System.out.println("get one with id "+id);
         return jobService.getJob(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteJob(@PathVariable Long id)
+    {
+        System.out.println("delete");
+        jobService.deleteJob(id);
+    }
+    @PatchMapping("/{id}")
+    public void partialUpdateJob(@PathVariable Long id ,@RequestBody Job job)
+    {
+        jobService.partialupdateJob(id,job);
+    }
+    @PutMapping("/{id}")
+    public void updateJob(@PathVariable Long id ,@RequestBody Job job)
+    {
+        jobService.updateJob(id,job);
     }
 }
