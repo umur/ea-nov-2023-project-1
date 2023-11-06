@@ -21,6 +21,6 @@ public class Course {
     private Long id;
     private String name;
 
-    @ManyToMany(mappedBy = "user")
+    @ManyToMany(mappedBy = "courses")
     private List<User> users;
 }

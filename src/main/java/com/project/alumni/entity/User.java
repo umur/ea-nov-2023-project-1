@@ -54,8 +54,8 @@ public class User {
     @ManyToMany
     @JoinTable(
             name = "courses_users",
-            joinColumns = {@JoinColumn(name = "course_id")},
-            inverseJoinColumns = {@JoinColumn(name = "user_id")}
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "course_id")}
     )
     private Set<Course> courses;
 
@@ -90,5 +90,5 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "eventId")
     )
     private List<Event> rsvped;
-    
+
 }
