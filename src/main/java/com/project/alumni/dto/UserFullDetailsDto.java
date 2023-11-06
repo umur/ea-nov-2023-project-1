@@ -24,7 +24,7 @@ public class UserFullDetailsDto {
     private String lastName;
     private String username;
     private String email;
-    //private AddressDto address;
+    private AddressDto address;
     private String gradYear;
     private String industry;
     private String educationalDetails;

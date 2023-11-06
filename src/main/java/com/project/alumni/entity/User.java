@@ -1,5 +1,6 @@
 package com.project.alumni.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -50,6 +51,7 @@ public class User {
 
     @OneToOne
     @JoinColumn(name = "address_id", referencedColumnName = "id")
+    @JsonBackReference
     private Address address;
 
     @ManyToMany

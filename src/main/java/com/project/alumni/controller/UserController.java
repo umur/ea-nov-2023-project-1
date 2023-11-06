@@ -56,5 +56,12 @@ public class UserController {
        return ResponseEntity.ok(userService.searchUsers(query));
     }
 
+    // Get users by addresses REST API (http://localhost:8080/api/users/address/1)
+    @GetMapping("/address/{id}")
+    public ResponseEntity<List<UserFullDetailsDto>> getUsersByAddress(@PathVariable (name= "id") Long addressId){
+        List<UserFullDetailsDto> userDtos = userService.getUsersByAddress(addressId);
+        return ResponseEntity.ok(userDtos);
+    }
+
 
 } // End of UserController class

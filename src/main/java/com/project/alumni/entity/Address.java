@@ -1,5 +1,6 @@
 package com.project.alumni.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,5 +26,6 @@ public class Address {
             CascadeType.MERGE,
     }, fetch = FetchType.LAZY,
             mappedBy = "address", orphanRemoval = false)
+    @JsonManagedReference
     private User user;
 }
