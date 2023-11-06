@@ -47,7 +47,7 @@ public class WorkExperienceServiceImpl implements WorkExperienceService {
     }
 
     @Override
-    public WorkExperienceDto getAddress(Long id) {
+    public WorkExperienceDto getWorkExperienceById(Long id) {
         return Optional.ofNullable(id)
                 .map(repository::findById)
                 .map(workExperience -> converter.convert(workExperience, WorkExperienceDto.class))

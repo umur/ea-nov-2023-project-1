@@ -28,7 +28,7 @@ public class WorkExperience {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getWorkExperienceById(@PathVariable Long id) {
-        return converter.buildReposeEntity(Map.of("data", workExperienceService.getAddress(id)), HttpStatus.OK);
+        return converter.buildReposeEntity(Map.of("data", workExperienceService.getWorkExperienceById(id)), HttpStatus.OK);
     }
 
     @PutMapping("/{id}")

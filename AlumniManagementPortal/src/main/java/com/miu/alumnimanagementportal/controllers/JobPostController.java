@@ -35,7 +35,7 @@ public class JobPostController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getJobPostById(@PathVariable Long id) {
-        return converter.buildReposeEntity(Map.of("data", jobPostService.getAddress(id)), HttpStatus.OK);
+        return converter.buildReposeEntity(Map.of("data", jobPostService.getjobPostById(id)), HttpStatus.OK);
     }
 
     @PutMapping("/{id}")

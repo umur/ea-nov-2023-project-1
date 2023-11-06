@@ -12,7 +12,7 @@ public interface WorkExperienceService {
 
     WorkExperienceDto update(WorkExperienceDto workExperienceDto, Long id);
 
-    WorkExperienceDto getAddress(Long id);
+    WorkExperienceDto getWorkExperienceById(Long id);
 
     void delete(Long id);
 }
