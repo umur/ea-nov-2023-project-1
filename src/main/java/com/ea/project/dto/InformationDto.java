@@ -2,6 +2,7 @@ package com.ea.project.dto;
 
 import com.ea.project.entity.Announcement;
 import com.ea.project.entity.Information;
+import com.ea.project.entity.New;
 import com.ea.project.entity.Replay;
 import org.modelmapper.ModelMapper;
 
@@ -27,6 +28,7 @@ public class InformationDto {
     private String title;
 
     public Information getInformation(ModelMapper modelMapper) {
-        return modelMapper.map(this, Announcement.class);
+
+        return modelMapper.map(this, New.class);
     }
 }
