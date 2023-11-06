@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.Year;
 import java.util.List;
+import java.util.Set;
 
 
 import com.project.alumni.entity.Job.Job;
@@ -50,8 +51,13 @@ public class User {
     @Embedded
     private Address location;
 
-    //@OneToMany
-    //private Course courses;
+    @ManyToMany
+    @JoinTable(
+            name = "courses_users",
+            joinColumns = {@JoinColumn(name = "course_id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_id")}
+    )
+    private Set<Course> courses;
 
     @OneToOne(mappedBy = "user")
     private Job job;
@@ -64,14 +70,25 @@ public class User {
 
 
     @ManyToMany
-    @JoinTable(name = "user_organizing_event", joinColumns = @JoinColumn(name = "organizerId"), inverseJoinColumns = @JoinColumn(name = "eventId"))
+    @JoinTable(
+            name = "user_organizing_event",
+            joinColumns = @JoinColumn(name = "organizerId"),
+            inverseJoinColumns = @JoinColumn(name = "eventId")
+    )
     private List<Event> organized;
     @ManyToMany
-    @JoinTable(name = "user_attending_event", joinColumns = @JoinColumn(name = "attendeeId"), inverseJoinColumns = @JoinColumn(name = "eventId"))
+    @JoinTable(
+            name = "user_attending_event",
+            joinColumns = @JoinColumn(name = "attendeeId"),
+            inverseJoinColumns = @JoinColumn(name = "eventId")
+    )
     private List<Event> attended;
     @ManyToMany
-    @JoinTable(name = "user_rsvped_event", joinColumns = @JoinColumn(name = "rsvperId"), inverseJoinColumns = @JoinColumn(name = "eventId"))
+    @JoinTable(
+            name = "user_rsvped_event",
+            joinColumns = @JoinColumn(name = "rsvperId"),
+            inverseJoinColumns = @JoinColumn(name = "eventId")
+    )
     private List<Event> rsvped;
-
-
+    
 }

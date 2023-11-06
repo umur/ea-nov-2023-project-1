@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -19,6 +21,6 @@ public class Course {
     private Long id;
     private String name;
 
-    //@OneToMany
-    //private User users;
+    @ManyToMany(mappedBy = "user")
+    private List<User> users;
 }
