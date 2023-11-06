@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/attendanceController")
+@RequestMapping("/attendance")
 public class AttendanceController {
     private final AttendantService attendantService;
     private final Converter converter;
