@@ -40,7 +40,7 @@ public class SurveyController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateSurveyById(@Valid @PathVariable Long id, @RequestBody SurveyDto surveyDto) {
+    public ResponseEntity<?> updateSurveyById( @PathVariable Long id,@Valid @RequestBody SurveyDto surveyDto) {
         return converter.buildReposeEntity(Map.of("data", surveyService.update(surveyDto, id)), HttpStatus.OK);
     }
 
