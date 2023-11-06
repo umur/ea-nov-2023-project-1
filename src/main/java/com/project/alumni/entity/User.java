@@ -57,5 +57,5 @@ public class User {
 
     @OneToMany(mappedBy = "poster")
     private List<Posting> jobPostings;
-    
+
 }
