@@ -1,8 +1,7 @@
 package com.project.alumni.dto.chat;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.project.alumni.dto.UserLoginDto;
-import com.project.alumni.entity.User;
+import com.project.alumni.dto.UserFullDetailsDto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +15,7 @@ public class ChatMessagesDto {
     private Long id;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private UserLoginDto sender;
+    private UserFullDetailsDto sender;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Long userId;

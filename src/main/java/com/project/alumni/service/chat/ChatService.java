@@ -1,7 +1,7 @@
 package com.project.alumni.service.chat;
 
 import com.project.alumni.dto.chat.ChatDto;
-import com.project.alumni.dto.UserLoginDto;
+import com.project.alumni.dto.UserFullDetailsDto;
 
 import java.util.List;
 
@@ -18,10 +18,10 @@ public interface ChatService {
 
     void deleteChat(Long id);
 
-    List<UserLoginDto> getAllChatParticipants(Long chatId);
+    List<UserFullDetailsDto> getAllChatParticipants(Long chatId);
 
 
-    List<UserLoginDto> addChatParticipants(Long chatId, List<Long> userIds);
+    List<UserFullDetailsDto> addChatParticipants(Long chatId, List<Long> userIds);
 
     void deleteChatParticipant(Long chatId, Long userId);
 

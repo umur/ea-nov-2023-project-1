@@ -1,7 +1,7 @@
 package com.project.alumni.service.chat;
 
 import com.project.alumni.dto.chat.ChatDto;
-import com.project.alumni.dto.UserLoginDto;
+import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.entity.chat.Chat;
 import com.project.alumni.entity.User;
 import com.project.alumni.repository.chat.ChatsRepository;
@@ -85,19 +85,19 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
-    public List<UserLoginDto> getAllChatParticipants(Long chatId) {
+    public List<UserFullDetailsDto> getAllChatParticipants(Long chatId) {
         Chat chat = findOrFail(chatId);
-        List<UserLoginDto> UserLoginDtoList = new ArrayList<>();
+        List<UserFullDetailsDto> UserFullDetailsDtoList = new ArrayList<>();
         chat.getParticipants().forEach(participant -> {
-            UserLoginDtoList.add(modelMapper.map(participant, UserLoginDto.class));
+            UserFullDetailsDtoList.add(modelMapper.map(participant, UserFullDetailsDto.class));
         });
 
-        return UserLoginDtoList;
+        return UserFullDetailsDtoList;
     }
 
 
     @Override
-    public List<UserLoginDto> addChatParticipants(Long chatId, List<Long> userIds) {
+    public List<UserFullDetailsDto> addChatParticipants(Long chatId, List<Long> userIds) {
         Chat chat = findOrFail(chatId);
         chat.setUpdatedAt(LocalDateTime.now());
         List<User> chatParticipants = chat.getParticipants();
@@ -117,7 +117,7 @@ public class ChatServiceImpl implements ChatService {
         chatParticipants.addAll(usersToAdd);
         chat.setParticipants(chatParticipants);
         chatsRepository.save(chat);
-        return usersToAdd.stream().map(user -> modelMapper.map(user, UserLoginDto.class)).collect(Collectors.toList());
+        return usersToAdd.stream().map(user -> modelMapper.map(user, UserFullDetailsDto.class)).collect(Collectors.toList());
     }
 
     @Override

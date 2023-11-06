@@ -1,7 +1,7 @@
 package com.project.alumni.controller.chat;
 
 import com.project.alumni.dto.chat.ChatDto;
-import com.project.alumni.dto.UserLoginDto;
+import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.service.chat.ChatService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -42,12 +42,12 @@ public class ChatController {
     }
 
     @GetMapping("/{chatId}/participants")
-    public List<UserLoginDto> getAllChatParticipants(@PathVariable Long chatId) {
+    public List<UserFullDetailsDto> getAllChatParticipants(@PathVariable Long chatId) {
         return chatService.getAllChatParticipants(chatId);
     }
 
     @PostMapping("/{chatId}/participants")
-    public List<UserLoginDto> addChatParticipants(@PathVariable Long chatId, @RequestBody ArrayList<Long> userIds) {
+    public List<UserFullDetailsDto> addChatParticipants(@PathVariable Long chatId, @RequestBody ArrayList<Long> userIds) {
         return chatService.addChatParticipants(chatId, userIds);
     }
 
