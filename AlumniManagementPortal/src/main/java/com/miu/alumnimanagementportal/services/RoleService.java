@@ -7,7 +7,7 @@ import com.miu.alumnimanagementportal.dtos.RoleDto;
 import java.util.List;
 
 public interface RoleService {
-    void create(RoleDto roleDto);
+    RoleDto create(RoleDto roleDto);
 
     List<RoleDto> findAll();
 

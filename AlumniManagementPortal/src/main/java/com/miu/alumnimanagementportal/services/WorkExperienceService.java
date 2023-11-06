@@ -1,13 +1,12 @@
 package com.miu.alumnimanagementportal.services;
 
 
-import com.miu.alumnimanagementportal.dtos.EducationDetailsDto;
 import com.miu.alumnimanagementportal.dtos.WorkExperienceDto;
 
 import java.util.List;
 
 public interface WorkExperienceService {
-    void create(WorkExperienceDto workExperienceDto);
+    WorkExperienceDto create(WorkExperienceDto workExperienceDto);
 
     List<WorkExperienceDto> findAll();
 
