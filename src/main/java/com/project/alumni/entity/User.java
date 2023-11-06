@@ -56,9 +56,6 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Application> jobApplications;
 
-    @OneToMany(mappedBy = "user")
-    private List<Application> jobApplications;
-
     @OneToMany(mappedBy = "poster")
     private List<Posting> jobPostings;
 
@@ -71,5 +68,5 @@ public class User {
     @ManyToMany
     @JoinTable(name = "user_rsvped_event", joinColumns = @JoinColumn(name = "rsvperId"), inverseJoinColumns = @JoinColumn(name = "eventId"))
     private List<Event> rsvped;
-    
+
 }
