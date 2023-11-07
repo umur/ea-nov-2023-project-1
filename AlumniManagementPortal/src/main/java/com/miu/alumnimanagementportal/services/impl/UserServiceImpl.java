@@ -1,6 +1,7 @@
 package com.miu.alumnimanagementportal.services.impl;
 
 import com.miu.alumnimanagementportal.common.Converter;
+import com.miu.alumnimanagementportal.dtos.ResetPasswordDto;
 import com.miu.alumnimanagementportal.dtos.UserActivationDto;
 import com.miu.alumnimanagementportal.dtos.UserDto;
 import com.miu.alumnimanagementportal.dtos.UserLoginInfoDto;
@@ -23,6 +24,7 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final Converter converter;
+
     @Override
     public UserDto register(UserDto userDto) {
         Optional.ofNullable(userDto.getId()).ifPresent(id -> {
@@ -57,7 +59,6 @@ public class UserServiceImpl implements UserService {
     }
 
 
-
     @Override
     public UserDto getUserById(Long id) {
         return Optional.ofNullable(id)
@@ -70,7 +71,6 @@ public class UserServiceImpl implements UserService {
     public void delete(Long id) {
         Optional.ofNullable(id).ifPresent(repository::deleteById);
     }
-
 
 
     @Override
@@ -113,5 +113,13 @@ public class UserServiceImpl implements UserService {
                 });
     }
 
-
+    @Override
+    public ResetPasswordDto resetPassword(ResetPasswordDto resetPasswordDto) {
+        Optional.ofNullable(resetPasswordDto.getEmail())
+                .map(repository::findByEmail)
+                .ifPresent(user -> {
+                    user.setPassword(resetPasswordDto.getPassword());
+                });
+        return resetPasswordDto;
+    }
 }

@@ -1,10 +1,7 @@
 package com.miu.alumnimanagementportal.controllers;
 
 import com.miu.alumnimanagementportal.common.Converter;
-import com.miu.alumnimanagementportal.dtos.ProfileDto;
-import com.miu.alumnimanagementportal.dtos.UserActivationDto;
-import com.miu.alumnimanagementportal.dtos.UserDto;
-import com.miu.alumnimanagementportal.dtos.UserLoginInfoDto;
+import com.miu.alumnimanagementportal.dtos.*;
 import com.miu.alumnimanagementportal.services.ProfileService;
 import com.miu.alumnimanagementportal.services.UserService;
 import jakarta.validation.Valid;
@@ -93,5 +90,12 @@ public class UserController {
         userService.login(userLoginInfoDto);
         return converter.buildReposeEntity(Map.of("message", "User logged in successfully"), HttpStatus.ACCEPTED);
     }
+
+    @PutMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@Valid @RequestBody ResetPasswordDto resetPasswordDto) {
+        return converter.buildReposeEntity(Map.of("data", userService.resetPassword(resetPasswordDto)), HttpStatus.OK);
+    }
+
+
 
 }
