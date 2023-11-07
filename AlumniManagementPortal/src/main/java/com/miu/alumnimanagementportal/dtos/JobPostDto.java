@@ -38,4 +38,21 @@ public class JobPostDto implements Serializable {
     private boolean isPublished = false;
     @NotNull
     private PostStatus status;
+
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    private String location;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    private String companyName;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    private String city;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    private String state;
 }

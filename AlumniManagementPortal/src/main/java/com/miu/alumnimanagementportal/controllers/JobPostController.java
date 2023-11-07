@@ -2,6 +2,7 @@ package com.miu.alumnimanagementportal.controllers;
 
 import com.miu.alumnimanagementportal.common.Converter;
 import com.miu.alumnimanagementportal.dtos.JobPostDto;
+import com.miu.alumnimanagementportal.dtos.JobPostsByFilterDto;
 import com.miu.alumnimanagementportal.dtos.UserDto;
 import com.miu.alumnimanagementportal.services.JobPostService;
 import com.miu.alumnimanagementportal.services.UserService;
@@ -19,6 +20,7 @@ import java.util.Map;
 public class JobPostController {
     private final JobPostService jobPostService;
     private final Converter converter;
+    private JobPostsByFilterDto jobPostsByFilterDto;
 
 
 
@@ -50,6 +52,13 @@ public class JobPostController {
     }
 
 
-
+    @GetMapping("/filter/{location}/{companyName}/{city}/{state}")
+    public ResponseEntity<?> getJobPostsByFilter(@Valid @RequestParam String location, @Valid @RequestParam String companyName, @Valid @RequestParam String city, @Valid @RequestParam String state) {
+        jobPostsByFilterDto.setLocation(location);
+        jobPostsByFilterDto.setCompanyName(companyName);
+        jobPostsByFilterDto.setCity(city);
+        jobPostsByFilterDto.setState(state);
+        return converter.buildReposeEntity(Map.of("data", jobPostService.getJobPostsByFilter(jobPostsByFilterDto)), HttpStatus.OK);
+    }
 
 }
