@@ -16,10 +16,9 @@ public class SearchUsersDto {
     private String lastName;
     private String gradYear;
     private String industry;
-    private String city;
-    private String state;
+    private AddressDto address;
     private CourseDto course;
-    private List<Long> coursesIds;
+    //private List<Long> coursesIds;
 
 //    @Override
 //    public String toString() {
