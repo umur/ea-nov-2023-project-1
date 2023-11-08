@@ -21,8 +21,14 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByAddressId(Long addressId);
 
 
-    @Query("""
-            select u from User u left join u.courses courses
-            where u.gradYear like concat('%', ?1, '%') or courses.id in ?2 or u.address.city like concat('%', ?3, '%') or u.address.state like concat('%', ?4, '%') or u.industry like concat('%', ?5, '%')""")
-    List<User> findUsersInDirectory(String gradYear, Collection<Long> courses_id, String address_city, String address_state, String industry);
+    @Query("select u from User u left join u.courses courses where " +
+    "u.gradYear like concat('%', ?1, '%')" +
+    "or courses.name in ?2 or u.address.city like concat('%', ?3, '%')" +
+    "or u.address.state like concat('%', ?4, '%')" +
+            "or u.industry like concat('%', ?5, '%')")
+    List<User> findUsersInDirectory(String gradYear,
+                                    Collection<Long> courses_id,
+                                    String address_city,
+                                    String address_state,
+                                    String industry);
 }
