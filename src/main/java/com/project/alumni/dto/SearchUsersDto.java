@@ -18,17 +18,17 @@ public class SearchUsersDto {
     private String industry;
     private String city;
     private String state;
-    private CourseDto courseDto;
+    private CourseDto course;
     private List<Long> coursesIds;
 
-    @Override
-    public String toString() {
-        return "SearchUsersDto{" +
-                "gradYear='" + gradYear + '\'' +
-                ", industry='" + industry + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", coursesIds=" + coursesIds +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "SearchUsersDto{" +
+//                "gradYear='" + gradYear + '\'' +
+//                ", industry='" + industry + '\'' +
+//                ", city='" + city + '\'' +
+//                ", state='" + state + '\'' +
+//                ", coursesIds=" + coursesIds +
+//                '}';
+//    }
 }
