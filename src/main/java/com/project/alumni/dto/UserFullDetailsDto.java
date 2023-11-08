@@ -30,5 +30,7 @@ public class UserFullDetailsDto {
     private String educationalDetails;
     private String professionalAchievements;
     private String profilePic;
+    private CourseDto course;
     private Long addressId;
+
 }
