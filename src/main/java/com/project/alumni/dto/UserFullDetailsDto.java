@@ -1,16 +1,10 @@
 package com.project.alumni.dto;
 
-import com.project.alumni.entity.Address;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-import java.time.Year;
 import java.util.List;
 
 @NoArgsConstructor
