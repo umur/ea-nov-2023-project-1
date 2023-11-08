@@ -11,6 +11,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.time.Year;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,6 +32,7 @@ public class UserFullDetailsDto {
     private String professionalAchievements;
     private String profilePic;
     private CourseDto course;
+    List<Long> coursesIds;
     private Long addressId;
 
 }

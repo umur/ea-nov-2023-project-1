@@ -1,5 +1,6 @@
 package com.project.alumni.controller;
 
+import com.project.alumni.dto.SearchUsersDto;
 import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.service.UserService;
@@ -57,7 +58,7 @@ public class UserController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<UserFullDetailsDto>> searchUserDirectory(@RequestParam("query") String query){
+    public ResponseEntity<List<SearchUsersDto>> searchUserDirectory(@RequestParam("query") String query){
         return ResponseEntity.ok(userService.searchUsersDirectory(query));
     }
 

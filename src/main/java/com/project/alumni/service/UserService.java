@@ -1,5 +1,6 @@
 package com.project.alumni.service;
 
+import com.project.alumni.dto.SearchUsersDto;
 import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.entity.User;
@@ -20,8 +21,6 @@ public interface UserService {
 
     List<UserFullDetailsDto> getUsersByAddress(Long addressId);
 
-    List<UserFullDetailsDto> searchUsersDirectory(String query);
-
-
+    List<SearchUsersDto> searchUsersDirectory(String query);
 
 } // End of UserService class

@@ -1,5 +1,6 @@
 package com.project.alumni.service.Impl;
 
+import com.project.alumni.dto.SearchUsersDto;
 import com.project.alumni.dto.UserFullDetailsDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.entity.Address;
@@ -87,11 +88,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserFullDetailsDto> searchUsersDirectory(String query) {
+    public List<SearchUsersDto> searchUsersDirectory(String query) {
         List<User> users = userRepo.searchUsersDirectory(query);
-        return users.stream().map(u -> modelMapper.map(u, UserFullDetailsDto.class ))
+        return users.stream().map(u -> modelMapper.map(u, SearchUsersDto.class ))
                 .collect(Collectors.toList());
     }
-
 
 } // End of UserServiceImpl class
