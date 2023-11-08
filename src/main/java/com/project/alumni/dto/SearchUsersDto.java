@@ -12,14 +12,14 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SearchUsersDto {
-    String firstName;
-    String lastName;
-    String gradYear;
-    String industry;
-    String city;
-    String state;
+    private String firstName;
+    private String lastName;
+    private String gradYear;
+    private String industry;
+    private String city;
+    private String state;
     private CourseDto courseDto;
-    List<Long> coursesIds;
+    private List<Long> coursesIds;
 
     @Override
     public String toString() {
