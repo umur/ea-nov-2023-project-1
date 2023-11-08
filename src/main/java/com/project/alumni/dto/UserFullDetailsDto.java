@@ -31,7 +31,7 @@ public class UserFullDetailsDto {
     private String professionalAchievements;
     private String profilePic;
     private CourseDto course;
-    List<Long> coursesIds;
+    private List<Long> coursesIds;
     private Long addressId;
 
 }
