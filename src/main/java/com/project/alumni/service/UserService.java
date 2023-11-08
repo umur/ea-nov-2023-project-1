@@ -20,4 +20,6 @@ public interface UserService {
 
     List<UserFullDetailsDto> getUsersByAddress(Long addressId);
 
+
+
 } // End of UserService class

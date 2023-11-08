@@ -16,6 +16,7 @@ public interface UserRepository extends ListCrudRepository<User, Long> {
     "Or u.address.city LIKE CONCAT ('%', :query, '%')" +
     "Or u.address.state LIKE CONCAT ('%', :query, '%')" )
     //"Or u.courses LIKE CONCAT ('%', :query, '%')")
+    List<User> searchUsersDirectory(String query);
 
     List<User> findByAddressId(Long addressId);
 
