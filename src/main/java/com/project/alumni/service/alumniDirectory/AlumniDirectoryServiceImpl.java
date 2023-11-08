@@ -22,7 +22,7 @@ public class AlumniDirectoryServiceImpl implements AlumniDirectoryService {
         {
 
             System.out.println(searchAlumniDirectoryDto);
-            List<User> users = userRepo.findAllByGradYearContainsOrCoursesIdInOrAddressCityContainsOrAddressStateContainsOrIndustryContains(
+            List<User> users = userRepo.findUsersInDirectory(
                     searchAlumniDirectoryDto.getGradYear(),
                     searchAlumniDirectoryDto.getCoursesIds(),
                     searchAlumniDirectoryDto.getCity(),
