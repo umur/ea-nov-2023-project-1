@@ -12,10 +12,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SearchUsersDto {
+    String firstName;
+    String lastName;
     String gradYear;
     String industry;
     String city;
     String state;
+    private CourseDto courseDto;
     List<Long> coursesIds;
 
     @Override
