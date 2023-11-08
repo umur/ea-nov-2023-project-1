@@ -56,5 +56,10 @@ public class UserController {
         return ResponseEntity.ok(userDtos);
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<UserFullDetailsDto>> searchUserDirectory(@RequestParam("query") String query){
+        return ResponseEntity.ok(userService.searchUsersDirectory(query));
+    }
+
 
 } // End of UserController class

@@ -86,5 +86,12 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<UserFullDetailsDto> searchUsersDirectory(String query) {
+        List<User> users = userRepo.searchUsersDirectory(query);
+        return users.stream().map(u -> modelMapper.map(u, UserFullDetailsDto.class ))
+                .collect(Collectors.toList());
+    }
+
 
 } // End of UserServiceImpl class
