@@ -52,7 +52,7 @@ public class JobPostController {
     }
 
 
-    @GetMapping("/filter/{location}/{companyName}/{city}/{state}")
+    @GetMapping("/filter")
     public ResponseEntity<?> getJobPostsByFilter(@Valid @RequestParam String location, @Valid @RequestParam String companyName, @Valid @RequestParam String city, @Valid @RequestParam String state) {
         jobPostsByFilterDto.setLocation(location);
         jobPostsByFilterDto.setCompanyName(companyName);

@@ -34,10 +34,7 @@ public class UserServiceImpl implements UserService {
         return converter.convert(repository.save(converter.convert(userDto, User.class)), UserDto.class);
     }
 
-    @Override
-    public void create(UserDto userDto) {
 
-    }
 
     @Override
     public List<UserDto> findAll() {
