@@ -1,0 +1,1005 @@
+{
+	"info": {
+		"_postman_id": "2b7aeae3-58e0-41a1-a1fe-31ed2a55eb0e",
+		"name": "Alumni Management Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12893732",
+		"_collection_link": "https://planetary-meadow-119146.postman.co/workspace/EA~3abdf189-7678-47bf-8527-606061b4efaa/collection/12893732-2b7aeae3-58e0-41a1-a1fe-31ed2a55eb0e?action=share&source=collection_link&creator=12893732"
+	},
+	"item": [
+		{
+			"name": "Attendence",
+			"item": [
+				{
+					"name": "Get All Attendence",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/attendance",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Attendence",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"version\": 1,\r\n  \"user\": {\r\n    \"version\": 1,\r\n    \"username\": \"your_username_here\" // Add the user properties\r\n  },\r\n  \"is_confirmed\": true,\r\n  \"event\": {\r\n    \"id\": 3,\r\n    \"version\": 1,\r\n    \"title\": \"Event Title\",\r\n    \"description\": \"Event Description\",\r\n    \"eventType\": \"SOME_EVENT_TYPE\", // Replace with the actual event type\r\n    \"location\": \"Event Location\",\r\n    \"staringDate\": \"2023-11-07T00:00:00Z\",\r\n    \"endingDate\": \"2023-11-08T00:00:00Z\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/attendance",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Attendence",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"version\": 1,\r\n  \"createdDate\": \"2023-11-06T00:00:00Z\",\r\n  \"lastModifiedDate\": \"2023-11-06T00:00:00Z\",\r\n  \"user\": {\r\n    \"id\": 2, \r\n    \"version\": 1,\r\n    \"createdDate\": \"2023-11-06T00:00:00Z\",\r\n    \"lastModifiedDate\": \"2023-11-06T00:00:00Z\",\r\n    \"username\": \"your_username_here\" // Add the user properties\r\n  },\r\n  \"is_confirmed\": true,\r\n  \"event\": {\r\n    \"id\": 3,\r\n    \"version\": 1,\r\n    \"createdDate\": \"2023-11-06T00:00:00Z\",\r\n    \"lastModifiedDate\": \"2023-11-06T00:00:00Z\",\r\n    \"title\": \"Event Title\",\r\n    \"description\": \"Event Description\",\r\n    \"eventType\": \"SOME_EVENT_TYPE\", // Replace with the actual event type\r\n    \"location\": \"Event Location\",\r\n    \"staringDate\": \"2023-11-07T00:00:00Z\",\r\n    \"endingDate\": \"2023-11-08T00:00:00Z\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/attendance/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attendance",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "create news",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"version\": 0,\r\n  \"title\": \"string\",\r\n  \"newsType\": \"NEWS_TYPE\",\r\n  \"description\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/news",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "news delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/news/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "news update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"version\": 1,\r\n  \"createdDate\": \"2023-11-06T00:00:00Z\",\r\n  \"lastModifiedDate\": \"2023-11-06T00:00:00Z\",\r\n  \"title\": \"Sample Title\",\r\n  \"newsType\": \"NEWS_TYPE\",\r\n  \"description\": \"Sample Description\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/news/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get News By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/news/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All News",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/news",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Post",
+			"item": [
+				{
+					"name": "Job Post create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"version\": 1,\r\n  \"title\": \"Job Title\",\r\n  \"description\": \"Job Description\",\r\n  \"jobType\": \"FULL_TIME\", \r\n  \"isPublished\": false,\r\n  \"status\": \"OPEN\",\r\n  \"location\": \"Job Location\",\r\n  \"companyName\": \"Company Name\",\r\n  \"city\": \"City Name\",\r\n  \"state\": \"State Name\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/jobPosts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jobPosts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Post Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"version\": 1,\r\n  \"title\": \"Job Title\",\r\n  \"description\": \"Job Description\",\r\n  \"jobType\": \"FULL_TIME\",\r\n  \"isPublished\": false,\r\n  \"status\": \"OPEN\", \r\n  \"location\": \"Job Location\",\r\n  \"companyName\": \"Company Name\",\r\n  \"city\": \"City Name\",\r\n  \"state\": \"State Name\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/jobPosts/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jobPosts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ALL Job Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/jobPosts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jobPosts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Job Post By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/jobPosts/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jobPosts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/jobPosts/filter?location=Dhaka&companyName=ABC&city=Dhaka&state=Dhaka",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jobPosts",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "Dhaka"
+								},
+								{
+									"key": "companyName",
+									"value": "ABC"
+								},
+								{
+									"key": "city",
+									"value": "Dhaka"
+								},
+								{
+									"key": "state",
+									"value": "Dhaka"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Job Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/jobPosts/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"jobPosts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"version\": 1,\r\n  \"createdDate\": \"2023-11-06T12:00:00Z\",\r\n  \"lastModifiedDate\": \"2023-11-06T12:00:00Z\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"secretPassword\",\r\n  \"roles\": [\r\n    {\r\n      \"version\": 1,\r\n      \"createdDate\": \"2023-11-06T12:00:00Z\",\r\n      \"lastModifiedDate\": \"2023-11-06T12:00:00Z\",\r\n      \"title\": \"Admin\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/registration",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign-up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"email\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"version\": 1,\r\n  \"phone\": \"string\",\r\n  \"profileImage\": \"string\",\r\n  \"workExperiences\": [\r\n    {\r\n      \"version\": 0,\r\n      \"startYear\": \"string\",\r\n      \"designation\": \"string\",\r\n      \"companyName\": \"string\",\r\n      \"endYear\": \"string\"\r\n    }\r\n  ],\r\n  \"professionalAchievements\": [\r\n    {\r\n      \"version\": 0,\r\n\r\n      \"title\": \"string\",\r\n      \"year\": \"2023-11-09T21:32:24.415Z\",\r\n      \"description\": \"string\"\r\n    }\r\n  ],\r\n  \"educationDetails\": [\r\n    {\r\n      \"version\": 0,\r\n      \"institutionName\": \"string\",\r\n      \"degree\": \"string\",\r\n      \"passingYear\": \"stri\",\r\n      \"cgpa\": \"string\",\r\n      \"course\": \"string\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/1/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"version\": 1,\r\n    \"phone\": \"string\",\r\n    \"profileImage\": \"string\",\r\n    \"workExperiences\": [\r\n        {\r\n            \"id\": 1,\r\n            \"version\": 0,\r\n            \"startYear\": \"string\",\r\n            \"designation\": \"string\",\r\n            \"companyName\": \"string\",\r\n            \"endYear\": \"string\"\r\n        }\r\n    ],\r\n    \"professionalAchievements\": [\r\n        {\r\n            \"id\": 1,\r\n            \"version\": 0,\r\n            \"title\": \"string\",\r\n            \"year\": \"2023-11-09T21:32:24.415Z\",\r\n            \"description\": \"string\"\r\n        }\r\n    ],\r\n    \"educationDetails\": [\r\n        {\r\n            \"id\": 1,\r\n            \"version\": 0,\r\n            \"institutionName\": \"string\",\r\n            \"degree\": \"string\",\r\n            \"passingYear\": \"stri\",\r\n            \"cgpa\": \"string\",\r\n            \"course\": \"string\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/1/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n  \"version\": 1,\r\n  \"createdDate\": \"2023-11-06T12:00:00Z\",\r\n  \"lastModifiedDate\": \"2023-11-06T12:00:00Z\",\r\n  \"firstName\": \"Ranjan\",\r\n  \"lastName\": \"Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"secretPassword\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single user Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/1/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Single user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Single Profile",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/{id}/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{id}",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/reset-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ranjan@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active-Inactive",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/activate/{id}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"activate",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Work Experience",
+			"item": [
+				{
+					"name": "Create Work Experience",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"version\": 1,\r\n  \"startYear\": \"2018\",\r\n  \"designation\": \"Software Engineer\",\r\n  \"companyName\": \"Example Company\",\r\n  \"endYear\": \"2021\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/work-experience",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"work-experience"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update the Work Experience",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"version\": 1,\r\n  \"startYear\": \"2018\",\r\n  \"designation\": \"Software Engineer\",\r\n  \"companyName\": \"Example Company\",\r\n  \"endYear\": \"2021\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/work-experience/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"work-experience",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Experience By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/work-experience/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"work-experience",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Work-experience",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/work-experience/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"work-experience",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Survey",
+			"item": [
+				{
+					"name": "Create Survey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/surveys",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"surveys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Survey All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/surveys",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"surveys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Survey",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/surveys/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"surveys",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Survey",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/surveys/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"surveys",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Survey",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/surveys",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"surveys"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Save Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"version\": 1,\r\n  \"title\": \"Event Title\",\r\n  \"description\": \"Event Description\",\r\n  \"eventType\": \"SOME_EVENT_TYPE\", \r\n  \"location\": \"Event Location\",\r\n  \"staringDate\": \"2023-11-07T00:00:00Z\",\r\n  \"endingDate\": \"2023-11-08T00:00:00Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/events",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/events",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/events/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"version\": 1,\r\n  \"title\": \"Event Title\",\r\n  \"description\": \"Event Description\",\r\n  \"eventType\": \"SOME_EVENT_TYPE\",\r\n  \"location\": \"Event Location\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/events/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/events/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
