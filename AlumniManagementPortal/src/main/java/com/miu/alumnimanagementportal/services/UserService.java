@@ -24,4 +24,6 @@ public interface UserService {
 
 
     void signup(SignupDto signinDto);
+
+    List<UserDto> searchBy(SearchDto searchDto);
 }

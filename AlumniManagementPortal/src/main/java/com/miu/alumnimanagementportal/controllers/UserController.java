@@ -91,11 +91,14 @@ public class UserController {
         return converter.buildReposeEntity(Map.of("message", "User logged in successfully"), HttpStatus.ACCEPTED);
     }
 
+    @GetMapping("/searchBy")
+    public ResponseEntity<?> searchBy(@Valid @RequestBody SearchDto searchDto) {
+        return converter.buildReposeEntity(Map.of("data", userService.searchBy(searchDto)), HttpStatus.OK);
+    }
+
     @PutMapping("/reset-password")
     public ResponseEntity<?> resetPassword(@Valid @RequestBody ResetPasswordDto resetPasswordDto) {
         return converter.buildReposeEntity(Map.of("data", userService.resetPassword(resetPasswordDto)), HttpStatus.OK);
     }
-
-
 
 }

@@ -135,4 +135,10 @@ public class UserServiceImpl implements UserService {
             return repository.save(user);
         }).orElseThrow(() -> new DataAlreadyExistException("User with email " + signupDto.getEmail() + " already exists"));
     }
+
+    @Override
+    public List<UserDto> searchBy(SearchDto searchDto) {
+        return converter.convertList(repository.findUsersByFileter(searchDto.getGraduationYear(), searchDto.getCourse(), searchDto.getLocation(), searchDto.getIndustry()), UserDto.class);
+    }
+
 }
