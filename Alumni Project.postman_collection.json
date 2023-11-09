@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "1e0fd860-e25c-4b99-974e-bdfd64d28ed2",
+		"name": "Alumni Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2157741",
+		"_collection_link": "https://red-resonance-484666.postman.co/workspace/New-Team-Workspace~8f05f70a-af22-4dfd-9602-31b46deb66b8/collection/2157741-1e0fd860-e25c-4b99-974e-bdfd64d28ed2?action=share&source=collection_link&creator=2157741"
+	},
+	"item": [
+		{
+			"name": "Get Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjk5NTY0MTIwLCJleHAiOjE2OTk1Njc3MjB9.Lqowvsw_dvvPNqWdKPZzVz8k6HeFOqpP9rQs4bNqDwQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/users",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjk5NTY0MTIwLCJleHAiOjE2OTk1Njc3MjB9.Lqowvsw_dvvPNqWdKPZzVz8k6HeFOqpP9rQs4bNqDwQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/users/1",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Jobs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjk5NTY0MTIwLCJleHAiOjE2OTk1Njc3MjB9.Lqowvsw_dvvPNqWdKPZzVz8k6HeFOqpP9rQs4bNqDwQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/jobs?organization=MKIT&state=Ulaanbaatar&city=Ulaanbaatar",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "organization",
+							"value": "MKIT",
+							"description": "or Any"
+						},
+						{
+							"key": "state",
+							"value": "Ulaanbaatar",
+							"description": "or Iowa"
+						},
+						{
+							"key": "city",
+							"value": "Ulaanbaatar",
+							"description": "or Fairfield"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Login User (get Token)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/users/login?email=test@gmail.com&password=123456789",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. Register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMiLCJyb2xlIjoiU1RVREVOVCIsImlhdCI6MTY5OTQ5MDEyMSwiZXhwIjoxNjk5NDkzNzIxfQ.qEZxPP-zKn62LKuXctEKg4ue4q7H8SOVcMvGVq3AAEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": {\r\n        \"email\": \"test@gmail.com\",\r\n        \"firstName\": \"Saikhanbat\",\r\n        \"lastName\": \"Bayarsaikhan\",\r\n        \"password\": \"123456789\",\r\n        \"role\": \"ADMIN\"\r\n    },\r\n    \"profile\": {\r\n        \"phoneNumber\": \"94641960\",\r\n        \"major\": \"ComPro\",\r\n        \"education\": [\r\n            {\r\n                \"degree\": \"Master\",\r\n                \"university\": \"MIU\",\r\n                \"graduationYear\": \"2024\",\r\n                \"courses\": []\r\n            }\r\n        ],\r\n        \"achievements\": [],\r\n        \"jobs\": [],\r\n        \"country\": \"USA\",\r\n        \"state\": \"Iowa\",\r\n        \"street\": \"S D street\",\r\n        \"zip\": \"52556\",\r\n        \"city\": \"Fairfield\",\r\n        \"profileImage\": \"Link to the image\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/users/register",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "server_url",
+			"value": "localhost:8080"
+		}
+	]
+}
