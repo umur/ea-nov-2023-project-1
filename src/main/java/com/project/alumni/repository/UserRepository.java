@@ -27,7 +27,8 @@ public interface UserRepository extends ListCrudRepository<User, Long> {
             "or u.address.city like concat('%', ?3, '%')" +
     "or u.address.state like concat('%', ?4, '%')" +
             "or u.industry like concat('%', ?5, '%')")
-    List<User> findUsersInDirectory(String gradYear,
+    List<User> findUsersInDirectory(
+                                    String gradYear,
                                     Collection<Long> courses_id,
                                     String address_city,
                                     String address_state,
