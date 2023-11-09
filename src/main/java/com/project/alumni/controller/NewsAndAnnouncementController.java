@@ -14,7 +14,7 @@ public class NewsAndAnnouncementController{
 
     private final NewsAndAnnouncementService newsAndAnnouncementService;
 
-    @PostMapping
+    @PostMapping("/save")
     public void save(@RequestBody NewsAndAnnouncementDto newsAndAnnouncementDto){
         newsAndAnnouncementService.save(newsAndAnnouncementDto);
     }
@@ -26,11 +26,11 @@ public class NewsAndAnnouncementController{
     public NewsAndAnnouncementDto findById(@PathVariable Long id){
         return newsAndAnnouncementService.findById(id);
     }
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public void update(@PathVariable Long id, @RequestBody NewsAndAnnouncementDto newsAndAnnouncementDto){
         newsAndAnnouncementService.update(id, newsAndAnnouncementDto);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id){
         newsAndAnnouncementService.delete(id);
     }

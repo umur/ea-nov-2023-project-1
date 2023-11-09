@@ -7,14 +7,9 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class NewsAndAnnouncementDto {
-
+public class InsightsDto {
     private Long id;
-
-    private String type;
-
     private String title;
-    private String content;
-    private Date publishDate;
-
+    private String description;
+    private Date publicationDate;
 }
