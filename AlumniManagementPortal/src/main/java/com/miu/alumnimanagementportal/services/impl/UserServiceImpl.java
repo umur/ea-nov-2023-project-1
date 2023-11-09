@@ -1,21 +1,19 @@
 package com.miu.alumnimanagementportal.services.impl;
 
 import com.miu.alumnimanagementportal.common.Converter;
-import com.miu.alumnimanagementportal.dtos.ResetPasswordDto;
-import com.miu.alumnimanagementportal.dtos.UserActivationDto;
-import com.miu.alumnimanagementportal.dtos.UserDto;
-import com.miu.alumnimanagementportal.dtos.UserLoginInfoDto;
+import com.miu.alumnimanagementportal.dtos.*;
+import com.miu.alumnimanagementportal.exceptions.BadRequestException;
 import com.miu.alumnimanagementportal.exceptions.DataAlreadyExistException;
 import com.miu.alumnimanagementportal.exceptions.ResourceNotFoundException;
 import com.miu.alumnimanagementportal.repositories.UserRepository;
 import com.miu.alumnimanagementportal.services.UserService;
 import com.miu.alumnimanagementportal.entities.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,6 +22,7 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final Converter converter;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDto register(UserDto userDto) {
@@ -90,26 +89,33 @@ public class UserServiceImpl implements UserService {
     // 15 minutes in milliseconds
 
     @Override
-    public void login(UserLoginInfoDto userLoginInfoDto) {
-        Optional.ofNullable(userLoginInfoDto.getEmail())
+    public void login(SigninDto signinDto) {
+        Optional.ofNullable(signinDto.getEmail())
                 .map(repository::findByEmail)
                 .ifPresent(user -> {
-                    if (user.is_locked()) {
-                        throw new ResourceNotFoundException("User is locked");
+                    try {
+                        if (user.is_locked()) {
+                            throw new BadRequestException("User is locked");
+                        }
+                        if (user.getLoginCount() >= MAX_LOGIN_ATTEMPTS) {
+                            throw new BadRequestException("User reached max login attempts");
+                        }
+                        LocalDateTime lastLockedDateTime = LocalDateTime.now();
+                        Duration duration = Duration.between(lastLockedDateTime, LocalDateTime.now());
+                        if (duration.toMinutes() > 15) {
+                            throw new BadRequestException("User is locked");
+                        }
+                        String encodedPassword = passwordEncoder.encode(signinDto.getPassword());
+                        if (!user.getPassword().equals(encodedPassword)) {
+                            user.setLoginCount(user.getLoginCount() + 1);
+                            throw new BadRequestException("Incorrect password");
+                        }
+                        user.setLoginCount(0);
+                    } catch (BadRequestException e) {
+                        throw e;
+                    } finally {
+                        repository.save(user);
                     }
-                    if (user.getLoginCount() >= MAX_LOGIN_ATTEMPTS) {
-                        throw new ResourceNotFoundException("User reached max login attempts");
-                    }
-                    LocalDateTime lastLockedDateTime = LocalDateTime.now();
-                    Duration duration = Duration.between(lastLockedDateTime, LocalDateTime.now());
-                    if (duration.toMinutes() > 15) {
-                        throw new ResourceNotFoundException("User is locked");
-                    }
-                    if (!user.getPassword().equals(userLoginInfoDto.getPassword())) {
-                        user.setLoginCount(user.getLoginCount() + 1);
-                        throw new ResourceNotFoundException("Incorrect password");
-                    }
-                    user.setLoginCount(0);
                 });
     }
 
@@ -118,8 +124,18 @@ public class UserServiceImpl implements UserService {
         Optional.ofNullable(resetPasswordDto.getEmail())
                 .map(repository::findByEmail)
                 .ifPresent(user -> {
-                    user.setPassword(resetPasswordDto.getPassword());
+                    user.setPassword(passwordEncoder.encode(resetPasswordDto.getPassword()));
                 });
         return resetPasswordDto;
+    }
+
+    @Override
+    public void signup(SignupDto signupDto) {
+        Optional.ofNullable(repository.findByEmail(signupDto.getEmail())).map(signup -> {
+            User user = converter.convert(signup, User.class);
+            String encodedPassword = passwordEncoder.encode(signupDto.getPassword());
+            user.setPassword(encodedPassword);
+            return repository.save(user);
+        }).orElseThrow(() -> new DataAlreadyExistException("User with email " + signupDto.getEmail() + " already exists"));
     }
 }

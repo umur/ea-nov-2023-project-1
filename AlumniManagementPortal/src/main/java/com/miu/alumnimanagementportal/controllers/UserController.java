@@ -6,7 +6,6 @@ import com.miu.alumnimanagementportal.services.ProfileService;
 import com.miu.alumnimanagementportal.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -86,8 +85,14 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@Valid @RequestBody UserLoginInfoDto userLoginInfoDto) {
-        userService.login(userLoginInfoDto);
+    public ResponseEntity<?> login(@Valid @RequestBody SigninDto signinDto) {
+        userService.login(signinDto);
+        return converter.buildReposeEntity(Map.of("message", "User logged in successfully"), HttpStatus.ACCEPTED);
+    }
+
+    @PostMapping("/signup")
+    public ResponseEntity<?> login(@Valid @RequestBody SignupDto signupDto) {
+        userService.signup(signupDto);
         return converter.buildReposeEntity(Map.of("message", "User logged in successfully"), HttpStatus.ACCEPTED);
     }
 
