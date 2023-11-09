@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Setter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Information {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -18,6 +19,5 @@ public abstract class Information {
 
     private String content;
     private String author;
-
     private String type;
 }
