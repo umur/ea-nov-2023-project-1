@@ -33,11 +33,6 @@ public class UserController {
         return converter.buildReposeEntity(Map.of("message", "User registered successfully"), HttpStatus.ACCEPTED);
     }
 
-    @PostMapping
-    public ResponseEntity<?> createUser(@Valid @RequestBody UserDto userDto) {
-        userService.create(userDto);
-        return converter.buildReposeEntity(Map.of("message", "User created successfully"), HttpStatus.ACCEPTED);
-    }
 
     @GetMapping
     public ResponseEntity<?> getUserAll() {
