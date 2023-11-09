@@ -20,8 +20,9 @@ public interface UserService {
 
     UserActivationDto update(UserActivationDto userActivationDto, Long id);
 
-    void login(UserLoginInfoDto userLoginInfoDto);
+    void login(SigninDto signinDto);
     ResetPasswordDto resetPassword(ResetPasswordDto resetPassworddto);
 
 
+    void signup(SignupDto signinDto);
 }
