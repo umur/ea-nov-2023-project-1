@@ -178,6 +178,106 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Edit profile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"phoneNumber\": \"94641960\",\r\n\"major\": \"ComPro\",\r\n\"education\": [\r\n    {\r\n        \"degree\": \"Master\",\r\n        \"university\": \"MIU\",\r\n        \"graduationYear\": 2024,\r\n        \"courses\": []\r\n    }\r\n],\r\n\"achievements\": [],\r\n\"jobs\": [],\r\n\"profileImage\": \"link to the image\",\r\n\"country\": \"USA\",\r\n\"state\": \"Iowa\",\r\n\"street\": \"S D St\",\r\n\"zip\": 52556,\r\n\"city\": \"Fairfield\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/profiles/1",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"profiles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjk5NTY2MjQxLCJleHAiOjE2OTk1Njk4NDF9.MaFz6tIfbPLKmobmQc5idad3NURk9ru2kzFYursJUIs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n  \"title\": \"Sample Job2\",\n  \"description\": \"Job Description\",\n  \"organization\": \"MIU\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/api/jobs",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXNoMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5OTU3MjUxMywiZXhwIjoxNjk5NTc2MTEzfQ.Dh8MnIsfy82-z4SciGWzaY1QzTbDw8iqfuqomYwIOmY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/api/users/resetPassword?email=dash9266@gmail.com",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"resetPassword"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "dash9266@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [
