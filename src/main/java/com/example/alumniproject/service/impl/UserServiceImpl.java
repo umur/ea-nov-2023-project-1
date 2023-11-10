@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDateTime;
 import java.time.Duration;
@@ -29,6 +30,7 @@ public class UserServiceImpl implements UserService {
         repository.save(user);
     }
 
+
     @Override
     public List<User> findAll() {
         return repository.findAll();
@@ -40,35 +42,32 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User> findByEmail(String email){
+    public Optional<User> findByEmail(String email) {
         return repository.findByEmail(email);
     }
 
     @Override
     public User changeActive(Long userId) {
         Optional<User> userOptional = this.findById(userId);
-        if(userOptional.isPresent()){
+        if (userOptional.isPresent()) {
             User user = userOptional.get();
             user.setShowYn(!user.getShowYn());
             return repository.save(user);
-        }
-        else{
+        } else {
             return null;
         }
     }
 
     @Override
-    public boolean isUserLockedOut(User user){
-        LocalDateTime  lastFailedLogin = user.getLastFailedLoginTimestamp();
-        if(lastFailedLogin != null)
-        {
+    public boolean isUserLockedOut(User user) {
+        LocalDateTime lastFailedLogin = user.getLastFailedLoginTimestamp();
+        if (lastFailedLogin != null) {
             LocalDateTime currentTime = LocalDateTime.now();
             long minDifference = Duration.between(lastFailedLogin, currentTime).toMinutes();
 
-            if(minDifference < 15 && (user.getAccountLocked() != null &&  user.getAccountLocked())){
+            if (minDifference < 15 && (user.getAccountLocked() != null && user.getAccountLocked())) {
                 return true;
-            }
-            else {
+            } else {
                 user.setAccountLocked(false);
                 user.setLastFailedLoginTimestamp(null);
                 repository.save(user);
@@ -77,11 +76,25 @@ public class UserServiceImpl implements UserService {
         }
         return false;
     }
+
     @Override
-    public void lockUserAccount(User user){
+    public void lockUserAccount(User user) {
         user.setAccountLocked(true);
         user.setLastFailedLoginTimestamp(LocalDateTime.now());
         repository.save(user);
+    }
+
+    @Override
+    public ResponseEntity<?> resetPassword(String email) {
+        Optional<User> existingUser = this.findByEmail(email);
+        if(existingUser.isPresent()) {
+            User user = existingUser.get();
+            user.setPassword("12345");
+            this.repository.save(user);
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body("Reseted Password: " + user.getPassword());
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not found");
+        }
     }
 
     @Override
@@ -93,7 +106,7 @@ public class UserServiceImpl implements UserService {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Account locked. Try again later 15 minutes later.");
             }
             if (user.getPassword().equals(password)) {
-                String token = jwtUtil.generateToken(email, existingUser.get().getRole().toString());
+                String token = jwtUtil.generateToken(email, existingUser.get().getRole() != null ? existingUser.get().getRole().toString() : Role.STUDENT.toString());
                 TokenDTO result = new TokenDTO();
                 result.setFirstname(user.getFirstName());
                 result.setEmail(email);

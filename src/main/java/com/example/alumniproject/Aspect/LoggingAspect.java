@@ -50,7 +50,7 @@ public class LoggingAspect {
             if (user.isPresent()) {
                 Log log = new Log();
                 log.setName(user.get().getFirstName());
-                log.setRoles(user.get().getRole());
+                log.setRole(user.get().getRole());
                 log.setDate(date);
                 log.setMethod(method);
                 log.setUrl(url);

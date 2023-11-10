@@ -47,7 +47,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         user.setFirstName(userDTO.getFirstName());
         user.setLastName(userDTO.getLastName());
         user.setPassword(userDTO.getPassword());
-        user.setRole(Role.STUDENT);
+        user.setRole(userDTO.getRole());
         user.setAccountLocked(false);
         return user;
     }

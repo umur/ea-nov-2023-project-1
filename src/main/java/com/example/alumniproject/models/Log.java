@@ -20,7 +20,7 @@ public class Log {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Role roles;
+    private String role;
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime date;
     private String method;

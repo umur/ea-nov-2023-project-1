@@ -2,6 +2,7 @@ package com.example.alumniproject.config;
 
 
 import com.example.alumniproject.entity.Role;
+import jakarta.servlet.http.HttpServletRequestWrapper;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -47,7 +48,19 @@ public class AuthenticationFilter extends OncePerRequestFilter {
                     java.util.Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role)));
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            filterchain.doFilter(request, responce);
+
+            // Modify the request to include the email as a parameter
+            HttpServletRequestWrapper requestWrapper = new HttpServletRequestWrapper(request) {
+                @Override
+                public String getParameter(String name) {
+                    if ("email".equals(name)) {
+                        return email;
+                    }
+                    return super.getParameter(name);
+                }
+            };
+
+            filterchain.doFilter(requestWrapper, responce);
         } catch (java.io.IOException | ServletException e) {
             e.printStackTrace();
         }

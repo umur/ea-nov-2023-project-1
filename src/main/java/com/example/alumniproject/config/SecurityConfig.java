@@ -34,6 +34,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/users/register").permitAll()
                         .requestMatchers("/api/users/**").authenticated()
                         .requestMatchers("/api/jobs").hasAnyRole(Role.FACULTY.toString(), Role.STUDENT.toString())
+                        .requestMatchers(HttpMethod.POST,"/api/jobs").hasRole(Role.STUDENT.toString())
+                        .requestMatchers(HttpMethod.POST,"/api/users/resetPassword").hasRole(Role.ADMIN.toString())
                 )
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
