@@ -23,7 +23,7 @@ public interface UserRepo extends ListCrudRepository<User, Long> {
     List<User> findAllByIsDeleted(boolean d);
 
     @Modifying
-    @Query(value = "UPDATE `ea-project`.`user` SET `is_deleted` = true WHERE (`id` = ?);\n",
+    @Query(value = "UPDATE `ea_project`.`user` SET `is_deleted` = true WHERE (`id` = ?);\n",
             nativeQuery = true)
     void updateUserByIdIs(Long id);
 }

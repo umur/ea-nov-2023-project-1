@@ -16,7 +16,7 @@ public interface ApplicationRepo extends ListCrudRepository<Application, List<Ap
 
 
     @Modifying
-    @Query(value = "UPDATE `alumni_db`.`application` SET `is_deleted` = true WHERE (`student_id` = ?1) AND (`advertisement_id` = ?2);\n",
+    @Query(value = "UPDATE `ea_project`.`application` SET `is_deleted` = true WHERE (`student_id` = ?1) AND (`advertisement_id` = ?2);\n",
             nativeQuery = true)
     public void deleteApplication(Long id, Long adId);
 }
