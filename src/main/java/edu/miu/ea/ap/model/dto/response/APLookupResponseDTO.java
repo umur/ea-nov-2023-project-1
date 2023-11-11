@@ -7,6 +7,7 @@ import java.util.List;
 
 @Data
 public class APLookupResponseDTO extends APResponseDTO {
+
     private String type;
     private String subtype;
     private String code;

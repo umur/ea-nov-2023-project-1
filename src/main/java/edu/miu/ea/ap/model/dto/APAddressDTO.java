@@ -5,12 +5,10 @@ import lombok.Data;
 @Data
 public class APAddressDTO extends APDtoModel {
 
-    private String address;
-    private Integer zone;
-    private Integer street;
-    private Integer building;
-    private Integer unit;
-    private Integer flat;
-    private Integer room;
+    private String locationStreet;
+    private String locationCity;
+    private String locationState;
+    private String locationPostalCode;
+    private String locationCountry;
 
 }

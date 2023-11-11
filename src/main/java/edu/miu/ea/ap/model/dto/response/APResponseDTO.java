@@ -11,6 +11,7 @@ import java.util.Date;
 @MappedSuperclass
 @Data
 public class APResponseDTO extends APDtoModel {
+
     private Long id;
     private boolean retired;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DateConfigFinals.DATETIME_FORMAT)

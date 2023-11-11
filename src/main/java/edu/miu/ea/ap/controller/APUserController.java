@@ -14,12 +14,12 @@ import java.util.List;
 public class APUserController {
 
     @Autowired
-    APUserService userService;
+    APUserService service;
 
     @PostMapping
     public ResponseEntity getAll() {
         try {
-            List<APUserResponseDTO> userResponseDTOs = userService.getAll();
+            List<APUserResponseDTO> userResponseDTOs = service.getAll();
             return ResponseEntity.ok(userResponseDTOs);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
@@ -29,7 +29,7 @@ public class APUserController {
     @PostMapping(value = "/registration/user")
     public ResponseEntity registeUser(@RequestBody APUserRequestDTO userRequestDTO) {
         try {
-            APUserResponseDTO userResponseDTO = userService.saveUser(userRequestDTO);
+            APUserResponseDTO userResponseDTO = service.saveUser(userRequestDTO);
             return ResponseEntity.ok(userResponseDTO);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
@@ -39,7 +39,7 @@ public class APUserController {
     @PostMapping(value = "/registration/admin")
     public ResponseEntity registeAdmin(@RequestBody APUserRequestDTO userRequestDTO) {
         try {
-            APUserResponseDTO userResponseDTO = userService.saveAdmin(userRequestDTO);
+            APUserResponseDTO userResponseDTO = service.saveAdmin(userRequestDTO);
             return ResponseEntity.ok(userResponseDTO);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
@@ -50,7 +50,7 @@ public class APUserController {
     public ResponseEntity changePassword(@RequestBody APUserRequestDTO userRequestDTO) {
 
         try {
-            boolean result = userService.changePassword(userRequestDTO);
+            boolean result = service.changePassword(userRequestDTO);
             return ResponseEntity.ok(result);
         } catch (Exception ex) {
             throw new RuntimeException(ex);

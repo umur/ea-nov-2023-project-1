@@ -1,8 +1,8 @@
 package edu.miu.ea.ap.controller;
 
-import edu.miu.ea.ap.model.dto.request.APJobRequestDTO;
-import edu.miu.ea.ap.model.dto.response.APJobResponseDTO;
-import edu.miu.ea.ap.service.APJobService;
+import edu.miu.ea.ap.model.dto.request.APMeetingRequestDTO;
+import edu.miu.ea.ap.model.dto.response.APMeetingResponseDTO;
+import edu.miu.ea.ap.service.APMeetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,17 +10,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/jobs")
-public class APJobController {
-
+@RequestMapping("/meetings")
+public class APMeetingController {
 
     @Autowired
-    APJobService service;
+    APMeetingService service;
 
     @PostMapping
     public ResponseEntity getAll() {
         try {
-            List<APJobResponseDTO> responseDTOs = service.getAll();
+            List<APMeetingResponseDTO> responseDTOs = service.getAll();
             return ResponseEntity.ok(responseDTOs);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -30,7 +29,7 @@ public class APJobController {
     @PostMapping("/valid")
     public ResponseEntity getAllValid() {
         try {
-            List<APJobResponseDTO> responseDTOs = service.getAllUnretired();
+            List<APMeetingResponseDTO> responseDTOs = service.getAllUnretired();
             return ResponseEntity.ok(responseDTOs);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -38,9 +37,9 @@ public class APJobController {
     }
 
     @PostMapping(value = "/save")
-    public ResponseEntity save(@RequestBody APJobRequestDTO requestDTO) {
+    public ResponseEntity save(@RequestBody APMeetingRequestDTO requestDTO) {
         try {
-            APJobResponseDTO responseDTO = service.save(requestDTO);
+            APMeetingResponseDTO responseDTO = service.save(requestDTO);
             return ResponseEntity.ok(responseDTO);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
@@ -48,7 +47,7 @@ public class APJobController {
     }
 
     @DeleteMapping(value = "/retire")
-    public ResponseEntity retire(@RequestBody APJobRequestDTO requestDTO) {
+    public ResponseEntity retire(@RequestBody APMeetingRequestDTO requestDTO) {
         try {
             service.retire(requestDTO);
             return ResponseEntity.ok("{}");
@@ -58,7 +57,7 @@ public class APJobController {
     }
 
     @DeleteMapping(value = "/unretire")
-    public ResponseEntity unretire(@RequestBody APJobRequestDTO requestDTO) {
+    public ResponseEntity unretire(@RequestBody APMeetingRequestDTO requestDTO) {
         try {
             service.unretire(requestDTO);
             return ResponseEntity.ok("{}");

@@ -1,7 +1,5 @@
 package edu.miu.ea.ap.model.domain;
 
-import edu.miu.ea.ap.model.domain.APBaseEntityWithIdAuto;
-import edu.miu.ea.ap.model.domain.APUser;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,7 +13,7 @@ public class APCourse extends APBaseEntityWithIdAuto {
     private String name;
     private String code;
     private String location;
-    private int credit;
+    private Integer credit;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

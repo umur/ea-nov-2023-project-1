@@ -1,14 +1,11 @@
 package edu.miu.ea.ap.controller;
 
-import edu.miu.ea.ap.model.dto.request.APUserRequestDTO;
-import edu.miu.ea.ap.model.dto.response.APUserResponseDTO;
-import edu.miu.ea.ap.service.APUserService;
+import edu.miu.ea.ap.model.dto.request.APEventRequestDTO;
+import edu.miu.ea.ap.model.dto.response.APEventResponseDTO;
+import edu.miu.ea.ap.service.APEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,48 +14,56 @@ import java.util.List;
 public class APEventController {
 
     @Autowired
-    APUserService userService;
+    APEventService service;
 
     @PostMapping
     public ResponseEntity getAll() {
         try {
-            List<APUserResponseDTO> userResponseDTOs = userService.getAll();
-            return ResponseEntity.ok(userResponseDTOs);
+            List<APEventResponseDTO> responseDTOs = service.getAll();
+            return ResponseEntity.ok(responseDTOs);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @PostMapping("/valid")
+    public ResponseEntity getAllValid() {
+        try {
+            List<APEventResponseDTO> responseDTOs = service.getAllUnretired();
+            return ResponseEntity.ok(responseDTOs);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @PostMapping(value = "/save")
+    public ResponseEntity save(@RequestBody APEventRequestDTO requestDTO) {
+        try {
+            APEventResponseDTO responseDTO = service.save(requestDTO);
+            return ResponseEntity.ok(responseDTO);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }
 
-    @PostMapping(value = "/registration/user")
-    public ResponseEntity registeUser(@RequestBody APUserRequestDTO userRequestDTO) {
+    @DeleteMapping(value = "/retire")
+    public ResponseEntity retire(@RequestBody APEventRequestDTO requestDTO) {
         try {
-            APUserResponseDTO userResponseDTO = userService.saveUser(userRequestDTO);
-            return ResponseEntity.ok(userResponseDTO);
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
+            service.retire(requestDTO);
+            return ResponseEntity.ok("{}");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
-    @PostMapping(value = "/registration/admin")
-    public ResponseEntity registeAdmin(@RequestBody APUserRequestDTO userRequestDTO) {
+    @DeleteMapping(value = "/unretire")
+    public ResponseEntity unretire(@RequestBody APEventRequestDTO requestDTO) {
         try {
-            APUserResponseDTO userResponseDTO = userService.saveAdmin(userRequestDTO);
-            return ResponseEntity.ok(userResponseDTO);
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
+            service.unretire(requestDTO);
+            return ResponseEntity.ok("{}");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-    }
-
-    @PostMapping("/changePassword")
-    public ResponseEntity changePassword(@RequestBody APUserRequestDTO userRequestDTO) {
-
-        try {
-            boolean result = userService.changePassword(userRequestDTO);
-            return ResponseEntity.ok(result);
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
-        }
-
     }
 
 }

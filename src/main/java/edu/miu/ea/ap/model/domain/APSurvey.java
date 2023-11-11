@@ -3,7 +3,7 @@ package edu.miu.ea.ap.model.domain;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -14,6 +14,6 @@ public class APSurvey extends APBaseEntityWithIdAuto {
     private String description;
 
     @OneToMany(mappedBy = "survey")
-    private List<APSurveyResponse> responses;
+    private Set<APSurveyResponse> responses;
 
 }
