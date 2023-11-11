@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: ozakaria
+Build-Jdk: 1.8.0_221
+Implementation-Version: 2.0.0
+Implementation-Vendor-Id: qa.gov.ncc
+Main-Class: ${start-class}
+
