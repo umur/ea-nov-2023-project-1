@@ -192,6 +192,16 @@ VALUES (1,
 
 -- Users--
 
+-- Roles --
+ INSERT INTO roles(name) values (ROLE_USER);
+ INSERT INTO roles(name) values ('ROLE_ADMIN');
+-- Roles --
+
+-- Users_Roles --
+ INSERT INTO users_roles(user_id, role_id) values (1,1);
+ INSERT INTO users_roles(user_id, role_id) values (2,2);
+ -- Users_Roles --
+
 -- Courses -- id and name
 
 INSERT INTO courses (id, name)

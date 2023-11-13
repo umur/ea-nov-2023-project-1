@@ -7,6 +7,7 @@ import com.project.alumni.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -60,6 +61,16 @@ public class UserController {
     @GetMapping("/search")
     public ResponseEntity<List<SearchUsersDto>> searchUserDirectory(@RequestParam("query") String query){
         return ResponseEntity.ok(userService.searchUsersDirectory(query));
+    }
+
+    // delete category by {id} REST API
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable(name = "id") Long id){
+
+        userService.deleteUserById(id);
+
+        return new ResponseEntity<>("User entity deleted successfully.", HttpStatus.OK);
     }
 
 

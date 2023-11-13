@@ -35,7 +35,7 @@ public class User {
     private String lastName;
     @Column(name = "username", nullable = false, unique = true)
     private String username;
-    @Column(name = " email", nullable = false)
+    @Column(name = " email", nullable = false, unique = true)
     private String email;
     @Column(name = "password", nullable = false)
     private String password;
@@ -61,6 +61,13 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "course_id")}
     )
     private Set<Course> courses;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
+    )
+    private Set<Role> roles;
 
     @OneToOne(mappedBy = "user")
     private Job job;

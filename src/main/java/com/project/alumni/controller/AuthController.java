@@ -1,6 +1,6 @@
 package com.project.alumni.controller;
 
-import com.project.alumni.dto.UserLoginDto;
+import com.project.alumni.dto.LoginDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.service.AuthService;
 import jakarta.validation.Valid;
@@ -21,7 +21,7 @@ public class AuthController {
     }
 
     @PostMapping(value = {"/login", "/signin"})
-    public ResponseEntity<String> login(@Valid @RequestBody UserLoginDto loginDto){
+    public ResponseEntity<String> login(@Valid @RequestBody LoginDto loginDto){
         String response = authService.login(loginDto);
          return ResponseEntity.ok(response);
     }

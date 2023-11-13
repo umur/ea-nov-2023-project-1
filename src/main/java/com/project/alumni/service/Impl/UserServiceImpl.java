@@ -94,4 +94,11 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void deleteUserById(Long id) {
+        User user = userRepo.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException("User", "id", id));
+        userRepo.delete(user);
+    }
+
 } // End of UserServiceImpl class

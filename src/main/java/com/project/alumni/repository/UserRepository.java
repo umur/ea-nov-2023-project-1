@@ -6,8 +6,9 @@ import org.springframework.data.repository.ListCrudRepository;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
-public interface UserRepository extends ListCrudRepository<User, Long> {
+public interface UserRepository extends ListCrudRepository<User, Long>  {
     List<User> findAllByIdIn(List<Long> userIds);
 
     @Query("SELECT u FROM User u left join u.courses courses WHERE " +
@@ -33,4 +34,10 @@ public interface UserRepository extends ListCrudRepository<User, Long> {
                                     String address_city,
                                     String address_state,
                                     String industry);
+
+    Optional<User> findByEmail(String email);
+    Optional<User> findByUsernameOrEmail(String username, String email);
+    Optional<User> findByUsername(String username);
+    Boolean existsByUsername(String username);
+    Boolean existsByEmail(String email);
 }

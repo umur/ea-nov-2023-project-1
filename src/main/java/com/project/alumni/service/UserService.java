@@ -23,4 +23,6 @@ public interface UserService {
 
     List<SearchUsersDto> searchUsersDirectory(String query);
 
+    void deleteUserById(Long id);
+
 } // End of UserService class
