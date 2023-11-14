@@ -1,5 +1,6 @@
 package com.project.alumni.controller;
 
+import com.project.alumni.dto.JWTAuthResponse;
 import com.project.alumni.dto.LoginDto;
 import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.service.AuthService;
@@ -21,9 +22,13 @@ public class AuthController {
     }
 
     @PostMapping(value = {"/login", "/signin"})
-    public ResponseEntity<String> login(@Valid @RequestBody LoginDto loginDto){
-        String response = authService.login(loginDto);
-         return ResponseEntity.ok(response);
+    public ResponseEntity<JWTAuthResponse> login(@Valid @RequestBody LoginDto loginDto){
+        String token = authService.login(loginDto);
+
+        JWTAuthResponse jwtAuthResponse = new JWTAuthResponse();
+        jwtAuthResponse.setAccessToken(token);
+
+        return ResponseEntity.ok(jwtAuthResponse);
     }
 
     // Build Register REST API

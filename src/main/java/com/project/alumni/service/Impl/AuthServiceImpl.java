@@ -2,6 +2,7 @@ package com.project.alumni.service.Impl;
 
 import com.project.alumni.dto.LoginDto;
 import com.project.alumni.dto.UserMinimalDto;
+import com.project.alumni.security.JwtTokenProvider;
 import com.project.alumni.service.AuthService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,13 +14,15 @@ import org.springframework.stereotype.Service;
 public class AuthServiceImpl implements AuthService {
 
     /**
-     * Implemented our own Login logic using DAO Authentication provider
+     * Implemented our own Login logic using DAO Authentication provider and JWT Authentication Token
      * */
 
     private final AuthenticationManager authenticationManager;
+    private final JwtTokenProvider jwtTokenProvider;
 
-    public AuthServiceImpl(AuthenticationManager authenticationManager) {
+    public AuthServiceImpl(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider) {
         this.authenticationManager = authenticationManager;
+        this.jwtTokenProvider = jwtTokenProvider;
     }
 
     @Override
@@ -30,7 +33,9 @@ public class AuthServiceImpl implements AuthService {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        return "User Logged-in successfully!.";
+        String token = jwtTokenProvider.generateToken(authentication);
+
+        return token;
     }
     @Override
     public String register(UserMinimalDto registerDto) {
