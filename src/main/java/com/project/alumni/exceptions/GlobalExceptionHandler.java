@@ -1,6 +1,6 @@
 package com.project.alumni.exceptions;
 
-import com.project.alumni.dto.ErrorDetails;
+import com.project.alumni.dto.user.ErrorDetails;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

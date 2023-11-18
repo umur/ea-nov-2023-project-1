@@ -2,13 +2,13 @@ package com.project.alumni.service.Impl;
 
 
 import com.project.alumni.dto.SurveyAnswerDto;
-import com.project.alumni.dto.UserFullDetailsDto;
+import com.project.alumni.dto.user.UserFullDetailsDto;
 import com.project.alumni.entity.Survey;
 import com.project.alumni.entity.SurveyAnswer;
-import com.project.alumni.entity.User;
+import com.project.alumni.entity.user.User;
 import com.project.alumni.repository.SurveyAnswerRpo;
 import com.project.alumni.repository.SurveyRepo;
-import com.project.alumni.repository.UserRepository;
+import com.project.alumni.repository.user.UserRepository;
 import com.project.alumni.service.SurveyAnswerService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;

@@ -1,7 +1,7 @@
 package com.project.alumni.controller.alumniDirectory;
 
 import com.project.alumni.dto.alumniDirectory.SearchAlumniDirectoryDto;
-import com.project.alumni.dto.UserFullDetailsDto;
+import com.project.alumni.dto.user.UserFullDetailsDto;
 import com.project.alumni.service.alumniDirectory.AlumniDirectoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

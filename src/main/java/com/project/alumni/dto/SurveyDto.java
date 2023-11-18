@@ -1,5 +1,6 @@
 package com.project.alumni.dto;
 
+import com.project.alumni.dto.user.UserFullDetailsDto;
 import lombok.Getter;
 import lombok.Setter;
 

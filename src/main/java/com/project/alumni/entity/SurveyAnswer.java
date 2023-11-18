@@ -1,5 +1,6 @@
 package com.project.alumni.entity;
 
+import com.project.alumni.entity.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 

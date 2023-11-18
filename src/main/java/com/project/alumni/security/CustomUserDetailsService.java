@@ -1,8 +1,8 @@
 package com.project.alumni.security;
 
 
-import com.project.alumni.entity.User;
-import com.project.alumni.repository.UserRepository;
+import com.project.alumni.entity.user.User;
+import com.project.alumni.repository.user.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

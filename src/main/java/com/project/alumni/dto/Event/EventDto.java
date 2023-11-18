@@ -3,7 +3,7 @@ package com.project.alumni.dto.Event;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.project.alumni.dto.UserMinimalDto;
+import com.project.alumni.dto.user.UserMinimalDto;
 import lombok.Getter;
 import lombok.Setter;
 

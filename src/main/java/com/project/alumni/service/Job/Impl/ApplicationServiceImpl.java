@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.project.alumni.dto.Job.ApplicationDto;
 import com.project.alumni.entity.Job.Application;
 import com.project.alumni.entity.Job.ApplicationStatus;
-import com.project.alumni.repository.UserRepository;
+import com.project.alumni.repository.user.UserRepository;
 import com.project.alumni.repository.Job.ApplicationRepository;
 import com.project.alumni.repository.Job.JobRepository;
 import com.project.alumni.service.Job.ApplicationService;

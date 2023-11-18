@@ -1,6 +1,5 @@
 package com.project.alumni.dto.alumniDirectory;
 
-import com.project.alumni.dto.CourseDto;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.List;

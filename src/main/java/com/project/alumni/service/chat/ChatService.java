@@ -1,7 +1,7 @@
 package com.project.alumni.service.chat;
 
 import com.project.alumni.dto.chat.ChatDto;
-import com.project.alumni.dto.UserFullDetailsDto;
+import com.project.alumni.dto.user.UserFullDetailsDto;
 
 import java.util.List;
 

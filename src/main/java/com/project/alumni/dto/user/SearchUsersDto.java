@@ -1,11 +1,11 @@
-package com.project.alumni.dto;
+package com.project.alumni.dto.user;
 
+import com.project.alumni.dto.user.AddressDto;
+import com.project.alumni.dto.user.CourseDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter

@@ -1,4 +1,4 @@
-package com.project.alumni.dto;
+package com.project.alumni.dto.user;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;

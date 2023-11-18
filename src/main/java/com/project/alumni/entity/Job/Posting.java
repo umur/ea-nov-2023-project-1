@@ -2,9 +2,8 @@ package com.project.alumni.entity.Job;
 
 import java.time.LocalDateTime;
 
-import com.project.alumni.entity.User;
+import com.project.alumni.entity.user.User;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

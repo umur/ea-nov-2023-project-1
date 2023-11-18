@@ -1,6 +1,6 @@
-package com.project.alumni.repository;
+package com.project.alumni.repository.user;
 
-import com.project.alumni.entity.Role;
+import com.project.alumni.entity.user.Role;
 import org.springframework.data.repository.ListCrudRepository;
 
 import java.util.Optional;

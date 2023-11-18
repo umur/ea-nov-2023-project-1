@@ -1,9 +1,9 @@
-package com.project.alumni.controller;
+package com.project.alumni.controller.user;
 
-import com.project.alumni.dto.JWTAuthResponse;
-import com.project.alumni.dto.LoginDto;
-import com.project.alumni.dto.UserMinimalDto;
-import com.project.alumni.service.AuthService;
+import com.project.alumni.dto.user.JWTAuthResponse;
+import com.project.alumni.dto.user.LoginDto;
+import com.project.alumni.dto.user.UserMinimalDto;
+import com.project.alumni.service.user.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

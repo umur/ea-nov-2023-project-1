@@ -1,16 +1,15 @@
-package com.project.alumni.dto;
-
+package com.project.alumni.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddressDto {
-    private String city;
-    private String state;
+public class JWTAuthResponse {
+    private String accessToken;
+    private String tokenType = "Bearer";
 }

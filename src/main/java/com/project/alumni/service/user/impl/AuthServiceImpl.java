@@ -1,9 +1,9 @@
-package com.project.alumni.service.Impl;
+package com.project.alumni.service.user.impl;
 
-import com.project.alumni.dto.LoginDto;
-import com.project.alumni.dto.UserMinimalDto;
+import com.project.alumni.dto.user.LoginDto;
+import com.project.alumni.dto.user.UserMinimalDto;
 import com.project.alumni.security.JwtTokenProvider;
-import com.project.alumni.service.AuthService;
+import com.project.alumni.service.user.AuthService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

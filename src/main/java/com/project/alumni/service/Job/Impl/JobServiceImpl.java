@@ -2,7 +2,7 @@ package com.project.alumni.service.Job.Impl;
 
 import com.project.alumni.dto.Job.JobDto;
 import com.project.alumni.entity.Job.Job;
-import com.project.alumni.repository.UserRepository;
+import com.project.alumni.repository.user.UserRepository;
 import com.project.alumni.repository.Job.JobRepository;
 import com.project.alumni.service.Job.JobService;
 

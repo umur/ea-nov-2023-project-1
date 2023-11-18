@@ -1,4 +1,4 @@
-package com.project.alumni.entity;
+package com.project.alumni.entity.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

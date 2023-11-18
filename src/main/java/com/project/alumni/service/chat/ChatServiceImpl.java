@@ -1,11 +1,11 @@
 package com.project.alumni.service.chat;
 
 import com.project.alumni.dto.chat.ChatDto;
-import com.project.alumni.dto.UserFullDetailsDto;
+import com.project.alumni.dto.user.UserFullDetailsDto;
 import com.project.alumni.entity.chat.Chat;
-import com.project.alumni.entity.User;
+import com.project.alumni.entity.user.User;
 import com.project.alumni.repository.chat.ChatsRepository;
-import com.project.alumni.repository.UserRepository;
+import com.project.alumni.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;

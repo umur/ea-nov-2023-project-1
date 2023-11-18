@@ -1,9 +1,8 @@
-package com.project.alumni.service;
+package com.project.alumni.service.user;
 
-import com.project.alumni.dto.SearchUsersDto;
-import com.project.alumni.dto.UserFullDetailsDto;
-import com.project.alumni.dto.UserMinimalDto;
-import com.project.alumni.entity.User;
+import com.project.alumni.dto.user.SearchUsersDto;
+import com.project.alumni.dto.user.UserFullDetailsDto;
+import com.project.alumni.dto.user.UserMinimalDto;
 
 import java.util.List;
 

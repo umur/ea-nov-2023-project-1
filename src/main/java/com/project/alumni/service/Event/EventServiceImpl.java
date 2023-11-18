@@ -6,10 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.project.alumni.dto.UserMinimalDto;
 import com.project.alumni.dto.Event.EventDto;
 import com.project.alumni.entity.Event.Event;
-import com.project.alumni.repository.UserRepository;
+import com.project.alumni.repository.user.UserRepository;
 import com.project.alumni.repository.Event.EventRepository;
 import com.project.alumni.repository.Event.EventTypeRepository;
 

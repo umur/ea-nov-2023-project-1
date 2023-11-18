@@ -1,9 +1,9 @@
 package com.project.alumni.service.alumniDirectory;
 
-import com.project.alumni.dto.UserFullDetailsDto;
+import com.project.alumni.dto.user.UserFullDetailsDto;
 import com.project.alumni.dto.alumniDirectory.SearchAlumniDirectoryDto;
-import com.project.alumni.entity.User;
-import com.project.alumni.repository.UserRepository;
+import com.project.alumni.entity.user.User;
+import com.project.alumni.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

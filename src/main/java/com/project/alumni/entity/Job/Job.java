@@ -2,7 +2,7 @@ package com.project.alumni.entity.Job;
 
 import java.util.List;
 
-import com.project.alumni.entity.User;
+import com.project.alumni.entity.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

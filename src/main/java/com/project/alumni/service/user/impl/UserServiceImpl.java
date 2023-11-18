@@ -1,14 +1,14 @@
-package com.project.alumni.service.Impl;
+package com.project.alumni.service.user.impl;
 
-import com.project.alumni.dto.SearchUsersDto;
-import com.project.alumni.dto.UserFullDetailsDto;
-import com.project.alumni.dto.UserMinimalDto;
-import com.project.alumni.entity.Address;
-import com.project.alumni.entity.User;
+import com.project.alumni.dto.user.SearchUsersDto;
+import com.project.alumni.dto.user.UserFullDetailsDto;
+import com.project.alumni.dto.user.UserMinimalDto;
+import com.project.alumni.entity.user.Address;
+import com.project.alumni.entity.user.User;
 import com.project.alumni.exceptions.ResourceNotFoundException;
-import com.project.alumni.repository.AddressRepository;
-import com.project.alumni.repository.UserRepository;
-import com.project.alumni.service.UserService;
+import com.project.alumni.repository.user.AddressRepository;
+import com.project.alumni.repository.user.UserRepository;
+import com.project.alumni.service.user.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

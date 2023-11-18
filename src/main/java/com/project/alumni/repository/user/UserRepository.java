@@ -1,6 +1,6 @@
-package com.project.alumni.repository;
+package com.project.alumni.repository.user;
 
-import com.project.alumni.entity.User;
+import com.project.alumni.entity.user.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.ListCrudRepository;
 

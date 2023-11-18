@@ -1,11 +1,5 @@
 package com.project.alumni.dto.Job;
 
-import java.util.List;
-
-import com.project.alumni.entity.User;
-import com.project.alumni.entity.Job.Application;
-import com.project.alumni.entity.Job.Posting;
-
 import lombok.Getter;
 import lombok.Setter;
 
