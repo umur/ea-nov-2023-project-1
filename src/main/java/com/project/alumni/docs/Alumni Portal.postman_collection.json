@@ -1,0 +1,5335 @@
+{
+	"info": {
+		"_postman_id": "e2ff0f34-310f-4bbf-a88a-1bfdf3e62f33",
+		"name": "Alumni Portal",
+		"description": "Alumni Management Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24972674",
+		"_collection_link": "https://galactic-equinox-987321.postman.co/workspace/My-Workspace~5e325972-e78f-415b-8a33-6ceeba74b50c/collection/24972674-e2ff0f34-310f-4bbf-a88a-1bfdf3e62f33?action=share&source=collection_link&creator=24972674"
+	},
+	"item": [
+		{
+			"name": "surveyAnswer",
+			"item": [
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"answer\": \"<string>\",\n  \"deleted\": \"<integer>\",\n  \"survey\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    }\n  },\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/surveyAnswer/update/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"surveyAnswer",
+												"update",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"answer\": \"<string>\",\n  \"deleted\": \"<integer>\",\n  \"survey\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    }\n  },\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/surveyAnswer/update/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"surveyAnswer",
+														"update",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "save",
+					"item": [
+						{
+							"name": "save",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"answer\": \"<string>\",\n  \"deleted\": \"<integer>\",\n  \"survey\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    }\n  },\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/surveyAnswer/save",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"surveyAnswer",
+										"save"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"answer\": \"<string>\",\n  \"deleted\": \"<integer>\",\n  \"survey\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    }\n  },\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/surveyAnswer/save",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"surveyAnswer",
+												"save"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/surveyAnswer/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"surveyAnswer",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/surveyAnswer/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"surveyAnswer",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"answer\": \"<string>\",\n  \"deleted\": \"<integer>\",\n  \"survey\": {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    }\n  },\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "delete By Id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/surveyAnswer/delete/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"surveyAnswer",
+												"delete",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/surveyAnswer/delete/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"surveyAnswer",
+														"delete",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/surveyAnswer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"surveyAnswer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/surveyAnswer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"surveyAnswer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"answer\": \"<string>\",\n    \"deleted\": \"<integer>\",\n    \"survey\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"startDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"user\": {\n        \"id\": \"<long>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"username\": \"<string>\",\n        \"email\": \"<string>\",\n        \"address\": {\n          \"city\": \"<string>\",\n          \"state\": \"<string>\"\n        },\n        \"gradYear\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"educationalDetails\": \"<string>\",\n        \"professionalAchievements\": \"<string>\",\n        \"profilePic\": \"<string>\",\n        \"addressId\": \"<long>\"\n      }\n    },\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"answer\": \"<string>\",\n    \"deleted\": \"<integer>\",\n    \"survey\": {\n      \"id\": \"<long>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"startDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"user\": {\n        \"id\": \"<long>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"username\": \"<string>\",\n        \"email\": \"<string>\",\n        \"address\": {\n          \"city\": \"<string>\",\n          \"state\": \"<string>\"\n        },\n        \"gradYear\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"educationalDetails\": \"<string>\",\n        \"professionalAchievements\": \"<string>\",\n        \"profilePic\": \"<string>\",\n        \"addressId\": \"<long>\"\n      }\n    },\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    }\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "survey",
+			"item": [
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "update 1",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/survey/update/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"survey",
+												"update",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/survey/update/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"survey",
+														"update",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "save",
+					"item": [
+						{
+							"name": "save 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/survey/save",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"survey",
+										"save"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/survey/save",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"survey",
+												"save"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id 1",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/survey/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"survey",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/survey/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"survey",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"user\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/survey/delete/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"survey",
+												"delete",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/survey/delete/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"survey",
+														"delete",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/survey",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"survey"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/survey",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"survey"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"startDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    }\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "postings",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id 2",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/postings/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postings",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/postings/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"postings",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"creationDate\": \"<dateTime>\",\n  \"status\": \"Open\",\n  \"job\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": \"<string>\",\n    \"userId\": \"<long>\"\n  },\n  \"posterId\": \"<long>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update 2",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"creationDate\": \"<dateTime>\",\n  \"status\": \"Open\",\n  \"job\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": \"<string>\",\n    \"userId\": \"<long>\"\n  },\n  \"posterId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/postings/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postings",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"creationDate\": \"<dateTime>\",\n  \"status\": \"Open\",\n  \"job\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": \"<string>\",\n    \"userId\": \"<long>\"\n  },\n  \"posterId\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/postings/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"postings",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/postings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"postings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/postings",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"creationDate\": \"<dateTime>\",\n    \"status\": \"Open\",\n    \"job\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"requirements\": \"<string>\",\n      \"userId\": \"<long>\"\n    },\n    \"posterId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"creationDate\": \"<dateTime>\",\n    \"status\": \"Open\",\n    \"job\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"requirements\": \"<string>\",\n      \"userId\": \"<long>\"\n    },\n    \"posterId\": \"<long>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"creationDate\": \"<dateTime>\",\n  \"status\": \"Open\",\n  \"job\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": \"<string>\",\n    \"userId\": \"<long>\"\n  },\n  \"posterId\": \"<long>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/postings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"postings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"creationDate\": \"<dateTime>\",\n  \"status\": \"Open\",\n  \"job\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": \"<string>\",\n    \"userId\": \"<long>\"\n  },\n  \"posterId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/postings",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "newsAndAnnouncements",
+			"item": [
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "update 3",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"publishDate\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/newsAndAnnouncements/update/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"newsAndAnnouncements",
+												"update",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"publishDate\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/newsAndAnnouncements/update/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"newsAndAnnouncements",
+														"update",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "save",
+					"item": [
+						{
+							"name": "save 3",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"publishDate\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/newsAndAnnouncements/save",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"newsAndAnnouncements",
+										"save"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"publishDate\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/newsAndAnnouncements/save",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"newsAndAnnouncements",
+												"save"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id 3",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/newsAndAnnouncements/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"newsAndAnnouncements",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/newsAndAnnouncements/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"newsAndAnnouncements",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"publishDate\": \"<dateTime>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "delete 1",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/newsAndAnnouncements/delete/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"newsAndAnnouncements",
+												"delete",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/newsAndAnnouncements/delete/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"newsAndAnnouncements",
+														"delete",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 3",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/newsAndAnnouncements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"newsAndAnnouncements"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/newsAndAnnouncements",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"newsAndAnnouncements"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"type\": \"<string>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"publishDate\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"type\": \"<string>\",\n    \"title\": \"<string>\",\n    \"content\": \"<string>\",\n    \"publishDate\": \"<dateTime>\"\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "jobs",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id 4",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/jobs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/jobs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"jobs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requirements\": \"<string>\",\n  \"userId\": \"<long>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update 4",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requirements\": \"<string>\",\n  \"userId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/jobs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requirements\": \"<string>\",\n  \"userId\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/jobs/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"jobs",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 4",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/jobs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/jobs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": \"<string>\",\n    \"userId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": \"<string>\",\n    \"userId\": \"<long>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save 4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requirements\": \"<string>\",\n  \"userId\": \"<long>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/jobs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requirements\": \"<string>\",\n  \"userId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/jobs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "insights",
+			"item": [
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "update 5",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"publicationDate\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/insights/update/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"insights",
+												"update",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"publicationDate\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/insights/update/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"insights",
+														"update",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "save",
+					"item": [
+						{
+							"name": "save 5",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"publicationDate\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/insights/save",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"insights",
+										"save"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"publicationDate\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/insights/save",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"insights",
+												"save"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id 5",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/insights/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"insights",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/insights/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"insights",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"publicationDate\": \"<dateTime>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "delete 2",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/insights/delete/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"insights",
+												"delete",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/insights/delete/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"insights",
+														"delete",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 5",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/insights",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"insights"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/insights",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"insights"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"publicationDate\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"publicationDate\": \"<dateTime>\"\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "addRsvper",
+							"item": [
+								{
+									"name": "add Rsvper",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/addRsvper?userId=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												"addRsvper"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/events/:id/addRsvper?userId=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"events",
+														":id",
+														"addRsvper"
+													],
+													"query": [
+														{
+															"key": "userId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "addOrganizer",
+							"item": [
+								{
+									"name": "add Organizer",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/addOrganizer?userId=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												"addOrganizer"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/events/:id/addOrganizer?userId=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"events",
+														":id",
+														"addOrganizer"
+													],
+													"query": [
+														{
+															"key": "userId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "addAttendee",
+							"item": [
+								{
+									"name": "add Attendee",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/addAttendee?userId=<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												"addAttendee"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/events/:id/addAttendee?userId=<long>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"events",
+														":id",
+														"addAttendee"
+													],
+													"query": [
+														{
+															"key": "userId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "find By Id 6",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"location\": \"<string>\",\n  \"eventDate\": \"<dateTime>\",\n  \"typeId\": \"<long>\",\n  \"organizers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"rsvpers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "update 6",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"location\": \"<string>\",\n  \"eventDate\": \"<dateTime>\",\n  \"typeId\": \"<long>\",\n  \"organizers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"rsvpers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"location\": \"<string>\",\n  \"eventDate\": \"<dateTime>\",\n  \"typeId\": \"<long>\",\n  \"organizers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"rsvpers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/events/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 6",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/events",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"location\": \"<string>\",\n    \"eventDate\": \"<dateTime>\",\n    \"typeId\": \"<long>\",\n    \"organizers\": [\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ],\n    \"attendees\": [\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ],\n    \"rsvpers\": [\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"location\": \"<string>\",\n    \"eventDate\": \"<dateTime>\",\n    \"typeId\": \"<long>\",\n    \"organizers\": [\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ],\n    \"attendees\": [\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ],\n    \"rsvpers\": [\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      },\n      {\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"password\": \"<string>\",\n        \"username\": \"<string>\",\n        \"id\": \"<long>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save 6",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"location\": \"<string>\",\n  \"eventDate\": \"<dateTime>\",\n  \"typeId\": \"<long>\",\n  \"organizers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"rsvpers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/events",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"location\": \"<string>\",\n  \"eventDate\": \"<dateTime>\",\n  \"typeId\": \"<long>\",\n  \"organizers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ],\n  \"rsvpers\": [\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"username\": \"<string>\",\n      \"id\": \"<long>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "eventTypes",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id 7",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventTypes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventTypes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/eventTypes/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventTypes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"events\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "update 7",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"events\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/eventTypes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventTypes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"events\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/eventTypes/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"eventTypes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 7",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/eventTypes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"eventTypes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/eventTypes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventTypes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"events\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"location\": \"<string>\",\n        \"eventDate\": \"<dateTime>\",\n        \"typeId\": \"<long>\",\n        \"organizers\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ],\n        \"attendees\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ],\n        \"rsvpers\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"location\": \"<string>\",\n        \"eventDate\": \"<dateTime>\",\n        \"typeId\": \"<long>\",\n        \"organizers\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ],\n        \"attendees\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ],\n        \"rsvpers\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"events\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"location\": \"<string>\",\n        \"eventDate\": \"<dateTime>\",\n        \"typeId\": \"<long>\",\n        \"organizers\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ],\n        \"attendees\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ],\n        \"rsvpers\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\",\n        \"location\": \"<string>\",\n        \"eventDate\": \"<dateTime>\",\n        \"typeId\": \"<long>\",\n        \"organizers\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ],\n        \"attendees\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ],\n        \"rsvpers\": [\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          },\n          {\n            \"email\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"password\": \"<string>\",\n            \"username\": \"<string>\",\n            \"id\": \"<long>\"\n          }\n        ]\n      }\n    ]\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save 7",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"events\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/eventTypes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"eventTypes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"events\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"location\": \"<string>\",\n      \"eventDate\": \"<dateTime>\",\n      \"typeId\": \"<long>\",\n      \"organizers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"attendees\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ],\n      \"rsvpers\": [\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        },\n        {\n          \"email\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"password\": \"<string>\",\n          \"username\": \"<string>\",\n          \"id\": \"<long>\"\n        }\n      ]\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/eventTypes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eventTypes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "chats",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "get Chats By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update Chat",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete Chat",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{chatId}",
+					"item": [
+						{
+							"name": "messages",
+							"item": [
+								{
+									"name": "{messageId}",
+									"item": [
+										{
+											"name": "get Message",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages",
+														":messageId"
+													],
+													"variable": [
+														{
+															"key": "chatId",
+															"value": "<long>",
+															"description": "(Required) "
+														},
+														{
+															"key": "messageId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"chats",
+																":chatId",
+																"messages",
+																":messageId"
+															],
+															"variable": [
+																{
+																	"key": "chatId"
+																},
+																{
+																	"key": "messageId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"sender\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "update Message",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"sender\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages",
+														":messageId"
+													],
+													"variable": [
+														{
+															"key": "chatId",
+															"value": "<long>",
+															"description": "(Required) "
+														},
+														{
+															"key": "messageId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"sender\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"chats",
+																":chatId",
+																"messages",
+																":messageId"
+															],
+															"variable": [
+																{
+																	"key": "chatId"
+																},
+																{
+																	"key": "messageId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"sender\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "delete Message",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages",
+														":messageId"
+													],
+													"variable": [
+														{
+															"key": "chatId",
+															"value": "<long>",
+															"description": "(Required) "
+														},
+														{
+															"key": "messageId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"chats",
+																":chatId",
+																"messages",
+																":messageId"
+															],
+															"variable": [
+																{
+																	"key": "chatId"
+																},
+																{
+																	"key": "messageId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get All Messages",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:chatId/messages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":chatId",
+												"messages"
+											],
+											"variable": [
+												{
+													"key": "chatId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages"
+													],
+													"variable": [
+														{
+															"key": "chatId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"sender\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    },\n    \"userId\": \"<long>\",\n    \"type\": \"<string>\",\n    \"content\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"sender\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"username\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {\n        \"city\": \"<string>\",\n        \"state\": \"<string>\"\n      },\n      \"gradYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"addressId\": \"<long>\"\n    },\n    \"userId\": \"<long>\",\n    \"type\": \"<string>\",\n    \"content\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "add Message",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"sender\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/chats/:chatId/messages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":chatId",
+												"messages"
+											],
+											"variable": [
+												{
+													"key": "chatId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"sender\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages"
+													],
+													"variable": [
+														{
+															"key": "chatId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"sender\": {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "participants",
+							"item": [
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "delete Chat Participant",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/participants/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"participants",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "chatId",
+															"value": "<long>",
+															"description": "(Required) "
+														},
+														{
+															"key": "userId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/chats/:chatId/participants/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"chats",
+																":chatId",
+																"participants",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "chatId"
+																},
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get All Chat Participants",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:chatId/participants",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":chatId",
+												"participants"
+											],
+											"variable": [
+												{
+													"key": "chatId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/participants",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"participants"
+													],
+													"variable": [
+														{
+															"key": "chatId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "add Chat Participants",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  \"<long>\",\n  \"<long>\"\n]",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/chats/:chatId/participants",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":chatId",
+												"participants"
+											],
+											"variable": [
+												{
+													"key": "chatId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "[\n  \"<long>\",\n  \"<long>\"\n]",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/participants",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"participants"
+													],
+													"variable": [
+														{
+															"key": "chatId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n]"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get All Chats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/chats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/chats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"isGroup\": \"<boolean>\",\n    \"name\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"isGroup\": \"<boolean>\",\n    \"name\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "add Chat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/chats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "applications",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id 8",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/applications/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"applications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/applications/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"applications",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"status\": \"Pending\",\n  \"userId\": \"<long>\",\n  \"jobId\": \"<long>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update 8",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"status\": \"Pending\",\n  \"userId\": \"<long>\",\n  \"jobId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/applications/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"applications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"status\": \"Pending\",\n  \"userId\": \"<long>\",\n  \"jobId\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/applications/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"applications",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 8",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/applications",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"applications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/applications",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"applications"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"status\": \"Pending\",\n    \"userId\": \"<long>\",\n    \"jobId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"status\": \"Rejected\",\n    \"userId\": \"<long>\",\n    \"jobId\": \"<long>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save 8",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"status\": \"Pending\",\n  \"userId\": \"<long>\",\n  \"jobId\": \"<long>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/applications",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"applications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"status\": \"Pending\",\n  \"userId\": \"<long>\",\n  \"jobId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/applications",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"applications"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "update",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "update User Details",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"username\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": {\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"gradYear\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"educationalDetails\": \"<string>\",\n  \"professionalAchievements\": \"<string>\",\n  \"profilePic\": \"<string>\",\n  \"addressId\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/update/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														"update",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"username\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": {\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"gradYear\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"educationalDetails\": \"<string>\",\n  \"professionalAchievements\": \"<string>\",\n  \"profilePic\": \"<string>\",\n  \"addressId\": \"<long>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/users/update/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"users",
+																"update",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"username\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": {\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"gradYear\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"educationalDetails\": \"<string>\",\n  \"professionalAchievements\": \"<string>\",\n  \"profilePic\": \"<string>\",\n  \"addressId\": \"<long>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "register",
+							"item": [
+								{
+									"name": "register User",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/register",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"register"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														"register"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "profile",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "get User Profile",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/profile/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														"profile",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/users/profile/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"users",
+																"profile",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"username\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": {\n    \"city\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"gradYear\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"educationalDetails\": \"<string>\",\n  \"professionalAchievements\": \"<string>\",\n  \"profilePic\": \"<string>\",\n  \"addressId\": \"<long>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "address",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "get Users By Address",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/address/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														"address",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/users/address/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"users",
+																"address",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n]"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get All Users",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"item": [
+								{
+									"name": "login",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"<string>\",\n  \"usernameOrEmail\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"password\": \"<string>\",\n  \"usernameOrEmail\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/auth/login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"auth",
+														"login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "signin",
+							"item": [
+								{
+									"name": "login 1",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"<string>\",\n  \"usernameOrEmail\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/signin",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"signin"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"password\": \"<string>\",\n  \"usernameOrEmail\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/auth/signin",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"auth",
+														"signin"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "register",
+							"item": [
+								{
+									"name": "register",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/register",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"register"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/auth/register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"auth",
+														"register"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "signup",
+							"item": [
+								{
+									"name": "register 1",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/signup",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"username\": \"<string>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/auth/signup",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"auth",
+														"signup"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "alumniDirectory",
+			"item": [
+				{
+					"name": "search",
+					"item": [
+						{
+							"name": "search Alumni Directory",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/alumniDirectory/search?gradYear=<string>&industry=<string>&city=<string>&state=<string>&coursesIds=<long>,<long>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"alumniDirectory",
+										"search"
+									],
+									"query": [
+										{
+											"key": "gradYear",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "industry",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "city",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "state",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "coursesIds",
+											"value": "<long>,<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/alumniDirectory/search?gradYear=<string>&industry=<string>&city=<string>&state=<string>&coursesIds=<long>,<long>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"alumniDirectory",
+												"search"
+											],
+											"query": [
+												{
+													"key": "gradYear",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "industry",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "city",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "state",
+													"value": "<string>",
+													"description": "(Required) "
+												},
+												{
+													"key": "coursesIds",
+													"value": "<long>,<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"username\": \"<string>\",\n    \"email\": \"<string>\",\n    \"address\": {\n      \"city\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"gradYear\": \"<string>\",\n    \"industry\": \"<string>\",\n    \"educationalDetails\": \"<string>\",\n    \"professionalAchievements\": \"<string>\",\n    \"profilePic\": \"<string>\",\n    \"addressId\": \"<long>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}

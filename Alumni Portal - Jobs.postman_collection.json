@@ -1,0 +1,848 @@
+{
+	"info": {
+		"_postman_id": "8775f9f9-2b54-4102-bec1-2f01d1b32201",
+		"name": "Alumni Portal",
+		"description": "Alumni Management Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18846146"
+	},
+	"item": [
+		{
+			"name": "postings",
+			"item": [
+				{
+					"name": "find All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/postings"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/postings"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"creationDate\": \"<dateTime>\",\n    \"status\": \"Closed\",\n    \"job\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"requirements\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"user\": {\n        \"id\": \"<long>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"graduationYear\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"educationalDetails\": \"<string>\",\n        \"professionalAchievements\": \"<string>\",\n        \"profilePic\": \"<string>\",\n        \"address\": {\n          \"id\": \"<long>\",\n          \"location\": \"<string>\",\n          \"zip\": \"<string>\",\n          \"city\": \"<string>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        },\n        \"jobApplications\": [\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Rejected\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          },\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Pending\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          }\n        ]\n      },\n      \"jobPosting\": {\n        \"id\": \"<long>\",\n        \"creationDate\": \"<dateTime>\",\n        \"status\": \"Open\",\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        },\n        \"poster\": {\n          \"id\": \"<long>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"email\": \"<string>\",\n          \"password\": \"<string>\",\n          \"graduationYear\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"educationalDetails\": \"<string>\",\n          \"professionalAchievements\": \"<string>\",\n          \"profilePic\": \"<string>\",\n          \"address\": {\n            \"id\": \"<long>\",\n            \"location\": \"<string>\",\n            \"zip\": \"<string>\",\n            \"city\": \"<string>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          },\n          \"jobApplications\": [\n            {\n              \"id\": \"<long>\",\n              \"status\": \"Accepeted\",\n              \"user\": {\n                \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n              },\n              \"job\": {\n                \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n              }\n            },\n            {\n              \"id\": \"<long>\",\n              \"status\": \"Pending\",\n              \"user\": {\n                \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n              },\n              \"job\": {\n                \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n              }\n            }\n          ]\n        }\n      },\n      \"jobApplications\": [\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Accepeted\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        },\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Accepeted\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        }\n      ]\n    },\n    \"posterId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"creationDate\": \"<dateTime>\",\n    \"status\": \"Open\",\n    \"job\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"requirements\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"user\": {\n        \"id\": \"<long>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"graduationYear\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"educationalDetails\": \"<string>\",\n        \"professionalAchievements\": \"<string>\",\n        \"profilePic\": \"<string>\",\n        \"address\": {\n          \"id\": \"<long>\",\n          \"location\": \"<string>\",\n          \"zip\": \"<string>\",\n          \"city\": \"<string>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        },\n        \"jobApplications\": [\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Rejected\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          },\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Rejected\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          }\n        ]\n      },\n      \"jobPosting\": {\n        \"id\": \"<long>\",\n        \"creationDate\": \"<dateTime>\",\n        \"status\": \"Open\",\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        },\n        \"poster\": {\n          \"id\": \"<long>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"email\": \"<string>\",\n          \"password\": \"<string>\",\n          \"graduationYear\": \"<string>\",\n          \"industry\": \"<string>\",\n          \"educationalDetails\": \"<string>\",\n          \"professionalAchievements\": \"<string>\",\n          \"profilePic\": \"<string>\",\n          \"address\": {\n            \"id\": \"<long>\",\n            \"location\": \"<string>\",\n            \"zip\": \"<string>\",\n            \"city\": \"<string>\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            }\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          },\n          \"jobApplications\": [\n            {\n              \"id\": \"<long>\",\n              \"status\": \"Accepeted\",\n              \"user\": {\n                \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n              },\n              \"job\": {\n                \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n              }\n            },\n            {\n              \"id\": \"<long>\",\n              \"status\": \"Rejected\",\n              \"user\": {\n                \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n              },\n              \"job\": {\n                \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n              }\n            }\n          ]\n        }\n      },\n      \"jobApplications\": [\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Rejected\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        },\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Pending\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        }\n      ]\n    },\n    \"posterId\": \"<long>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"creationDate\": \"2023-11-06T00:00:00\",\n  \"status\": \"Open\",\n  \"job\": {\n    \"name\": \"Spring Developer\",\n    \"description\": \"Java Spring Developer\",\n    \"requirements\": \"To be able to code\"\n  },\n  \"posterId\": 1\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/postings"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"creationDate\": \"<dateTime>\",\n  \"status\": \"Open\",\n  \"job\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"graduationYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"address\": {\n        \"id\": \"<long>\",\n        \"location\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        }\n      },\n      \"job\": {\n        \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n      },\n      \"jobApplications\": [\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Accepeted\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        },\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Accepeted\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        }\n      ]\n    },\n    \"jobPosting\": {\n      \"id\": \"<long>\",\n      \"creationDate\": \"<dateTime>\",\n      \"status\": \"Closed\",\n      \"job\": {\n        \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n      },\n      \"poster\": {\n        \"id\": \"<long>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"graduationYear\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"educationalDetails\": \"<string>\",\n        \"professionalAchievements\": \"<string>\",\n        \"profilePic\": \"<string>\",\n        \"address\": {\n          \"id\": \"<long>\",\n          \"location\": \"<string>\",\n          \"zip\": \"<string>\",\n          \"city\": \"<string>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        },\n        \"jobApplications\": [\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Rejected\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          },\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Accepeted\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          }\n        ]\n      }\n    },\n    \"jobApplications\": [\n      {\n        \"id\": \"<long>\",\n        \"status\": \"Pending\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        }\n      },\n      {\n        \"id\": \"<long>\",\n        \"status\": \"Rejected\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        }\n      }\n    ]\n  },\n  \"posterId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/postings"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "423 LOCKED"
+						}
+					]
+				},
+				{
+					"name": "find By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/postings/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"postings",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/postings/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postings",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"creationDate\": \"<dateTime>\",\n  \"status\": \"Open\",\n  \"job\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"graduationYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"address\": {\n        \"id\": \"<long>\",\n        \"location\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        }\n      },\n      \"job\": {\n        \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n      },\n      \"jobApplications\": [\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Accepeted\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        },\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Accepeted\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        }\n      ]\n    },\n    \"jobPosting\": {\n      \"id\": \"<long>\",\n      \"creationDate\": \"<dateTime>\",\n      \"status\": \"Closed\",\n      \"job\": {\n        \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n      },\n      \"poster\": {\n        \"id\": \"<long>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"graduationYear\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"educationalDetails\": \"<string>\",\n        \"professionalAchievements\": \"<string>\",\n        \"profilePic\": \"<string>\",\n        \"address\": {\n          \"id\": \"<long>\",\n          \"location\": \"<string>\",\n          \"zip\": \"<string>\",\n          \"city\": \"<string>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        },\n        \"jobApplications\": [\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Rejected\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          },\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Accepeted\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          }\n        ]\n      }\n    },\n    \"jobApplications\": [\n      {\n        \"id\": \"<long>\",\n        \"status\": \"Pending\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        }\n      },\n      {\n        \"id\": \"<long>\",\n        \"status\": \"Rejected\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        }\n      }\n    ]\n  },\n  \"posterId\": \"<long>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"creationDate\": \"2023-11-06T00:00:00\",\n    \"status\": \"Closed\",\n    \"job\": {\n        \"id\": 6,\n        \"name\": \"Customer Service Representative!!\",\n        \"description\": \"Customer Service Representative position for a call center.\",\n        \"requirements\": \"High school diploma, good communication skills.\",\n        \"userId\": 6\n    },\n    \"posterId\": 6\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/postings/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"postings",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"creationDate\": \"<dateTime>\",\n  \"status\": \"Open\",\n  \"job\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user\": {\n      \"id\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"graduationYear\": \"<string>\",\n      \"industry\": \"<string>\",\n      \"educationalDetails\": \"<string>\",\n      \"professionalAchievements\": \"<string>\",\n      \"profilePic\": \"<string>\",\n      \"address\": {\n        \"id\": \"<long>\",\n        \"location\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"city\": \"<string>\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        }\n      },\n      \"job\": {\n        \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n      },\n      \"jobApplications\": [\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Accepeted\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        },\n        {\n          \"id\": \"<long>\",\n          \"status\": \"Accepeted\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          },\n          \"job\": {\n            \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n          }\n        }\n      ]\n    },\n    \"jobPosting\": {\n      \"id\": \"<long>\",\n      \"creationDate\": \"<dateTime>\",\n      \"status\": \"Closed\",\n      \"job\": {\n        \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n      },\n      \"poster\": {\n        \"id\": \"<long>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"password\": \"<string>\",\n        \"graduationYear\": \"<string>\",\n        \"industry\": \"<string>\",\n        \"educationalDetails\": \"<string>\",\n        \"professionalAchievements\": \"<string>\",\n        \"profilePic\": \"<string>\",\n        \"address\": {\n          \"id\": \"<long>\",\n          \"location\": \"<string>\",\n          \"zip\": \"<string>\",\n          \"city\": \"<string>\",\n          \"user\": {\n            \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n          }\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        },\n        \"jobApplications\": [\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Rejected\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          },\n          {\n            \"id\": \"<long>\",\n            \"status\": \"Accepeted\",\n            \"user\": {\n              \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n            },\n            \"job\": {\n              \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n            }\n          }\n        ]\n      }\n    },\n    \"jobApplications\": [\n      {\n        \"id\": \"<long>\",\n        \"status\": \"Pending\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        }\n      },\n      {\n        \"id\": \"<long>\",\n        \"status\": \"Rejected\",\n        \"user\": {\n          \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n        },\n        \"job\": {\n          \"value\": \"<Circular reference to #/components/schemas/Job detected>\"\n        }\n      }\n    ]\n  },\n  \"posterId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/postings/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"postings",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "423 LOCKED"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "jobs",
+			"item": [
+				{
+					"name": "find All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/jobs"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/jobs"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"userId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"requirements\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"userId\": \"<long>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \".NET Developer\",\n  \"description\": \"C# .NET Developer\",\n  \"requirements\": \"Able to Code in C#\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/jobs"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requirements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/jobs"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "423 LOCKED"
+						}
+					]
+				},
+				{
+					"name": "find By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/jobs/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"jobs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/jobs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requirements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userId\": \"<long>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 7,\n    \"name\": \"Data Analyst!!\",\n    \"description\": \"Data Analyst role at a data analytics company.\",\n    \"requirements\": \"Bachelors degree in Statistics, experience with data analysis tools.\",\n    \"userId\": 7\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/jobs/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"jobs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "7",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requirements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"userId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/jobs/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"jobs",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "423 LOCKED"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "applications",
+			"item": [
+				{
+					"name": "find All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/applications"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/applications"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"status\": \"Accepeted\",\n    \"userId\": \"<long>\",\n    \"jobId\": \"<long>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"status\": \"Pending\",\n    \"userId\": \"<long>\",\n    \"jobId\": \"<long>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"Pending\",\n  \"userId\": \"10\",\n  \"jobId\": \"10\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/applications"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"status\": \"Accepeted\",\n  \"userId\": \"<long>\",\n  \"jobId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/applications"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "423 LOCKED"
+						}
+					]
+				},
+				{
+					"name": "find By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/applications/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"applications",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/applications/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"applications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"status\": \"Accepeted\",\n  \"userId\": \"<long>\",\n  \"jobId\": \"<long>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 10,\n    \"status\": \"Accepted\",\n    \"userId\": 10,\n    \"jobId\": 10\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/applications/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"applications",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"status\": \"Accepeted\",\n  \"userId\": \"<long>\",\n  \"jobId\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/applications/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"applications",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "423 LOCKED"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
