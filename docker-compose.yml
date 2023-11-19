@@ -58,6 +58,7 @@ services:
       - eventsdb
     networks:
       - alumni
+      - events
     environment:
       - PORT=8801
       - EUREKA_URI=http://discovery:8000/eureka
@@ -76,8 +77,10 @@ services:
       - MYSQL_ROOT_PASSWORD=1
     restart: always
     networks:
-      - alumni
+      - events
 
 networks:
   alumni:
+    driver: bridge
+  events:
     driver: bridge
