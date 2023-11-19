@@ -15,5 +15,7 @@ public class Application {
     private boolean isDeleted;
     @ManyToOne
     private User student;
+    @ManyToOne
+    private Job job;
 
 }

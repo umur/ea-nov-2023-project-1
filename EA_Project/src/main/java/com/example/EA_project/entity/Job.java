@@ -22,6 +22,7 @@ public class Job {
     private int id;
     private String companyName;
     private String industry;
+    private String description;
     @ManyToOne(fetch = FetchType.EAGER)
     private Student student;
     @ManyToMany
