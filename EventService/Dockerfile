@@ -1,5 +1,7 @@
 FROM eclipse-temurin:latest
 EXPOSE 8801
+ENV PORT=8801
+ENV CONFIG_URI=http://configuration:8001
 RUN mkdir /app
 WORKDIR /app
 COPY . ./src

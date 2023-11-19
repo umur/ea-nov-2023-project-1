@@ -1,0 +1,83 @@
+services:
+  discovery:
+    container_name: discovery
+    image: servicediscovery
+    ports:
+      - "8000:8000"
+    restart: always
+    networks:
+      - alumni
+    environment:
+      - PORT=8000
+      - EUREKA_URI=http://discovery:8000/eureka
+
+  config:
+    container_name: config
+    image: configserver
+    ports:
+      - "8001:8001"
+    restart: always
+    depends_on:
+      - discovery
+    networks:
+      - alumni
+    environment:
+      - PORT=8001
+      - EUREKA_URI=http://discovery:8000/eureka
+      - EVENT_PORT=8801
+      - EVENT_DB_URL=eventsdb:3306
+      - EVENT_DB_NAME=eventsDb
+      - EVENT_DB_USER=root
+      - EVENT_DB_PASSWORD=1
+
+  apigateway:
+    container_name: apigateway
+    image: apigateway
+    ports:
+      - "8002:8002"
+    restart: always
+    depends_on:
+      - discovery
+      - config
+    networks:
+      - alumni
+    environment:
+      - PORT=8002
+      - EUREKA_URI=http://discovery:8000/eureka
+
+  eventservice:
+    container_name: eventservice
+    image: eventservice
+    ports:
+      - "8801:8801"
+    restart: always
+    depends_on:
+      - discovery
+      - config
+      - apigateway
+      - eventsdb
+    networks:
+      - alumni
+    environment:
+      - PORT=8801
+      - EUREKA_URI=http://discovery:8000/eureka
+      - CONFIG_URI=http://config:8001
+      - EVENT_DB_URL=eventsdb:3306
+      - EVENT_DB_NAME=eventsdb
+      - EVENT_DB_USER=root
+      - EVENT_DB_PASSWORD=1
+
+  eventsdb:
+    container_name: eventsdb
+    image: mysql
+    ports:
+      - "9901:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+    restart: always
+    networks:
+      - alumni
+
+networks:
+  alumni:
+    driver: bridge

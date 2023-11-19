@@ -1,5 +1,9 @@
 FROM eclipse-temurin:latest
 EXPOSE 8000
+
+ENV PORT = 8000
+ENV EUREKA_URI=http://localhost:8000/eureka
+
 RUN mkdir /app
 WORKDIR /app
 COPY . ./src
