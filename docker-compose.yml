@@ -73,7 +73,7 @@ services:
     container_name: userservice
     image: userservice
     ports:
-      - "8802:8802"
+      - "8181:8181"
     restart: always
     depends_on:
       - discovery
@@ -84,7 +84,7 @@ services:
       - alumni
       - users
     environment:
-      - PORT=8802
+      - PORT=8181
       - EUREKA_URI=http://discovery:8000/eureka
       - CONFIG_URI=http://config:8001
       - USER_DB_URL=usersdb:3306
@@ -109,7 +109,7 @@ services:
     ports:
       - "9902:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=1
+      - MYSQL_ROOT_PASSWORD=cluster@1
     restart: always
     networks:
       - users
