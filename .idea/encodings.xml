@@ -4,7 +4,9 @@
     <file url="file://$PROJECT_DIR$/EA_Project/Discovery-Server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EA_Project/Discovery-Server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EA_Project/Event-Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EA_Project/Event-Service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EA_Project/Job-Service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EA_Project/Job-Service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EA_Project/Log-Service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EA_Project/Log-Service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EA_Project/Log-Service1/src/main/java" charset="UTF-8" />
@@ -19,5 +21,7 @@
     <file url="file://$PROJECT_DIR$/EA_Project/configuration-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EA_Project/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EA_Project/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EA_Project/student-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EA_Project/surevy_surveyresponse-service/src/main/java" charset="UTF-8" />
   </component>
 </project>
