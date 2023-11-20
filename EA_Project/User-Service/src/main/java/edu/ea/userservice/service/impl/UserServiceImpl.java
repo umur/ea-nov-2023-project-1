@@ -5,6 +5,7 @@ import edu.ea.userservice.model.User;
 import edu.ea.userservice.repository.UserRepo;
 import edu.ea.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,9 +18,10 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepo usRepo;
 
-
+    private final PasswordEncoder passwordEncoder;
 
     public User addUser(User u) {
+        u.setPassword(passwordEncoder.encode(u.getPassword()));
         return usRepo.save(u);
     }
 
