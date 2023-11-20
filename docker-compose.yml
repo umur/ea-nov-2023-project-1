@@ -56,6 +56,7 @@ services:
       - config
       - apigateway
       - eventsdb
+      - userservice
     networks:
       - alumni
       - events
@@ -68,6 +69,29 @@ services:
       - EVENT_DB_USER=root
       - EVENT_DB_PASSWORD=1
 
+  userservice:
+    container_name: userservice
+    image: userservice
+    ports:
+      - "8802:8802"
+    restart: always
+    depends_on:
+      - discovery
+      - config
+      - apigateway
+      - usersdb
+    networks:
+      - alumni
+      - users
+    environment:
+      - PORT=8802
+      - EUREKA_URI=http://discovery:8000/eureka
+      - CONFIG_URI=http://config:8001
+      - USER_DB_URL=usersdb:3306
+      - USER_DB_NAME=usersdb
+      - USER_DB_USER=root
+      - USER_DB_PASSWORD=1
+
   eventsdb:
     container_name: eventsdb
     image: mysql
@@ -79,8 +103,21 @@ services:
     networks:
       - events
 
+  usersdb:
+    container_name: usersdb
+    image: mysql
+    ports:
+      - "9902:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+    restart: always
+    networks:
+      - users
+
 networks:
   alumni:
     driver: bridge
   events:
+    driver: bridge
+  users:
     driver: bridge
