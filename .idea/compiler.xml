@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-project" />
+        <module name="Job-Service" />
         <module name="Log-Service" />
         <module name="Event-Service" />
         <module name="News-Service" />

@@ -1,10 +1,10 @@
-package com.example.EA_project.service.impl;
+package edu.ea.jobservice.service.impl;
 
 import com.example.EA_project.entity.Job;
-import com.example.EA_project.entity.Student;
-import com.example.EA_project.repository.JobRepo;
 import com.example.EA_project.service.JobService;
-import com.example.EA_project.service.StudentService;
+import edu.ea.jobservice.model.Student;
+import edu.ea.jobservice.repository.JobRepo;
+import edu.ea.jobservice.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.example.EA_project.repository;
+package edu.ea.jobservice.repository;
 
 import com.example.EA_project.entity.Job;
 import org.springframework.data.repository.ListCrudRepository;

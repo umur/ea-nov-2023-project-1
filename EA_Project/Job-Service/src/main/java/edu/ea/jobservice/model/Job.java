@@ -2,6 +2,7 @@ package com.example.EA_project.entity;
 
 import java.util.List;
 
+import edu.ea.jobservice.model.Student;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -23,7 +24,11 @@ public class Job {
     private String companyName;
     private String industry;
     private String description;
-    private int studentId;
-    private int appliedStudent;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Student student;
+    @ManyToMany
+    private List<Student> appliedStudents;
+    @Embedded
+
     private String address;
 }
