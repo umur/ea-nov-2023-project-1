@@ -4,7 +4,6 @@ import com.example.log_service.model.Log;
 import com.example.log_service.repository.LogRepo;
 import com.example.log_service.service.LogService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
