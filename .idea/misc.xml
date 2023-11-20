@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/EA_Project/pom.xml" />
         <option value="$PROJECT_DIR$/EA_Project/News/pom.xml" />
         <option value="$PROJECT_DIR$/EA_Project/Log_Service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/Log-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/News-Service/pom.xml" />
       </list>
     </option>
   </component>

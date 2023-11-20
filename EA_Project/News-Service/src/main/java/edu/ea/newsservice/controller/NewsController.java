@@ -1,8 +1,7 @@
-package com.example.news.controller;
+package edu.ea.newsservice.controller;
 
-
-import com.example.news.model.News;
-import com.example.news.service.NewsService;
+import edu.ea.newsservice.model.News;
+import edu.ea.newsservice.service.NewsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

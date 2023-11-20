@@ -1,7 +1,8 @@
-package com.example.news.repository;
+package edu.ea.newsservice.repository;
 
 
-import com.example.news.model.News;
+
+import edu.ea.newsservice.model.News;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -16,7 +16,7 @@ public class Log {
     private Long id;
     private LocalDateTime time;
     private String description;
-    private Long idUser;
+    //private Long idUser;
     @ManyToOne
     @JoinColumn
    private User user;

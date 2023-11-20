@@ -1,9 +1,8 @@
-package com.example.news.service.impl;
+package edu.ea.newsservice.service.impl;
 
-
-import com.example.news.model.News;
-import com.example.news.repository.NewsRepo;
-import com.example.news.service.NewsService;
+import edu.ea.newsservice.model.News;
+import edu.ea.newsservice.repository.NewsRepo;
+import edu.ea.newsservice.service.NewsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

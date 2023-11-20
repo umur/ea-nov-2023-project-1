@@ -1,7 +1,6 @@
-package com.example.news.service;
+package edu.ea.newsservice.service;
 
-
-import com.example.news.model.News;
+import edu.ea.newsservice.model.News;
 
 
 import java.util.List;
