@@ -1,4 +1,4 @@
-package com.example.log_service;
+package edu.ea.logservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

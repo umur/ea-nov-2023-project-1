@@ -1,6 +1,6 @@
-package com.example.log_service.repository;
+package edu.ea.logservice.repository;
 
-import com.example.log_service.model.Log;
+import edu.ea.logservice.model.Log;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 

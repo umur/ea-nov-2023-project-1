@@ -1,6 +1,6 @@
-package com.example.log_service.service;
+package edu.ea.logservice.service;
 
-import com.example.log_service.model.Log;
+import edu.ea.logservice.model.Log;
 
 import java.time.LocalDateTime;
 import java.util.List;

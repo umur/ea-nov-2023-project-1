@@ -1,8 +1,8 @@
-package com.example.log_service.service.impl;
+package edu.ea.logservice.service.impl;
 
-import com.example.log_service.model.Log;
-import com.example.log_service.repository.LogRepo;
-import com.example.log_service.service.LogService;
+import edu.ea.logservice.model.Log;
+import edu.ea.logservice.repository.LogRepo;
+import edu.ea.logservice.service.LogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.example.log_service.model;
+package edu.ea.logservice.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

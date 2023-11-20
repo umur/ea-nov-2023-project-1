@@ -1,4 +1,4 @@
-package com.example.log_service;
+package edu.ea.logservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
