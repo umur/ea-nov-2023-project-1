@@ -4,7 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import com.alumni.EventService.dto.EventDto;
 import com.alumni.EventService.dto.EventTypeDto;
+import com.alumni.EventService.entity.Event;
 import com.alumni.EventService.entity.EventType;
 import com.alumni.EventService.repository.EventTypeRepository;
 import java.util.ArrayList;
@@ -25,9 +27,17 @@ public class EventTypeServiceImpl implements EventTypeService {
     public List<EventTypeDto> findAll() {
         List<EventType> eventTypes = eventTypeRepo.findAll();
         var res = new ArrayList<EventTypeDto>();
-        eventTypes.forEach(eventType -> {
-            res.add(mapper.map(eventType, EventTypeDto.class));
-        });
+        // eventTypes.forEach(eventType -> {
+        // EventTypeDto e = new EventTypeDto();
+
+        // eventType.getEvents().forEach(event -> {
+        // EventDto edto = new EventDto();
+
+        // e.getEvents().add(null)
+        // });
+
+        // res.add(mapper.map(eventType, EventTypeDto.class));
+        // });
         return res;
     }
 

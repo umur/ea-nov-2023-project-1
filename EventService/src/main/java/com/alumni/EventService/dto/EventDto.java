@@ -20,8 +20,8 @@ public class EventDto {
     // private EventTypeDto type;
     private Long typeId;
 
-    private List<UserMinimalDto> organizers = new ArrayList<>();
-    private List<UserMinimalDto> attendees = new ArrayList<>();
-    private List<UserMinimalDto> rsvpers = new ArrayList<>();
+    // private List<UserFullDetailsDto> organizers = new ArrayList<>();
+    // private List<UserFullDetailsDto> attendees = new ArrayList<>();
+    // private List<UserFullDetailsDto> rsvpers = new ArrayList<>();
 
 }

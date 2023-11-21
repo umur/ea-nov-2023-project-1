@@ -1,4 +1,4 @@
-package com.alumni.EventService;
+package com.alumni.JobService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,9 +8,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-public class EventServiceApplication {
+public class JobServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EventServiceApplication.class, args);
+		SpringApplication.run(JobServiceApplication.class, args);
 	}
 }

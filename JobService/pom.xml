@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.alumni</groupId>
-	<artifactId>EventService</artifactId>
+	<artifactId>JobService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>EventService</name>
-	<description>Events Service For Alumni Management</description>
+	<name>JobService</name>
+	<description>Jobs Service For Alumni Management</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
