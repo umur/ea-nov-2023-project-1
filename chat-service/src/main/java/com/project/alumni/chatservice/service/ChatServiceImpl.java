@@ -107,7 +107,7 @@ public class ChatServiceImpl implements ChatService {
 
         List<Long> usersNotFound = userIds.stream().filter(userId -> usersToAdd.stream().noneMatch(user -> user.getId().equals(userId))).toList();
         if (!usersNotFound.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Users with ids: " + usersNotFound.toString() + " not found");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Users with ids: " + usersNotFound.toString() + " not found");
         }
 
         List<Long> usersAlreadyInChat = usersToAdd.stream().filter(chatParticipants::contains).map(ExternalUserDto::getId).toList();

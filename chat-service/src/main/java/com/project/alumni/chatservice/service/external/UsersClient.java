@@ -12,6 +12,6 @@ import java.util.List;
 @FeignClient("user-service")
 public interface UsersClient {
     // get list users by ids
-    @GetMapping("/users")
+    @GetMapping("/api/users/byIds")
     List<ExternalUserDto> findAllByIdIn(@RequestParam List<Long> ids);
 }
