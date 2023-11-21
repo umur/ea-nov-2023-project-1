@@ -1,4 +1,4 @@
-package com.alumni.insight.dto;
+package com.alumni.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,9 +7,11 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class InsightsDto {
+public class SurveyDto {
     private Long id;
     private String title;
     private String description;
-    private Date publicationDate;
+    private Date startDate;
+    private Date endDate;
+    private ExternalUserDto user;
 }

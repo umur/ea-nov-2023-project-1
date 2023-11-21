@@ -1,8 +1,9 @@
-package com.alumni.insight;
+package com.alumni;
 
 import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration

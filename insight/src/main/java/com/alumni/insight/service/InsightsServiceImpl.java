@@ -1,8 +1,8 @@
-package main.java.com.alumni.insight.service;
+package com.alumni.insight.service;
 
-import main.java.com.alumni.insight.dto.InsightsDto;
-import main.java.com.alumni.insight.entity.Insights;
-import main.java.com.alumni.insight.repository.AlumniInsightsRepo;
+import com.alumni.insight.dto.InsightsDto;
+import com.alumni.insight.entity.Insights;
+import com.alumni.insight.repository.AlumniInsightsRepo;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

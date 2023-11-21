@@ -1,4 +1,4 @@
-package main.java.com.alumni.insight.entity;
+package com.alumni.insight.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.util.Date;
 
+@Table(name = "insights")
 @Entity
 @Getter
 @Setter

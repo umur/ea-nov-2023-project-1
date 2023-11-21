@@ -1,7 +1,7 @@
-package main.java.com.alumni.insight.controller;
+package com.alumni.insight.controller;
 
-import main.java.com.alumni.insight.dto.InsightsDto;
-import main.java.com.alumni.insight.service.InsightsService;
+import com.alumni.insight.dto.InsightsDto;
+import com.alumni.insight.service.InsightsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

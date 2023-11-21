@@ -1,4 +1,4 @@
-package com.alumni.insight;
+package com.alumni;
 
 import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;

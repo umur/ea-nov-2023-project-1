@@ -1,6 +1,6 @@
-package main.java.com.alumni.insight.service;
+package com.alumni.insight.service;
 
-import main.java.com.alumni.insight.dto.InsightsDto;
+import com.alumni.insight.dto.InsightsDto;
 import java.util.List;
 public interface InsightsService {
 
