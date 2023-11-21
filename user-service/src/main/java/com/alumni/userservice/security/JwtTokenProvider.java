@@ -1,6 +1,6 @@
 package com.alumni.userservice.security;
 
-import com.project.alumni.exceptions.GlobalAPIException;
+import com.alumni.userservice.exceptions.GlobalAPIException;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
