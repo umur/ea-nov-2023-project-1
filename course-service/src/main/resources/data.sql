@@ -1,15 +1,15 @@
 -- Courses -- id and name
 
-INSERT INTO courses (id, name)
-VALUES (1, 'Software Engineering'),
-       (2, 'Marketing'),
-       (3, 'Accounting'),
-       (4, 'IT Support'),
-       (5, 'Graphic Design'),
-       (6, 'Business Administration'),
-       (7, 'Statistics'),
-       (8, 'Computer Science'),
-       (9, 'Networking'),
-       (10, 'Sales');
+INSERT INTO courses (name)
+VALUES ('Software Engineering'),
+       ('Marketing'),
+       ('Accounting'),
+       ('IT Support'),
+       ('Graphic Design'),
+       ('Business Administration'),
+       ('Statistics'),
+       ('Computer Science'),
+       ('Networking'),
+       ('Sales');
 
 -- Courses -- id and name

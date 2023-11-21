@@ -1,4 +1,4 @@
-package com.dunky.enrollmentservice.entity;
+package com.dunky.enrollmentservice.payload;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,13 +10,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "enrollments")
-public class Enrollment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EnrollmentDto {
     private Long id;
-    private Long UserId;
+    private Long userId;
     private Long courseId;
 
 }
