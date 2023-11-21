@@ -12,16 +12,11 @@ public class User  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String image;
-    private String password;
     private String email;
-    @Embedded
-    private Address address;
-    private boolean isActive;
-    private String cv;
-    private boolean isDeleted;
-    @OneToOne
+    private String password;
+    private boolean active;
+    private boolean deleted;
+    @ManyToOne
     @JoinColumn(name="role_id")
     Role role;
 

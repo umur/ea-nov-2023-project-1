@@ -34,15 +34,15 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Discovery-Server" options="" />
-      <module name="Event-Service" options="" />
-      <module name="Job-Service" options="" />
-      <module name="Log-Service" options="" />
+      <module name="Discovery-Server" options="-parameters" />
+      <module name="Event-Service" options="-parameters" />
+      <module name="Job-Service" options="-parameters" />
+      <module name="Log-Service" options="-parameters" />
       <module name="Log-Service1" options="-parameters" />
-      <module name="News-Service" options="" />
-      <module name="User-Service" options="" />
-      <module name="api-gatway" options="" />
-      <module name="configuration-service" options="" />
+      <module name="News-Service" options="-parameters" />
+      <module name="User-Service" options="-parameters" />
+      <module name="api-gatway" options="-parameters" />
+      <module name="configuration-service" options="-parameters" />
       <module name="spring-project" options="-parameters" />
       <module name="student-service" options="-parameters" />
       <module name="surevy_surveyresponse-service" options="-parameters" />

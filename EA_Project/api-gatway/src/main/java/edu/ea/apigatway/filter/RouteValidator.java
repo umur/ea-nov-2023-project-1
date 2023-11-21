@@ -1,5 +1,4 @@
 package edu.ea.apigatway.filter;
-
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +9,7 @@ import java.util.function.Predicate;
 public class RouteValidator {
 
     public static final List<String> openApiEndpoints = List.of(
+            "/auth/signin",
             "/auth/register",
             "/auth/token",
             "/eureka"

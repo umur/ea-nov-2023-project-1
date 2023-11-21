@@ -19,13 +19,5 @@ public interface UserRepo extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
 
 
-    List<User> findByNameContainingAndIsDeleted(String name, boolean d);
-    List<User> findByIdContainingAndIsDeleted(Long id, boolean d);
 
-    List<User> findAllByIsDeleted(boolean d);
-
-    @Modifying
-    @Query(value = "UPDATE  user  SET `is_deleted` = true WHERE (`id` = ?);\n",
-            nativeQuery = true)
-    void updateUserByIdIs(Long id);
 }

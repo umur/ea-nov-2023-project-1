@@ -16,6 +16,7 @@ public class CustomUserDetails implements UserDetails {
     public CustomUserDetails(User userCredential) {
         this.username = userCredential.getEmail();
         this.password = userCredential.getPassword();
+
     }
 
     @Override
