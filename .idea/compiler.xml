@@ -12,6 +12,7 @@
         <module name="user-service" />
         <module name="ConfigurationService" />
         <module name="APIGatewayService" />
+        <module name="enrollment-service" />
         <module name="ServiceDiscovery" />
       </profile>
     </annotationProcessing>
@@ -23,6 +24,7 @@
       <module name="EventService" options="-parameters" />
       <module name="ServiceDiscovery" options="-parameters" />
       <module name="course-service" options="-parameters" />
+      <module name="enrollment-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>
