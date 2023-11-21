@@ -1,8 +1,9 @@
 package com.alumni.userservice.service;
 
-import com.project.alumni.dto.user.SearchUsersDto;
-import com.project.alumni.dto.user.UserFullDetailsDto;
-import com.project.alumni.dto.user.UserMinimalDto;
+
+import com.alumni.userservice.payload.SearchUsersDto;
+import com.alumni.userservice.payload.UserFullDetailsDto;
+import com.alumni.userservice.payload.UserMinimalDto;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public interface UserService {
 
     List<UserFullDetailsDto> getUsersByAddress(Long addressId);
 
-    List<SearchUsersDto> searchUsersDirectory(String query);
+//    List<SearchUsersDto> searchUsersDirectory(String query);
 
     void deleteUserById(Long id);
 
