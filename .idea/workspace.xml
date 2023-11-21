@@ -4,292 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54ac729d-8fe8-46f7-8a9d-c0f5c23d8a75" name="Changes" comment="Create User Entity #2">
-      <change afterPath="$PROJECT_DIR$/api-gateway/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/edu/miu/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/test/java/edu/miu/apigateway/ApiGatewayApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/src/main/java/edu/miu/configurationservice/ConfigurationServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/src/main/resources/config/product-service.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configuration-service/src/test/java/edu/miu/configurationservice/ConfigurationServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/EAProjectApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/aop/LogMe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/aop/LoggerAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/controller/FacultyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/controller/InformationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/controller/JobController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/controller/MessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/controller/UaaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/AddressDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/AnnouncementDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/ExperienceDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/FacultyDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/InformationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/LoginResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/NewDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/StudentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/UpdatesDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/dto/UserPasswordResetDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/ActivityLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Announcement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Experience.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Faculty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Information.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Job.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/MessageGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/New.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Replay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Staff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/Updates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/entrypoint/AlumniAuthenticationEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/filter/JwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/ActivityLogRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/AnnouncementRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/ExperienceRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/FacultyRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/InformationRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/JobRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/MessageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/NewRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/RoleRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/StudentRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/TokenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/UpdatesRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/respository/UserRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/security/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/ExperienceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/FacultyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/InformationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/JobService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/MessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/impl/ExperienceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/impl/FacultyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/impl/InformationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/impl/JobServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/impl/LogoutServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/impl/MessageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/impl/StudentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/util/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/util/ListMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/util/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/util/SecurityUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/util/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/java/com/ea/project/util/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monolith_version/src/test/java/com/ea/project/DataoneApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/EAProjectApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/aop/LogMe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/aop/LoggerAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/controller/FacultyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/controller/InformationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/controller/JobController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/controller/MessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/controller/UaaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/AddressDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/AnnouncementDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/ExperienceDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/FacultyDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/InformationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/LoginResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/NewDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/StudentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/UpdatesDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/dto/UserPasswordResetDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/ActivityLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Announcement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Experience.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Faculty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Information.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Job.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/MessageGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/New.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Replay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Staff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/Updates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/entrypoint/AlumniAuthenticationEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/filter/JwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/ActivityLogRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/AnnouncementRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/ExperienceRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/FacultyRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/InformationRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/JobRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/MessageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/NewRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/RoleRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/StudentRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/TokenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/UpdatesRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/respository/UserRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/security/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/ExperienceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/FacultyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/InformationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/JobService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/MessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/impl/ExperienceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/impl/FacultyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/impl/InformationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/impl/JobServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/impl/LogoutServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/impl/MessageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/impl/StudentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/util/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/util/ListMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/util/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/util/SecurityUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/util/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/ea/project/util/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/test/java/com/ea/project/DataoneApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ea-nov-2023-project-1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/EAProjectApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/aop/LogMe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/aop/LoggerAspect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/controller/FacultyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/controller/InformationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/controller/JobController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/controller/MessageController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/controller/StudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/controller/UaaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/AddressDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/AnnouncementDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/ExperienceDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/FacultyDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/InformationDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/LoginResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/NewDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/RegisterRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/StudentDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/UpdatesDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/dto/UserPasswordResetDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/ActivityLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Announcement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Experience.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Faculty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Information.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Job.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/MessageGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/New.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Replay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Staff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/Updates.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/entrypoint/AlumniAuthenticationEntryPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/filter/JwtFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/ActivityLogRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/AnnouncementRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/ExperienceRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/FacultyRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/InformationRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/JobRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/MessageRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/NewRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/RoleRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/StudentRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/TokenRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/UpdatesRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/respository/UserRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/security/BeanConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/security/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/ExperienceService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/FacultyService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/InformationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/JobService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/MessageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/StudentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/impl/ExperienceServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/impl/FacultyServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/impl/InformationServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/impl/JobServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/impl/LogoutServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/impl/MessageServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/impl/StudentServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/service/impl/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/util/JwtUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/util/ListMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/util/Mapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/util/SecurityUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/util/Token.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ea/project/util/Utils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ea/project/DataoneApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="54ac729d-8fe8-46f7-8a9d-c0f5c23d8a75" name="Changes" comment="Create User Entity #2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -303,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -316,6 +36,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2XgTSw1I0IvibSzXwP49UCwOIQ1" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -324,30 +47,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;46f86faa6bbf9ac94a7e459509a20ed0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "16-create-repo-service-controller-for-jobs",
+    "last_opened_file_path": "C:/Users/af_aq/Documents/GitHub/ea-nov-2023-project-1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "46f86faa6bbf9ac94a7e459509a20ed0",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ea-nov-2023-project-1" />
@@ -381,6 +106,7 @@
       <workItem from="1699049731564" duration="7261000" />
       <workItem from="1700002788747" duration="1098000" />
       <workItem from="1700546233308" duration="1216000" />
+      <workItem from="1700607861116" duration="219000" />
     </task>
     <task id="LOCAL-00001" summary="kicking the project, initial commit">
       <option name="closed" value="true" />
