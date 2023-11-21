@@ -107,10 +107,12 @@ services:
     depends_on:
       - discovery
       - config
+      - chatdb
       - apigateway
       - userservice
-      - jobsdb
-      - chatdb
+      - prometheus
+      - grafana
+
     networks:
       - alumni
       - chat
@@ -188,6 +190,28 @@ services:
     restart: always
     networks:
       - chat
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "8003:9090"
+    volumes:
+      - ./chat-service/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - chat
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "8004:3000"
+    restart: unless-stopped
+    volumes:
+      - ./chat-service/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+    networks:
+      - chat
+
 
 networks:
   alumni:
