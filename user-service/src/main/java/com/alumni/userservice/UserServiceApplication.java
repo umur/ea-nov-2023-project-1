@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.reactive.function.client.WebClient;
 
 @OpenAPIDefinition(
 		info = @Info(
@@ -33,7 +34,10 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 
 public class UserServiceApplication {
-
+	@Bean
+	public WebClient webClient(){
+		return WebClient.builder().build();
+	}
 	@Bean // To make ModelMapper a Spring Bean.
 	public ModelMapper modelMapper(){
 		return new ModelMapper();

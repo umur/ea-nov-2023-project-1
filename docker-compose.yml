@@ -29,6 +29,11 @@ services:
       - EVENT_DB_NAME=eventsDb
       - EVENT_DB_USER=root
       - EVENT_DB_PASSWORD=1
+      - JOB_PORT=8803
+      - JOB_DB_URL=eventsdb:3306
+      - JOB_DB_NAME=eventsDb
+      - JOB_DB_USER=root
+      - JOB_DB_PASSWORD=1
 
   apigateway:
     container_name: apigateway
@@ -69,6 +74,30 @@ services:
       - EVENT_DB_USER=root
       - EVENT_DB_PASSWORD=1
 
+  jobservice:
+    container_name: jobservice
+    image: jobservice
+    ports:
+      - "8803:8803"
+    restart: always
+    depends_on:
+      - discovery
+      - config
+      - apigateway
+      - userservice
+      - jobsdb
+    networks:
+      - alumni
+      - jobs
+    environment:
+      - PORT=8803
+      - EUREKA_URI=http://discovery:8000/eureka
+      - CONFIG_URI=http://config:8001
+      - JOB_DB_URL=jobsdb:3306
+      - JOB_DB_NAME=jobsdb
+      - JOB_DB_USER=root
+      - JOB_DB_PASSWORD=1
+
   chatservice:
     container_name: chatservice
     image: chatservice
@@ -79,8 +108,9 @@ services:
       - discovery
       - config
       - apigateway
-      - chatdb
       - userservice
+      - jobsdb
+      - chatdb
     networks:
       - alumni
       - chat
@@ -126,6 +156,16 @@ services:
     restart: always
     networks:
       - events
+  jobsdb:
+    container_name: jobsdb
+    image: mysql
+    ports:
+      - "9903:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+    restart: always
+    networks:
+      - jobs
 
   usersdb:
     container_name: usersdb
@@ -153,6 +193,8 @@ networks:
   alumni:
     driver: bridge
   events:
+    driver: bridge
+  jobs:
     driver: bridge
   users:
     driver: bridge
