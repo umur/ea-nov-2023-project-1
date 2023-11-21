@@ -1,4 +1,4 @@
-package com.alumni.EventService;
+package com.alumni.JobService;
 
 import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;
