@@ -8,9 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-project" />
+        <module name="api-gatway" />
         <module name="Job-Service" />
-        <module name="Log-Service" />
+        <module name="configuration-service" />
         <module name="News-Service" />
+        <module name="student-service" />
+        <module name="Log-Service" />
+        <module name="Discovery-Server" />
+        <module name="Event-Service" />
+        <module name="surevy_surveyresponse-service" />
+        <module name="User-Service" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -27,11 +34,18 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Discovery-Server" options="-parameters" />
+      <module name="Event-Service" options="-parameters" />
       <module name="Job-Service" options="-parameters" />
       <module name="Log-Service" options="-parameters" />
       <module name="Log-Service1" options="-parameters" />
       <module name="News-Service" options="-parameters" />
+      <module name="User-Service" options="-parameters" />
+      <module name="api-gatway" options="-parameters" />
+      <module name="configuration-service" options="-parameters" />
       <module name="spring-project" options="-parameters" />
+      <module name="student-service" options="-parameters" />
+      <module name="surevy_surveyresponse-service" options="-parameters" />
       <module name="untitled" options="-parameters" />
     </option>
   </component>
