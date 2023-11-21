@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -20,7 +19,6 @@ target/
 *.iml
 *.ipr
 
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -33,6 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-=======
-/.idea/
->>>>>>> dbfed9bed7e502e5b9c03827564e9f07bcd7d90a

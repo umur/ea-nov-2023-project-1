@@ -82,6 +82,7 @@ services:
       - EVENT_DB_USER=root
       - EVENT_DB_PASSWORD=1
 
+<<<<<<< HEAD
   user-service:
     container_name: user-service
 #    image: user-service
@@ -91,6 +92,38 @@ services:
     ports:
       - "8181:8181"
     restart: on-failure
+=======
+  chatservice:
+    container_name: chatservice
+    image: chatservice
+    ports:
+      - "8809:8809"
+    restart: always
+    depends_on:
+      - discovery
+      - config
+      - apigateway
+      - chatdb
+      - userservice
+    networks:
+      - alumni
+      - chat
+    environment:
+      - PORT=8809
+      - EUREKA_URI=http://discovery:8000/eureka
+      - CONFIG_URI=http://config:8001
+      - CHAT_DB_URL=chatdb:3306
+      - CHAT_DB_NAME=chatDB
+      - CHAT_DB_USER=root
+      - CHAT_DB_PASSWORD=1
+
+  userservice:
+    container_name: userservice
+    image: userservice
+    ports:
+      - "8802:8802"
+    restart: always
+>>>>>>> dbfed9bed7e502e5b9c03827564e9f07bcd7d90a
     depends_on:
       - discovery
       - config
@@ -100,7 +133,7 @@ services:
       - alumni
       - users
     environment:
-      - PORT=8181
+      - PORT=8802
       - EUREKA_URI=http://discovery:8000/eureka
       - CONFIG_URI=http://config:8001
       - USER_DB_URL=users_db:3306
@@ -125,10 +158,21 @@ services:
     ports:
       - "9906:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=cluster@1
+      - MYSQL_ROOT_PASSWORD=1
     restart: always
     networks:
       - users
+
+  chatdb:
+    container_name: chatdb
+    image: mysql
+    ports:
+      - "9909:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+    restart: always
+    networks:
+      - chat
 
 networks:
   alumni:
@@ -136,4 +180,6 @@ networks:
   events:
     driver: bridge
   users:
+    driver: bridge
+  chat:
     driver: bridge
