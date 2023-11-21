@@ -6,6 +6,6 @@ spring.application.name=config-server
 
 eureka.client.service-url.default-zone=http://localhost:8761/eureka
 
-spring.cloud.config.server.native.search-locations=classpath:/config
+spring.cloud.config.server.git.url.clone
 
 
