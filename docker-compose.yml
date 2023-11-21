@@ -79,6 +79,11 @@ services:
     image: jobservice
     ports:
       - "8803:8803"
+  chatservice:
+    container_name: chatservice
+    image: chatservice
+    ports:
+      - "8809:8809"
     restart: always
     depends_on:
       - discovery
@@ -97,6 +102,19 @@ services:
       - JOB_DB_NAME=jobsdb
       - JOB_DB_USER=root
       - JOB_DB_PASSWORD=1
+      - chatdb
+      - userservice
+    networks:
+      - alumni
+      - chat
+    environment:
+      - PORT=8809
+      - EUREKA_URI=http://discovery:8000/eureka
+      - CONFIG_URI=http://config:8001
+      - CHAT_DB_URL=chatdb:3306
+      - CHAT_DB_NAME=chatDB
+      - CHAT_DB_USER=root
+      - CHAT_DB_PASSWORD=1
 
   userservice:
     container_name: userservice
@@ -153,6 +171,17 @@ services:
     networks:
       - users
 
+  chatdb:
+    container_name: chatdb
+    image: mysql
+    ports:
+      - "9909:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+    restart: always
+    networks:
+      - chat
+
 networks:
   alumni:
     driver: bridge
@@ -161,4 +190,6 @@ networks:
   jobs:
     driver: bridge
   users:
+    driver: bridge
+  chat:
     driver: bridge
