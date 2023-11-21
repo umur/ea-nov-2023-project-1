@@ -7,6 +7,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class New extends Information{
+public class News extends Information{
     private String title;
 }
