@@ -1,8 +1,4 @@
-FROM eclipse-temurin:17
-
-WORKDIR /app
-
-COPY target/ConfigurationService-0.0.1-SNAPSHOT.jar /app/ConfigurationService-0.0.1-SNAPSHOT.jar
+FROM openjdk:17-alpine as build
 
 EXPOSE 8001
 
@@ -21,8 +17,8 @@ ENV CHAT_DB_NAME = chatDB
 ENV CHAT_DB_USER = root
 ENV CHAT_DB_PASSWORD = 1
 
-#RUN apk add --no-cache maven
-#WORKDIR /app
-#COPY . /app
-#RUN mvn package
-ENTRYPOINT ["java","-jar","ConfigurationService-0.0.1-SNAPSHOT.jar"]
+RUN apk add --no-cache maven
+WORKDIR /app
+COPY . /app
+RUN mvn package
+ENTRYPOINT ["java","-jar","/app/target/ConfigurationService-0.0.1-SNAPSHOT.jar"]

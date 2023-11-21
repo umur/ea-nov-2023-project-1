@@ -1,11 +1,7 @@
-version: "3.8"
 services:
   discovery:
     container_name: discovery
-#    image: servicediscovery
-    build:
-      context: ./service-discovery
-      dockerfile: Dockerfile
+    image: servicediscovery
     ports:
       - "8000:8000"
     restart: always
@@ -17,10 +13,7 @@ services:
 
   config:
     container_name: config
-    #image: configserver
-    build:
-      context: ./config-server
-      dockerfile: Dockerfile
+    image: configserver
     ports:
       - "8001:8001"
     restart: always
@@ -39,10 +32,7 @@ services:
 
   apigateway:
     container_name: apigateway
-#    image: apigateway
-    build:
-      context: ./api-gateway
-      dockerfile: Dockerfile
+    image: apigateway
     ports:
       - "8002:8002"
     restart: always
@@ -57,10 +47,7 @@ services:
 
   eventservice:
     container_name: eventservice
-#    image: eventservice
-    build:
-      context: ./EventService
-      dockerfile: Dockerfile
+    image: eventservice
     ports:
       - "8801:8801"
     restart: always
@@ -69,7 +56,7 @@ services:
       - config
       - apigateway
       - eventsdb
-      - user-service
+      - userservice
     networks:
       - alumni
       - events
@@ -82,17 +69,6 @@ services:
       - EVENT_DB_USER=root
       - EVENT_DB_PASSWORD=1
 
-<<<<<<< HEAD
-  user-service:
-    container_name: user-service
-#    image: user-service
-    build:
-      context: ./user-service
-      dockerfile: Dockerfile
-    ports:
-      - "8181:8181"
-    restart: on-failure
-=======
   chatservice:
     container_name: chatservice
     image: chatservice
@@ -123,12 +99,11 @@ services:
     ports:
       - "8802:8802"
     restart: always
->>>>>>> dbfed9bed7e502e5b9c03827564e9f07bcd7d90a
     depends_on:
       - discovery
       - config
       - apigateway
-      - mysqldb-user
+      - usersdb
     networks:
       - alumni
       - users
@@ -136,10 +111,10 @@ services:
       - PORT=8802
       - EUREKA_URI=http://discovery:8000/eureka
       - CONFIG_URI=http://config:8001
-      - USER_DB_URL=users_db:3306
-      - USER_DB_NAME=users_db
-      - USER_DB_USER=student
-      - USER_DB_PASSWORD=cluster@1
+      - USER_DB_URL=usersdb:3306
+      - USER_DB_NAME=usersdb
+      - USER_DB_USER=root
+      - USER_DB_PASSWORD=1
 
   eventsdb:
     container_name: eventsdb
@@ -152,11 +127,11 @@ services:
     networks:
       - events
 
-  mysqldb-user:
-    container_name: mysqldb
+  usersdb:
+    container_name: usersdb
     image: mysql
     ports:
-      - "9906:3306"
+      - "9902:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=1
     restart: always
