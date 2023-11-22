@@ -29,6 +29,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Log-Service1" target="17" />
+      <module name="student-service" target="17" />
+      <module name="surevy_surveyresponse-service" target="17" />
       <module name="untitled" target="17" />
     </bytecodeTargetLevel>
   </component>
