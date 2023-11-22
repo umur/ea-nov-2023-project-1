@@ -104,6 +104,8 @@ services:
       - config
       - apigateway
       - usersdb
+      - rabbitmq
+      - zipkin
     networks:
       - alumni
       - users
@@ -127,6 +129,8 @@ services:
       - config
       - apigateway
       - coursesdb
+      - rabbitmq
+      - zipkin
     networks:
       - alumni
       - courses
@@ -138,6 +142,19 @@ services:
       - USER_DB_NAME=coursesdb
       - USER_DB_USER=root
       - USER_DB_PASSWORD=1
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.12-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
 
   eventsdb:
     container_name: eventsdb
