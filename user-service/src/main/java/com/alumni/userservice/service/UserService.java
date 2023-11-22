@@ -27,7 +27,7 @@ public interface UserService {
 
     public void deleteUserById(Long id);
 
-     List<SearchUsersDto> searchUsersDirectory(String query);
+    public List<SearchUsersDto> searchUsersDirectory(String query);
     public APIResponseDto getUserCourse(Long userId);
 
 } // End of UserService class
