@@ -1,0 +1,82 @@
+version: '3'
+
+services:
+  event-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-event-service
+    image: event-service:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+
+  job-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-job-service
+    image: job-service:latest
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+
+  log-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-log-service
+    image: log-service:latest
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql
+
+  news-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-news-service
+    image: news-service:latest
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mysql
+
+  student-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-student-service
+    image: student-service:latest
+    ports:
+      - "8084:8080"
+    depends_on:
+      - mysql
+
+  survey-surveyresponse-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-survey-surveyresponse-service
+    image: survey-surveyresponse-service:latest
+    ports:
+      - "8085:8080"
+    depends_on:
+      - mysql
+
+  user-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-user-service
+    image: user-service:latest
+    ports:
+      - "8086:8080"
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: ea_project
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD: 1
+    ports:
+      - "3306:3306"
