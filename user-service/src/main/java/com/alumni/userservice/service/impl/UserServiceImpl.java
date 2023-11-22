@@ -100,4 +100,12 @@ public class UserServiceImpl implements UserService {
         userRepo.delete(user);
     }
 
+    // findAllByIdIn
+    @Override
+    public List<UserFullDetailsDto> findAllByIdIn(List<Long> ids) {
+        List<User> users = userRepo.findAllByIdIn(ids);
+        return users.stream().map((u) -> modelMapper.map(u, UserFullDetailsDto.class))
+                .collect(Collectors.toList());
+    }
+
 } // End of UserServiceImpl class

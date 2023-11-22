@@ -74,4 +74,11 @@ public class UserController {
     }
 
 
+    @GetMapping("/byIds")
+    public ResponseEntity<List<UserFullDetailsDto>> getUsersByIds(@RequestParam List<Long> ids) {
+        List<UserFullDetailsDto> userDtos = userService.findAllByIdIn(ids);
+        return ResponseEntity.ok(userDtos);
+    }
+
+
 } // End of UserController class

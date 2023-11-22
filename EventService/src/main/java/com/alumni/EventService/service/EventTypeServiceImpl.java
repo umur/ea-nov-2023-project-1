@@ -42,7 +42,6 @@ public class EventTypeServiceImpl implements EventTypeService {
         var dbEventType = eventTypeRepo.findById(id);
         if (dbEventType.isPresent()) {
             dbEventType.get().setName(updatedEventType.getName());
-            ;
             eventTypeRepo.save(dbEventType.get());
         }
     }

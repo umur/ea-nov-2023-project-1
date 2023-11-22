@@ -116,29 +116,6 @@ services:
       - USER_DB_USER=root
       - USER_DB_PASSWORD=1
 
-  courseservice:
-    container_name: courseservice
-    image: courseservice
-    ports:
-      - "8808:8808"
-    restart: always
-    depends_on:
-      - discovery
-      - config
-      - apigateway
-      - coursesdb
-    networks:
-      - alumni
-      - courses
-    environment:
-      - PORT=8808
-      - EUREKA_URI=http://discovery:8000/eureka
-      - CONFIG_URI=http://config:8001
-      - USER_DB_URL=coursesdb:3306
-      - USER_DB_NAME=coursesdb
-      - USER_DB_USER=root
-      - USER_DB_PASSWORD=1
-
   eventsdb:
     container_name: eventsdb
     image: mysql
@@ -161,17 +138,6 @@ services:
     networks:
       - users
 
-  coursesdb:
-    container_name: coursesdb
-    image: mysql
-    ports:
-      - "9920:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=1
-    restart: always
-    networks:
-      - courses
-
   chatdb:
     container_name: chatdb
     image: mysql
@@ -189,8 +155,6 @@ networks:
   events:
     driver: bridge
   users:
-    driver: bridge
-  courses:
     driver: bridge
   chat:
     driver: bridge

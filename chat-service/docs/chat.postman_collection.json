@@ -1,0 +1,1073 @@
+{
+	"info": {
+		"_postman_id": "baed06fb-d810-48c3-a940-84c93eaf50c1",
+		"name": "chat",
+		"description": "Alumni Management Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24972674",
+		"_collection_link": "https://galactic-equinox-987321.postman.co/workspace/My-Workspace~5e325972-e78f-415b-8a33-6ceeba74b50c/collection/24972674-baed06fb-d810-48c3-a940-84c93eaf50c1?action=share&source=collection_link&creator=24972674"
+	},
+	"item": [
+		{
+			"name": "chats",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "get Chats By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update Chat",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete Chat",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/chats/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{chatId}",
+					"item": [
+						{
+							"name": "messages",
+							"item": [
+								{
+									"name": "{messageId}",
+									"item": [
+										{
+											"name": "get Message",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages",
+														":messageId"
+													],
+													"variable": [
+														{
+															"key": "chatId",
+															"value": "<long>",
+															"description": "(Required) "
+														},
+														{
+															"key": "messageId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"chats",
+																":chatId",
+																"messages",
+																":messageId"
+															],
+															"variable": [
+																{
+																	"key": "chatId"
+																},
+																{
+																	"key": "messageId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "update Message",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages",
+														":messageId"
+													],
+													"variable": [
+														{
+															"key": "chatId",
+															"value": "<long>",
+															"description": "(Required) "
+														},
+														{
+															"key": "messageId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"chats",
+																":chatId",
+																"messages",
+																":messageId"
+															],
+															"variable": [
+																{
+																	"key": "chatId"
+																},
+																{
+																	"key": "messageId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "delete Message",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages",
+														":messageId"
+													],
+													"variable": [
+														{
+															"key": "chatId",
+															"value": "<long>",
+															"description": "(Required) "
+														},
+														{
+															"key": "messageId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/chats/:chatId/messages/:messageId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"chats",
+																":chatId",
+																"messages",
+																":messageId"
+															],
+															"variable": [
+																{
+																	"key": "chatId"
+																},
+																{
+																	"key": "messageId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get All Messages",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:chatId/messages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":chatId",
+												"messages"
+											],
+											"variable": [
+												{
+													"key": "chatId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages"
+													],
+													"variable": [
+														{
+															"key": "chatId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<long>\",\n    \"userId\": \"<long>\",\n    \"type\": \"<string>\",\n    \"content\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"userId\": \"<long>\",\n    \"type\": \"<string>\",\n    \"content\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"deletedAt\": \"<dateTime>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "add Message",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/chats/:chatId/messages",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":chatId",
+												"messages"
+											],
+											"variable": [
+												{
+													"key": "chatId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/messages",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"messages"
+													],
+													"variable": [
+														{
+															"key": "chatId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"type\": \"<string>\",\n  \"content\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"deletedAt\": \"<dateTime>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "participants",
+							"item": [
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "delete Chat Participant",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/participants/:userId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"participants",
+														":userId"
+													],
+													"variable": [
+														{
+															"key": "chatId",
+															"value": "<long>",
+															"description": "(Required) "
+														},
+														{
+															"key": "userId",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/chats/:chatId/participants/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"chats",
+																":chatId",
+																"participants",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "chatId"
+																},
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get All Chat Participants",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/chats/:chatId/participants",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":chatId",
+												"participants"
+											],
+											"variable": [
+												{
+													"key": "chatId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/participants",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"participants"
+													],
+													"variable": [
+														{
+															"key": "chatId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"chatId\": \"<long>\",\n    \"userId\": \"<long>\"\n  },\n  {\n    \"chatId\": \"<long>\",\n    \"userId\": \"<long>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "add Chat Participants",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  \"<long>\",\n  \"<long>\"\n]",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/chats/:chatId/participants",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"chats",
+												":chatId",
+												"participants"
+											],
+											"variable": [
+												{
+													"key": "chatId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "[\n  \"<long>\",\n  \"<long>\"\n]",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/chats/:chatId/participants",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"chats",
+														":chatId",
+														"participants"
+													],
+													"variable": [
+														{
+															"key": "chatId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"chatId\": \"<long>\",\n    \"userId\": \"<long>\"\n  },\n  {\n    \"chatId\": \"<long>\",\n    \"userId\": \"<long>\"\n  }\n]"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get All Chats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/chats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/chats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"isGroup\": \"<boolean>\",\n    \"name\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"isGroup\": \"<boolean>\",\n    \"name\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "add Chat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chats"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/chats",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"chats"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"isGroup\": \"<boolean>\",\n  \"name\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8809"
+		}
+	]
+}
