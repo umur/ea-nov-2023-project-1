@@ -94,4 +94,31 @@ services:
     depends_on:
       - mysql
 
+  api-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile-api-gateway
+    image: api-gateway:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - discovery-server
+      - configuration-service
 
+  configuration-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-configuration-service
+    image: configuration-service:latest
+    ports:
+      - "8888:8888"
+    depends_on:
+      - discovery-server
+
+  discovery-server:
+    build:
+      context: .
+      dockerfile: Dockerfile-discovery-server
+    image: discovery-server:latest
+    ports:
+      - "8761:8761"

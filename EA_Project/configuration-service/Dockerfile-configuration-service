@@ -1,0 +1,6 @@
+FROM openjdk:17-alpine
+LABEL authors="Nizar Muala"
+
+WORKDIR /app
+COPY target/configration-service-0.0.1-SNAPSHOT.jar /app/configuration-service.jar
+ENTRYPOINT ["java", "-jar", "./app.jar"]
