@@ -126,7 +126,7 @@ public class UserServiceImpl implements UserService {
                 .block();
 
         APIResponseDto apiResponseDto = new APIResponseDto();
-        apiResponseDto.setUser(modelMapper.map(user, UserMinimalDto.class));
+        apiResponseDto.setUser(modelMapper.map(user, UserFullDetailsDto.class));
         apiResponseDto.setCourse(courseDto);
 
         return apiResponseDto;

@@ -10,6 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class APIResponseDto {
-    private UserMinimalDto user;
+    private UserFullDetailsDto user;
     private CourseDto course;
 }
