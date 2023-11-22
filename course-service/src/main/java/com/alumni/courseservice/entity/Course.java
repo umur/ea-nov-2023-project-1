@@ -21,6 +21,5 @@ public class Course {
     private Long id;
     private String name;
     private String courseCode;
-    private LocalDateTime createdDate;
 
 }

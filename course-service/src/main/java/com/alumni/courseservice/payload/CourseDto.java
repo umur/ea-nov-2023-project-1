@@ -15,6 +15,5 @@ public class CourseDto {
     private Long id;
     private String name;
     private String courseCode;
-    private LocalDateTime createdDate;
 
 }

@@ -29,7 +29,7 @@ public class CourseController {
     }
 
     // Build Get Course by Code REST API
-    @GetMapping("{code}")
+    @GetMapping("/code/{code}")
     public ResponseEntity<CourseDto> getCourse(@PathVariable("code") String courseCode){
         CourseDto courseDto = courseService.getCourseByCode(courseCode);
         return ResponseEntity.ok(courseDto);

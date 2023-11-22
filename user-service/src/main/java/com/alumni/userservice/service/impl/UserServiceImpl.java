@@ -108,7 +108,7 @@ public class UserServiceImpl implements UserService {
                 new ResourceNotFoundException("User", "id", userId));
 
         CourseDto courseDto = webClient.get()
-                .uri("http://localhost:8808/api/courses/" + user.getCourseCode())
+                .uri("http://localhost:8808/api/courses/code/" + user.getCourseCode())
                 .retrieve()
                 .bodyToMono(CourseDto.class)
                 .block();
