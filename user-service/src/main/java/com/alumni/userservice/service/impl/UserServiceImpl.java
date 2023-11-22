@@ -1,13 +1,18 @@
 package com.alumni.userservice.service.impl;
 
 import com.alumni.userservice.entity.Address;
+import com.alumni.userservice.entity.AuditAction;
 import com.alumni.userservice.entity.User;
 import com.alumni.userservice.exceptions.ResourceNotFoundException;
 import com.alumni.userservice.payload.*;
 import com.alumni.userservice.repository.AddressRepository;
 import com.alumni.userservice.repository.UserRepository;
+import com.alumni.userservice.security.CustomUserDetails;
+import com.alumni.userservice.service.AuditLogService;
 import com.alumni.userservice.service.UserService;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -21,12 +26,16 @@ public class UserServiceImpl implements UserService {
     private final AddressRepository addressRepo;
     private final WebClient webClient;
 
+    private final AuditLogService auditLogService;
+
     public UserServiceImpl(ModelMapper modelMapper, UserRepository userRepo,
-                           AddressRepository addressRepo, WebClient webClient) {
+                           AddressRepository addressRepo, WebClient webClient,
+                           AuditLogService auditLogService) {
         this.modelMapper = modelMapper;
         this.userRepo = userRepo;
         this.addressRepo = addressRepo;
         this.webClient = webClient;
+        this.auditLogService = auditLogService;
     }
 
     @Override
@@ -41,8 +50,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserFullDetailsDto> findAllUsers() {
         List<User> users = userRepo.findAll();
-        return users.stream().map((u) -> modelMapper.map(u, UserFullDetailsDto.class))
-                .collect(Collectors.toList());
+        List<UserFullDetailsDto> fullDetailsDtoList = users.stream().map((u) -> modelMapper.map(u, UserFullDetailsDto.class))
+                .toList();
+        String username = getLoggedInUserUsername();
+        auditLogService.save(username, AuditAction.FETCH_USERS);
+        return fullDetailsDtoList;
     }
 
     @Override
@@ -91,7 +103,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<SearchUsersDto> searchUsersDirectory(String query) {
         List<User> users = userRepo.searchUsersDirectory(query);
-        return users.stream().map(u -> modelMapper.map(u, SearchUsersDto.class ))
+        return users.stream().map(u -> modelMapper.map(u, SearchUsersDto.class))
                 .collect(Collectors.toList());
     }
 
@@ -129,4 +141,9 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
+    private String getLoggedInUserUsername(){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        CustomUserDetails userDetails = (CustomUserDetails) auth.getPrincipal();
+        return userDetails.getUsername();
+    }
 } // End of UserServiceImpl class

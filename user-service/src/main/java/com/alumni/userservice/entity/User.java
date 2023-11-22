@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.util.Set;
 
 
@@ -43,6 +44,10 @@ public class User {
     private String profilePic;
     @Column(name = "course_code")
     private String courseCode;
+    @Column(name = "failed_login_count")
+    private int failedLoginAttempts;
+
+    private boolean accountNonLocked;
 
     @OneToOne
     @JoinColumn(name = "address_id", referencedColumnName = "id")
