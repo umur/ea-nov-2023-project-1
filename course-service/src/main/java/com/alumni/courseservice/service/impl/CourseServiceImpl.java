@@ -23,4 +23,18 @@ public class CourseServiceImpl implements CourseService {
                 new RuntimeException("Course not found"));
         return  modelMapper.map(course, CourseDto.class);
     }
+
+    @Override
+    public CourseDto saveCourse(CourseDto courseDto) {
+          // Convert Dto to Entity
+        Course course = modelMapper.map(courseDto, Course.class);
+        Course newCourse = courseRepo.save(course);
+        return modelMapper.map(newCourse, CourseDto.class);
+    }
+
+    @Override
+    public CourseDto getCourseByCode(String courseCode) {
+        Course course = courseRepo.findByCourseCode(courseCode);
+        return modelMapper.map(course, CourseDto.class);
+    }
 }
