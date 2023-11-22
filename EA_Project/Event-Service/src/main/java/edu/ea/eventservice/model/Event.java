@@ -16,7 +16,7 @@ public class Event {
     private String name;
     private String date;
     private String description;
-        private String category;
+    private String category;
 
     private long userId;
 
