@@ -21,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> credential = userRepo.findByEmail(username);
+        Optional<User> credential = userRepo.findByEmailAndDeletedFalse(username);
             return credential.map(CustomUserDetails ::new).orElseThrow(() -> new UsernameNotFoundException("user not found with name :" + username));
     }
 }

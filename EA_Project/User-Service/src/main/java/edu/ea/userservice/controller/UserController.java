@@ -1,6 +1,7 @@
 package edu.ea.userservice.controller;
 
 
+import edu.ea.userservice.config.RabbitMQConfig;
 import edu.ea.userservice.dto.AuthRequest;
 import edu.ea.userservice.dto.UserDto;
 import edu.ea.userservice.model.User;
@@ -10,6 +11,9 @@ import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.PUT;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -21,11 +25,20 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/auth")
 public class UserController {
+
+    @Value("${alumni.rabbitmq.exchange}")
+    private  String exchange;
+
+    @Value("${student.routingkey}")
+    private String studentRoutingkey;
+
+    @Value("${job.routingkey}")
+    private String jobRoutingkey;
     private final UserService userService;
     private final JwtService jwtService;
     private final  AuthenticationManager authenticationManager;
 
-
+    private final RabbitTemplate rabbitTemplate;
 
     @GetMapping("/listAll")
     List<UserDto> findAllUsers()
@@ -48,9 +61,12 @@ public class UserController {
         userService.restPassword(id,authRequest);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/remove/{id}")
     public void deleteUser(@PathVariable Long id) throws Exception {
         userService.deleteUser(id);
+        rabbitTemplate.convertAndSend(exchange, studentRoutingkey, id);
+        rabbitTemplate.convertAndSend(exchange, jobRoutingkey, id);
+        System.out.println("delete user sent to queue" + id );
     }
 
 

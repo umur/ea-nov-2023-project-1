@@ -2,6 +2,8 @@ package ea.project.surevy_surveyresponse.controller;
 
 
 import ea.project.surevy_surveyresponse.entity.Survey;
+import ea.project.surevy_surveyresponse.entity.SurveyResponse;
+import ea.project.surevy_surveyresponse.service.SurveyResponseService;
 import ea.project.surevy_surveyresponse.service.SurveyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,13 +15,17 @@ import java.util.List;
 @RequestMapping("/survey")
 public class SurveyController {
     private final SurveyService surveyService;
-
+    private final SurveyResponseService surveyResponseService;
     @PostMapping
     public ResponseEntity<String> addSurvey(@RequestBody Survey survey) {
         surveyService.add(survey);
         return ResponseEntity.ok("Successfully added survey");
     }
 
+    @GetMapping("/responses/{surveyId}")
+    public List<SurveyResponse> getSurveyResponse(@PathVariable int surveyId) throws Exception {
+        return   surveyResponseService.findAllResponse(surveyId);
+    }
     @GetMapping
     public List<Survey> getSurveys() {
         return surveyService.findAll();

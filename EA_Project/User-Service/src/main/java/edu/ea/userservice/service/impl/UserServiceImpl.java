@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto getEmail(String email ) throws Exception {
-        Optional<User> byId = usRepo.findByEmail(email);
+        Optional<User> byId = usRepo.findByEmailAndDeletedFalse(email);
         if(!byId.isPresent())
             throw  new Exception("User not found");
         return   modelMapper.map(byId.get(),UserDto.class);

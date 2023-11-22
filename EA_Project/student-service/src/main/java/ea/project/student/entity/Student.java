@@ -14,20 +14,24 @@ public class Student  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String name;
+    private String cv;
+    private String image;
     private String graduationYear;
     private String description;
-    private String category;
     private String industry;
+    private String category;
 
-
-    private int addressId;
+    @Embedded
+    private Address address;
 
     @ElementCollection
     private   List<String> courses;
 
     private int jobId;
 
-    private int userId;
+    private Long userId;
+    private boolean deleted;
 
 }
 

@@ -1,6 +1,7 @@
-package com.example.EA_project.service;
+package  edu.ea.jobservice.service;
 
-import com.example.EA_project.entity.Job;
+
+import edu.ea.jobservice.model.Job;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,10 +9,10 @@ import java.util.List;
 @Service
 public interface JobService {
     public void add(Job job);
-    public void remove(int id);
-    public void update(Job job);
+    public void remove(int id) throws Exception;
+    public void update(Job job) throws Exception;
 
-    public void apply(int jobId, int studentId);
+    public void apply(int jobId) throws Exception;
 
     public List<Job> getByCity(String city);
 

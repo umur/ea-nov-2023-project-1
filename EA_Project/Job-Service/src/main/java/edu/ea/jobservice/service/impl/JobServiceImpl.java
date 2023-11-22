@@ -1,10 +1,10 @@
-package edu.ea.jobservice.service.impl;
+package  edu.ea.jobservice.service.impl;
 
-import com.example.EA_project.entity.Job;
-import com.example.EA_project.service.JobService;
-import edu.ea.jobservice.model.Student;
+
+
+import edu.ea.jobservice.model.Job;
 import edu.ea.jobservice.repository.JobRepo;
-import edu.ea.jobservice.service.StudentService;
+import edu.ea.jobservice.service.JobService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class JobServiceImpl implements JobService {
     private final JobRepo jobRepo;
-    private final StudentService studentService;
+
+    private final  JwtService jwtService;
 
     @Override
     public List<Job> findAll() {
@@ -25,51 +26,43 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public void add(Job job) {
+        Long userIdFromToken = jwtService.getUserIdFromToken();
+        job.setUserId(userIdFromToken);
         jobRepo.save(job);
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(int id) throws Exception {
         Optional<Job> job=jobRepo.findById(id);
-        if(job.isEmpty()){
-            throw new IllegalArgumentException();
-        }else{
-            jobRepo.deleteById(id);
-        }
+        if(job.isEmpty())
+           throw new Exception("Job not found");
+        Job job1 = job.get();
+        job1.setDeleted(true);
+        jobRepo.save(job1);
+
     }
 
 
     @Override
-    public void update(Job job) {
+    public void update(Job job) throws Exception {
         Optional<Job> job0=jobRepo.findById(job.getId());
-        if(job0.isEmpty()){
-            throw new IllegalArgumentException();
-        }else{
+        if(job0.isEmpty())
+            throw new Exception("Job not found");
             jobRepo.save(job);
-        }
+
 
     }
 
     @Override
-    public void apply(int jobId, int studentId) {
-        Optional<Job> jobO = jobRepo.findById(jobId);
-        Student student = studentService.findById(studentId);
-        if(jobO.isEmpty()){
-            throw new IllegalArgumentException();
-        }
-        else{
-            Job job = jobO.get();
-            if(job.getAppliedStudents() == null){
-                job.setAppliedStudents(new ArrayList<>());
-            }
-            List<Student> students = job.getAppliedStudents();
-            students.add(student);
-            job.setAppliedStudents(students);
-            update(job);
-        }
-
-
+    public void apply(int jobId) throws Exception {
+        Optional<Job> job0=jobRepo.findById(jobId);
+        if(job0.isEmpty())
+            throw new Exception("Job not found");
+        Job job = job0.get();
+        job.getAppliedUsers().add(jwtService.getUserIdFromToken());
+        jobRepo.save(job);
     }
+
 
     @Override
     public List<Job> getByCity(String city) {

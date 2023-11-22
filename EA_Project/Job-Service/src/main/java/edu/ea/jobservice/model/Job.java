@@ -1,18 +1,13 @@
-package com.example.EA_project.entity;
+package edu.ea.jobservice.model;
 
 import java.util.List;
 
-import edu.ea.jobservice.model.Student;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.repository.cdi.Eager;
 
 @Entity
 @Getter
@@ -23,12 +18,14 @@ public class Job {
     private int id;
     private String companyName;
     private String industry;
-    private String description;
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Student student;
-    @ManyToMany
-    private List<Student> appliedStudents;
+    private String jobDescription;
     @Embedded
+    private Address jobAddress;
 
-    private String address;
+    private Long userId;
+    private  boolean deleted;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    private   List<Long>   appliedUsers;
+
 }

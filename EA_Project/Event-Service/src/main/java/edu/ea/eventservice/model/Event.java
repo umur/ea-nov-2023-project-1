@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -14,9 +16,14 @@ public class Event {
     private String name;
     private String date;
     private String description;
-    private String category;
+        private String category;
 
-    private int students;
+    private long userId;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    List<Long> RSVP;
+
+
 
 }
 

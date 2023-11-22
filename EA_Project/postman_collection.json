@@ -1,0 +1,937 @@
+{
+	"info": {
+		"_postman_id": "42b2877b-7e09-4816-97dc-08e0a18f0820",
+		"name": "Final EA Project",
+		"description": "# 🪝 Get started here\n\nWebhooks are a mechanism that allows services to send real-time notifications to your application regarding asynchronous updates. The collection provides endpoints for setting up and managing webhooks, as well as verifying webhook events.\n\nThis collection demonstrates how to interact with a payment gateway and processing API, focusing specifically on the implementation of webhooks.\n\n### 🔐 Authentication and Authorization\n\nThis template assumes the user making requests to the Webhooks API would be authenticated, for example using a Bearer token. You can choose an authentication method to apply to the whole collection by selecting the collection and navigating to the Authorization tab.\n\n## 🔖 How to use this collection?\n\nThe collection is designed to be flexible and can be customized to meet the specific requirements of your own webhooks API implementation.\n\n#### Step 1: Update the base URL variable\n\nAdd your API's base URL in the `baseUrl` collection variable, replacing the existing dummy endpoint (`https://api.example.com`).\n\n#### Step 2: Create a webhook\n\nStart with `Create Webhook` endpoint to create a webhook and enter the following required information:\n\n- `webhook_url`: the name of the webhook that you're creating\n- `events`: (optional) Events that you want to trigger this webhook with. should be triggered on all events if none was provided.\n    \n\n#### **Step 3: Call the webhook**\n\nProceed to the `Trigger specific webhook` request. This call will utilize the `webhook_id` e.g. `W123456` set in the previous step. Under the **Body** tab, you can optionally update the payload to send.\n\n#### **Step 4: Verify various webhook payloads**\n\nTry sending several payloads to your webhooks with `Verify webhook` endpoint, and monitor your webhook server logs to verify if your webhooks are configured correctly as expected.\n\nYou can see an example of how to configure your webhook to be event-driven. We took Payment Gateway Service as an example here.\n\n#### **Step 5: Continue building the collection**\n\nCreate requests in this collection to test the new API endpoints you develop, and integrate your newly created webhooks in your other services.\n\n## ℹ️ Resources\n\n[Build Webhook with Postman APIs (Video Tutorial)](https://www.youtube.com/watch?v=wdLvXKkXhLk)  \n[Postman's Custom Webhooks](https://learning.postman.com/docs/integrations/webhooks/)\n\n## 💡Related templates\n\n[Content management API](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=8b1997c9-1fb2-453d-81a3-cafd3bbe28ae&sourceTemplateId=88a124f3-20d3-412a-a6a2-3b58307a7b16)  \n[Social media API](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=ce4ff49c-12c2-4a99-891a-07eea2388174&sourceTemplateId=88a124f3-20d3-412a-a6a2-3b58307a7b16)  \n[File storage API](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=45d1f394-35cd-44fa-aecc-fa329a7752a3&sourceTemplateId=88a124f3-20d3-412a-a6a2-3b58307a7b16)  \n[IoT device management API](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=30ebe963-3019-49d3-8087-00b4709687ad&sourceTemplateId=88a124f3-20d3-412a-a6a2-3b58307a7b16)  \n[CRM API](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=dda283f2-49f5-4754-b204-0c89a95e626c&sourceTemplateId=88a124f3-20d3-412a-a6a2-3b58307a7b16)  \n[Payment gateway and processing API](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=2ef318a1-e16c-4761-b8dc-1ccb1167ee8d&sourceTemplateId=88a124f3-20d3-412a-a6a2-3b58307a7b16)  \n[Fintech banking API](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=3b33c827-d9c8-4738-8d3f-09c466007363&sourceTemplateId=88a124f3-20d3-412a-a6a2-3b58307a7b16)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31075453"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"faculty@miu.edu\",\n    \"password\":\"123\",\n    \"Active\":\"true\",\n    \"role\":{\"id\":3}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"faculty@miu.edu\",\n    \"password\":\"123\",\n    \"Active\":\"true\",\n    \"role\":{\"id\":3}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin@miu.edu\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbkBtaXUuZWR1Iiwic3ViIjoiYWRtaW5AbWl1LmVkdSIsImlhdCI6MTcwMDU2MzQ4NCwiZXhwIjoxNzAwNTY0Mzg0fQ.Kaa68ebC1MpaOszYkoWswplM1Z4YCmN2o1aFPHWzKas",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/userlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"userlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rest Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin@miu.edu\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/reset/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"reset",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin@miu.edu\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/reset/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"reset",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin@miu.edu\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Student profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjoxLCJ1c2VybmFtZSI6InN0dWRlbnRAbWl1LmVkdSIsInN1YiI6InN0dWRlbnRAbWl1LmVkdSIsImlhdCI6MTcwMDYyNTAzMiwiZXhwIjoxNzAwNjI1OTMyfQ.Yu1-Kv2h91x-5FmFuzP2fPtOvJHKSUo-1WmP_aUOz44",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student\":\"ibrahim\",\n    \"graduationYear\":2024,\n    \"description\":\" experince description\",\n    \"industry\" : \"software development\",\n    \"category\" :\"Backend\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Student profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjoxLCJ1c2VybmFtZSI6InN0dWRlbnRAbWl1LmVkdSIsInN1YiI6InN0dWRlbnRAbWl1LmVkdSIsImlhdCI6MTcwMDYyNTAzMiwiZXhwIjoxNzAwNjI1OTMyfQ.Yu1-Kv2h91x-5FmFuzP2fPtOvJHKSUo-1WmP_aUOz44",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student\":\"ibrahim\",\n    \"graduationYear\":2024,\n    \"description\":\" experince description\",\n    \"industry\" : \"software development\",\n    \"category\" :\"Backend\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find student by state",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjoxLCJ1c2VybmFtZSI6InN0dWRlbnRAbWl1LmVkdSIsInN1YiI6InN0dWRlbnRAbWl1LmVkdSIsImlhdCI6MTcwMDYyNTAzMiwiZXhwIjoxNzAwNjI1OTMyfQ.Yu1-Kv2h91x-5FmFuzP2fPtOvJHKSUo-1WmP_aUOz44",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student\":\"ibrahim\",\n    \"graduationYear\":2024,\n    \"description\":\" experince description\",\n    \"industry\" : \"software development\",\n    \"category\" :\"Backend\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "survey",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"student@miu.edu\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add survey",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbkBtaXUuZWR1Iiwic3ViIjoiYWRtaW5AbWl1LmVkdSIsImlhdCI6MTcwMDY0NTY5NywiZXhwIjoxNzAwNjQ2NTk3fQ.pZa6A0SMcdLUT6IDSU-qMvv9Ze7Ajl_Mx9AdNI84Ozg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"survey1\",\n    \"description\":\"survey1 description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/survey",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"survey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add survey Response",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjozLCJ1c2VybmFtZSI6InN0dWRlbnRAbWl1LmVkdSIsInN1YiI6InN0dWRlbnRAbWl1LmVkdSIsImlhdCI6MTcwMDY0NjM1NiwiZXhwIjoxNzAwNjQ3MjU2fQ.yDiRuL5g1fRVhwS_Tr8pdyMIetFcRNeQA_8gm8QNpE0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"response\":\"response 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/surveyResponse/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"surveyResponse",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all response for survey",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjozLCJ1c2VybmFtZSI6InN0dWRlbnRAbWl1LmVkdSIsInN1YiI6InN0dWRlbnRAbWl1LmVkdSIsImlhdCI6MTcwMDY0Njg3NCwiZXhwIjoxNzAwNjQ3Nzc0fQ.Yyzi78Tas7RnThlKGGJx2yiR6QS353h3xIiOwsaHqDA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"response\":\"response 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/survey/responses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"survey",
+								"responses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "job",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"student@miu.edu\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add job",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjozLCJ1c2VybmFtZSI6InN0dWRlbnRAbWl1LmVkdSIsInN1YiI6InN0dWRlbnRAbWl1LmVkdSIsImlhdCI6MTcwMDY1MTczNCwiZXhwIjoxNzAwNjUyNjM0fQ.MpzxNP0ljbdyYoMZjd9Ft6WAyL6D8LPeW71cDJeu9IY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"companyName\":\"companyName 1\",\n    \"industry\":\"IT\",\n    \"jobDescription\" :\"backend developer\",\n    \"jobAddress\" : {\n        \"state\":\"IOWA\",\n        \"city\":\"Iowa City\",\n        \"zip\":\"52557\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apply job",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjozLCJ1c2VybmFtZSI6InN0dWRlbnRAbWl1LmVkdSIsInN1YiI6InN0dWRlbnRAbWl1LmVkdSIsImlhdCI6MTcwMDY1MTczNCwiZXhwIjoxNzAwNjUyNjM0fQ.MpzxNP0ljbdyYoMZjd9Ft6WAyL6D8LPeW71cDJeu9IY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/job/apply/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"job",
+								"apply",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"student@miu.edu\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add event",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjozLCJ1c2VybmFtZSI6InN0dWRlbnQyQG1pdS5lZHUiLCJzdWIiOiJzdHVkZW50MkBtaXUuZWR1IiwiaWF0IjoxNzAwNjU4Mzk5LCJleHAiOjE3MDA2NTkyOTl9.twYMZhnn3WnIu-0PdehSZQTlCRu5ko0gAkbS1NJ_Okg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"event 1\",\n    \"industry\":\"IT\",\n    \"description\" :\" event description\"\n     \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rsvp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjozLCJ1c2VybmFtZSI6InN0dWRlbnQyQG1pdS5lZHUiLCJzdWIiOiJzdHVkZW50MkBtaXUuZWR1IiwiaWF0IjoxNzAwNjU5MDA4LCJleHAiOjE3MDA2NTk5MDh9.9mgKpdKY_QPaIX5ln07UX7HKtSFAQcOpFhnmG05RdCo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/event/rsvp/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"event",
+								"rsvp",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update event",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjozLCJ1c2VybmFtZSI6InN0dWRlbnQyQG1pdS5lZHUiLCJzdWIiOiJzdHVkZW50MkBtaXUuZWR1IiwiaWF0IjoxNzAwNjU5MDA4LCJleHAiOjE3MDA2NTk5MDh9.9mgKpdKY_QPaIX5ln07UX7HKtSFAQcOpFhnmG05RdCo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"event 111\",\n    \"industry\":\"IT\",\n    \"description\" :\" event description\"\n     \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/event/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"event",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "news",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"student@miu.edu\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post news",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjoyLCJ1c2VybmFtZSI6InN0dWRlbnRAbWl1LmVkdSIsInN1YiI6InN0dWRlbnRAbWl1LmVkdSIsImlhdCI6MTcwMDY1OTg4NCwiZXhwIjoxNzAwNjYwNzg0fQ.BnESvuLrSM_dtt7nocpnijE0_V5u5WUGXY9e4UwLqDI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"news title 1\",\n    \"body\":\"news news news \"\n     \n     \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/news",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "news list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUTHORIZATION",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjoyLCJ1c2VybmFtZSI6InN0dWRlbnRAbWl1LmVkdSIsInN1YiI6InN0dWRlbnRAbWl1LmVkdSIsImlhdCI6MTcwMDY2MDQ5OSwiZXhwIjoxNzAwNjYxMzk5fQ.AMz9P91GZ4A8oOA3VXH67PFHC-E8X_Sy4LCho2a1yKI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8089/news",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://fcde83ce-ae2a-4165-bf7f-c2bb5f7fe762.mock.pstmn.io",
+			"type": "string"
+		},
+		{
+			"key": "authToken",
+			"value": "dummy_token",
+			"type": "string"
+		}
+	]
+}

@@ -2,7 +2,6 @@ package edu.ea.eventservice.service.impl;
 
 
 import edu.ea.eventservice.model.Event;
-import edu.ea.eventservice.model.Student;
 import edu.ea.eventservice.respository.EventRepo;
 import edu.ea.eventservice.service.EventService;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +14,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class EventServiceImpl implements EventService {
     private final EventRepo eventRepo;
+    private final JwtService jwtService;
     @Override
     public void add(Event event) {
+        event.setUserId(jwtService.getUserIdFromToken());
         eventRepo.save(event);
     }
 
@@ -35,22 +36,22 @@ public class EventServiceImpl implements EventService {
 
 
     @Override
-    public void update(Event event) {
-        remove(event.getId());
-        add(event);
+    public void update(Event event) throws Exception {
+       if(event.getUserId()!= jwtService.getUserIdFromToken())
+           throw  new Exception("Only event owner can update the event");
+        eventRepo.save(event);
     }
 
     @Override
-    public void RSVP(int id, Student student) {
+    public void RSVP(int id) throws Exception {
         Optional<Event> eventO = eventRepo.findById(id);
-        if(eventO.isEmpty()){
-            throw new IllegalArgumentException();
-        }
-        else{
+        if(eventO.isEmpty())
+          throw  new Exception("Event not found");
+
             Event event = eventO.get();
-            event.getStudents();
+            event.getRSVP().add(jwtService.getUserIdFromToken());
             update(event);
-        }
+
     }
 
     @Override
@@ -59,11 +60,10 @@ public class EventServiceImpl implements EventService {
     }
 
 	@Override
-	public Event getById(int id) {
+	public Event getById(int id) throws Exception {
 		Optional<Event> event = eventRepo.findById(id);
-		if(event.isEmpty()) {
-			throw new IllegalArgumentException();
-		}
+		if(event.isEmpty())
+            throw new Exception("Event not found");
 		return event.get();
 	}
 }

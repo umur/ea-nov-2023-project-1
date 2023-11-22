@@ -1,8 +1,8 @@
-package com.example.EA_project.controller;
+package edu.ea.jobservice.controller;
 
-import com.example.EA_project.entity.Job;
-import com.example.EA_project.service.JobService;
+import  edu.ea.jobservice.service.JobService;
 
+import edu.ea.jobservice.model.Job;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,19 +33,17 @@ public class JobController {
 
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteJob(@PathVariable int id){
+    public ResponseEntity<String> deleteJob(@PathVariable int id) throws Exception {
         jobService.remove(id);
         return ResponseEntity.ok("Successfully deleted a job!");
     }
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateJob(@RequestBody Job job, @PathVariable int id){
+    public ResponseEntity<String> updateJob(@RequestBody Job job, @PathVariable int id) throws Exception {
         Job existingJob = jobService.findById(id);
         if (existingJob != null) {
             existingJob.setCompanyName(job.getCompanyName());
             existingJob.setIndustry(job.getIndustry());
-            existingJob.setStudent(job.getStudent());
-            existingJob.setAppliedStudents(job.getAppliedStudents()); // Assuming the relationship is properly handled
-            existingJob.setAddress(job.getAddress());
+            existingJob.setJobAddress(job.getJobAddress());
             jobService.update(existingJob);
             return ResponseEntity.ok("Successfully updated a job!");
         } else {
@@ -53,9 +51,9 @@ public class JobController {
         }
     }
 
-    @PutMapping("/apply/{jobId}/{studentId}")
-    public ResponseEntity<String> applyToJob(@PathVariable int jobId, @PathVariable int studentId){
-        jobService.apply(jobId, studentId);
+    @PutMapping("/apply/{jobId}")
+    public ResponseEntity<String> applyToJob(@PathVariable int jobId) throws Exception {
+        jobService.apply(jobId );
         return ResponseEntity.ok("Successfully applied a job!");
     }
 
