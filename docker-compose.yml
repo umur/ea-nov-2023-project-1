@@ -50,6 +50,74 @@ services:
       - PORT=8002
       - EUREKA_URI=http://discovery:8000/eureka
 
+  survey:
+    container_name: survey
+    image: survey
+    ports:
+      - "8806:8806"
+    restart: always
+    depends_on:
+      - discovery
+      - config
+      - apigateway
+      - surveydb
+      - userservice
+    networks:
+      - alumni
+      - survey
+    environment:
+      - PORT=8804
+      - EUREKA_URI=http://discovery:8000/eureka
+      - CONFIG_URI=http://config:8001
+      - SURVEY_DB_URL=surveydb:3306
+      - SURVEY_DB_NAME=surveyDb
+      - SURVEY_DB_USER=root
+
+  newsannouncements:
+    container_name: newsannouncements
+    image: newsannouncements
+    ports:
+      - "8808:8808"
+    restart: always
+    depends_on:
+      - discovery
+      - config
+      - apigateway
+      - newsannouncementsdb
+    networks:
+      - alumni
+      - newsannouncements
+    environment:
+      - PORT=8805
+      - EUREKA_URI=http://discovery:8000/eureka
+      - CONFIG_URI=http://config:8001
+      - NEWANN_DB_URL=newsannouncementsdb:3306
+      - NEWANN_DB_NAME=newsAnnouncementsDb
+      - NEWANN_DB_USER=root
+      - NEWANN_DB_PASSWORD=1
+
+  insights:
+    container_name: insights
+    image: insights
+    ports:
+      - "8807:8807"
+    restart: always
+    depends_on:
+      - discovery
+      - config
+      - apigateway
+    networks:
+      - alumni
+      - insights
+    environment:
+      - PORT=8807
+      - EUREKA_URI=http://discovery:8000/eureka
+      - CONFIG_URI=http://config:8001
+      - INSIGHT_DB_URL=insightsdb:3306
+      - INSIGHT_DB_NAME=insightsdb
+      - INSIGHT_DB_USER=root
+      - INSIGHT_DB_PASSWORD=1
+
   eventservice:
     container_name: eventservice
     image: eventservice
@@ -146,6 +214,39 @@ services:
       - USER_DB_USER=root
       - USER_DB_PASSWORD=1
 
+  insightsdb:
+    container_name: insightsdb
+    image: mysql
+    ports:
+      - "9907:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+    restart: always
+    networks:
+      - insights
+
+  newsannouncementsdb:
+    container_name: newsannouncementsdb
+    image: mysql
+    ports:
+      - "9908:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+    restart: always
+    networks:
+      - newsannouncements
+
+  surveydb:
+    container_name: surveydb
+    image: mysql
+    ports:
+      - "9906:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+    restart: always
+    networks:
+      - surveys
+
   eventsdb:
     container_name: eventsdb
     image: mysql
@@ -199,4 +300,10 @@ networks:
   users:
     driver: bridge
   chat:
+    driver: bridge
+  insights:
+    driver: bridge
+  newsannouncements:
+    driver: bridge
+  survey:
     driver: bridge

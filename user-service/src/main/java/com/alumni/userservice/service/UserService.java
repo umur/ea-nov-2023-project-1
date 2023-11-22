@@ -20,6 +20,7 @@ public interface UserService {
     public UserFullDetailsDto getUserById(Long id);
 
     List<UserFullDetailsDto> getUsersByAddress(Long addressId);
+    List<UserFullDetailsDto> findAllByIdIn(List<Long> ids);
 
 //    List<SearchUsersDto> searchUsersDirectory(String query);
 

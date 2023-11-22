@@ -1,17 +1,17 @@
-package com.project.alumni.chatservice.service.external;
+package com.alumni.service.external;
 
-import com.project.alumni.chatservice.entity.ExternalUserDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
+import java.util.Optional;
 
 @Component
 @FeignClient("user-service")
 public interface UsersClient {
-    // get list users by ids
-    @GetMapping("/api/users/byIds")
-    List<ExternalUserDto> findAllByIdIn(@RequestParam List<Long> ids);
+    // get user by id
+    @GetMapping("/users")
+    Optional<UsersClient> findById(@RequestParam Long id);
 }

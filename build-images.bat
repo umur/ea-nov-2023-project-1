@@ -4,4 +4,7 @@ docker build ./config-server -t configserver
 docker build ./EventService -t eventservice
 docker build ./JobService -t jobservice
 docker build ./user-service -t userservice
+docker build ./insight -t insights
+docker build ./NewsAnAnnouncements -t newsandannouncements
+docker build ./Survey -t survey
 docker build ./chat-service -t chatservice
