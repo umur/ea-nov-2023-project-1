@@ -29,7 +29,7 @@ import java.util.Set;
 public class AuthServiceImpl implements AuthService {
 
     /**
-     * Implemented our own Login logic using DAO Authentication provider and JWT Authentication Token
+     * Implemented Login logic using DAO Authentication provider and JWT Authentication Token
      */
 
     private final AuthenticationManager authenticationManager;

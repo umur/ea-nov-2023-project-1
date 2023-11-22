@@ -9,9 +9,9 @@ import java.util.Set;
 
 public class CustomUserDetails implements UserDetails {
 
-    private User user;
+    private final User user;
 
-    private Set<GrantedAuthority> authorities;
+    private final Set<GrantedAuthority> authorities;
 
     public CustomUserDetails(User user, Set<GrantedAuthority> authorities) {
         this.user = user;
