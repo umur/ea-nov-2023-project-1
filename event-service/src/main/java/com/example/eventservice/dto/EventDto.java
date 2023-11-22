@@ -1,6 +1,6 @@
-package com.example.eventservice.dto;
+package com.example.eventService.dto;
 
-import com.example.eventservice.entity.Person;
+import com.example.eventService.entity.Person;
 import lombok.Getter;
 import lombok.Setter;
 
