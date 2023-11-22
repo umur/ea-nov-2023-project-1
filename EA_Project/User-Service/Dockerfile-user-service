@@ -1,6 +1,5 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:17-alpine
 MAINTAINER Ibrahim
-WORKDIR /app
-COPY target/user-service-0.0.1-SNAPSHOT.jar /app/user.jar
-EXPOSE 8080
-CMD ["java", "-jar", "/app/user.jar"]
+
+COPY ./target/User-Service-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

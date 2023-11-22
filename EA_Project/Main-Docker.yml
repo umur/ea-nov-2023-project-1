@@ -16,10 +16,10 @@ services:
     environment:
       MYSQL_DATABASE: ea_project
       MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_PASSWORD: 1
       MYSQL_ROOT_PASSWORD: 1
     ports:
-      - "3306:3306"
+      - "3307:3306"
 
   grafana:
     image: grafana/grafana
@@ -39,7 +39,7 @@ services:
 
   event-service:
     build:
-      context: .
+      context: ./Event-Service
       dockerfile: Dockerfile-event-service
     image: event-service:latest
     ports:
@@ -51,7 +51,7 @@ services:
 
   job-service:
     build:
-      context: .
+      context: ./Job-Service
       dockerfile: Dockerfile-job-service
     image: job-service:latest
     ports:
@@ -63,7 +63,7 @@ services:
 
   log-service:
     build:
-      context: .
+      context: ./Log-Service
       dockerfile: Dockerfile-log-service
     image: log-service:latest
     ports:
@@ -75,7 +75,7 @@ services:
 
   news-service:
     build:
-      context: .
+      context: ./News-Service
       dockerfile: Dockerfile-news-service
     image: news-service:latest
     ports:
@@ -87,7 +87,7 @@ services:
 
   student-service:
     build:
-      context: .
+      context: ./Student-service
       dockerfile: Dockerfile-student-service
     image: student-service:latest
     ports:
@@ -99,7 +99,7 @@ services:
 
   survey-surveyresponse-service:
     build:
-      context: .
+      context: ./Surevy-surveyresponse-service
       dockerfile: Dockerfile-survey-surveyresponse-service
     image: survey-surveyresponse-service:latest
     ports:
@@ -111,7 +111,7 @@ services:
 
   user-service:
     build:
-      context: .
+      context: ./User-Service
       dockerfile: Dockerfile-user-service
     image: user-service:latest
     ports:
@@ -123,7 +123,7 @@ services:
 
   api-gateway:
     build:
-      context: .
+      context: ./api-gatway
       dockerfile: Dockerfile-api-gateway
     image: api-gateway:latest
     ports:
@@ -134,7 +134,7 @@ services:
 
   configuration-service:
     build:
-      context: .
+      context: ./configuration-service
       dockerfile: Dockerfile-configuration-service
     image: configuration-service:latest
     ports:
@@ -144,7 +144,7 @@ services:
 
   discovery-server:
     build:
-      context: .
+      context: ./discovery-server
       dockerfile: Dockerfile-discovery-server
     image: discovery-server:latest
     ports:

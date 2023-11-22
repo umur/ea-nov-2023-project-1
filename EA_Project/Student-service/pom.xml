@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ea.project</groupId>
-    <artifactId>student-service</artifactId>
+    <artifactId>Student-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>student</name>
     <description>student</description>

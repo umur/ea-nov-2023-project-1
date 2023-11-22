@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ea.project</groupId>
-    <artifactId>surevy_surveyresponse-service</artifactId>
+    <artifactId>Surevy-surveyresponse-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>surevy_surveyresponse</name>
     <description>surevy_surveyresponse</description>
