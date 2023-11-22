@@ -1,9 +1,9 @@
-package org.oril.controllers;
+package com.ea.controllers;
 
+import com.ea.entities.AuthRequest;
+import com.ea.entities.AuthResponse;
+import com.ea.services.AuthService;
 import lombok.AllArgsConstructor;
-import org.oril.entities.AuthRequest;
-import org.oril.entities.AuthResponse;
-import org.oril.services.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
