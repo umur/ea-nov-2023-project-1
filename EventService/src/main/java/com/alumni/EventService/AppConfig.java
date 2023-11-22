@@ -12,8 +12,8 @@ public class AppConfig {
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setPropertyCondition(Conditions.isNotNull());
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-        modelMapper.getConfiguration().setAmbiguityIgnored(true);
+        // modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        // modelMapper.getConfiguration().setAmbiguityIgnored(true);
         return modelMapper;
     }
 }

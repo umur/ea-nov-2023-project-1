@@ -17,6 +17,9 @@ import com.alumni.EventService.entity.UsersRsvpingEvents;
 import com.alumni.EventService.entity.UsersRsvpingEventsId;
 import com.alumni.EventService.repository.EventRepository;
 import com.alumni.EventService.repository.EventTypeRepository;
+import com.alumni.EventService.repository.UsersAttendingEventsRepository;
+import com.alumni.EventService.repository.UsersOrganizingEventsRepository;
+import com.alumni.EventService.repository.UsersRsvpingEventsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,63 +32,23 @@ public class EventServiceImpl implements EventService {
     private final ModelMapper mapper;
     private final UserServiceClient userServiceClient;
 
+    private final UsersOrganizingEventsRepository usersOrganizingEventsRepo;
+    private final UsersAttendingEventsRepository usersAttendingEventsRepo;
+    private final UsersRsvpingEventsRepository usersRsvpingEventsRepo;
+
     @Override
     public void save(EventDto eventDto) {
-
-        // eventDto.getOrganizers().forEach(organizer -> {
-        // addOrganizer(organizer.getId(), eventDto.getId());
-        // });
-
-        // eventDto.getAttendees().forEach(attendee -> {
-        // addAttendee(attendee.getId(), eventDto.getId());
-        // });
-        // eventDto.getRsvpers().forEach(rsvper -> {
-        // addRsvper(rsvper.getId(), eventDto.getId());
-        // });
-
-        var event = mapper.map(eventDto, Event.class);
+        var event = eventRepo.save(mapper.map(eventDto, Event.class));
         eventRepo.save(event);
     }
-
-    // private void populateEventWithOrganizers(Event event, EventDto eventDto) {
-    // event.getOrganizers().forEach(org -> {
-    // var userId = org.getUsersOrganizingEventsId().getOrganizerId();
-    // var user = userServiceClient.getUserById(userId);
-    // eventDto.getOrganizers().add(mapper.map(user, UserFullDetailsDto.class));
-    // });
-    // }
-
-    // private void populateEventWithAttendees(Event event, EventDto eventDto) {
-    // event.getAttendees().forEach(org -> {
-    // var userId = org.getUsersAttendingEventsId().getAttendeeId();
-    // var user = userServiceClient.getUserById(userId);
-    // eventDto.getAttendees().add(mapper.map(user, UserFullDetailsDto.class));
-    // });
-    // }
-
-    // private void populateEventWithRsvpers(Event event, EventDto eventDto) {
-    // event.getRsvpers().forEach(org -> {
-    // var userId = org.getUsersRsvpingEventsId().getRsvperId();
-    // var user = userServiceClient.getUserById(userId);
-    // eventDto.getRsvpers().add(mapper.map(user, UserFullDetailsDto.class));
-    // });
-    // }
-
-    // public void populateEventWithUsers(Event event, EventDto eventDto) {
-    // populateEventWithOrganizers(event, eventDto);
-    // populateEventWithAttendees(event, eventDto);
-    // populateEventWithRsvpers(event, eventDto);
-    // }
 
     @Override
     public List<EventDto> findAll() {
         List<Event> events = eventRepo.findAll();
         var res = new ArrayList<EventDto>();
+
         events.forEach(event -> {
             var eventDto = mapper.map(event, EventDto.class);
-
-            // populateEventWithUsers(event, eventDto);
-
             res.add(eventDto);
         });
         return res;
@@ -95,8 +58,6 @@ public class EventServiceImpl implements EventService {
     public EventDto findById(Long id) {
         var event = eventRepo.findById(id).get();
         var eventDto = mapper.map(event, EventDto.class);
-        // populateEventWithUsers(event, eventDto);
-
         return eventDto;
     }
 
@@ -110,7 +71,7 @@ public class EventServiceImpl implements EventService {
             dbEvent.setName(updatedEvent.getName());
             dbEvent.setLocation(updatedEvent.getLocation());
 
-            var dbType = eventTypeRepo.findById(updatedEvent.getTypeId());
+            var dbType = eventTypeRepo.findById(updatedEvent.getType().getId());
             if (dbType.isPresent()) {
                 dbEvent.setType(dbType.get());
             }
@@ -132,8 +93,7 @@ public class EventServiceImpl implements EventService {
         userOrganizer.setEvent(event.get());
         userOrganizer.setUsersOrganizingEventsId(new UsersOrganizingEventsId(eventId, userId));
 
-        event.get().getOrganizers().add(userOrganizer);
-        eventRepo.save(event.get());
+        usersOrganizingEventsRepo.save(userOrganizer);
     }
 
     @Override
@@ -149,8 +109,7 @@ public class EventServiceImpl implements EventService {
         userAttendee.setEvent(event.get());
         userAttendee.setUsersAttendingEventsId(new UsersAttendingEventsId(eventId, userId));
 
-        event.get().getAttendees().add(userAttendee);
-        eventRepo.save(event.get());
+        usersAttendingEventsRepo.save(userAttendee);
     }
 
     @Override
@@ -166,7 +125,7 @@ public class EventServiceImpl implements EventService {
         userRsvper.setEvent(event.get());
         userRsvper.setUsersRsvpingEventsId(new UsersRsvpingEventsId(eventId, userId));
 
-        eventRepo.save(event.get());
+        usersRsvpingEventsRepo.save(userRsvper);
     }
 
     @Override
