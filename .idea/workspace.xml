@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54ac729d-8fe8-46f7-8a9d-c0f5c23d8a75" name="Changes" comment="Create User Entity #2" />
+    <list default="true" id="54ac729d-8fe8-46f7-8a9d-c0f5c23d8a75" name="Changes" comment="Create User Entity #2">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,13 +35,12 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2XgTSw1I0IvibSzXwP49UCwOIQ1" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -64,6 +66,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "spring.configuration.checksum": "46f86faa6bbf9ac94a7e459509a20ed0",
     "vue.rearranger.settings.migration": "true"
   },
@@ -107,6 +112,7 @@
       <workItem from="1700002788747" duration="1098000" />
       <workItem from="1700546233308" duration="1216000" />
       <workItem from="1700607861116" duration="219000" />
+      <workItem from="1700628500935" duration="168000" />
     </task>
     <task id="LOCAL-00001" summary="kicking the project, initial commit">
       <option name="closed" value="true" />
