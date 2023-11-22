@@ -1,13 +1,36 @@
 version: '3'
 
 services:
+  rabbitmq3:
+    container_name: "rabbitmq"
+    image: rabbitmq:3-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+    ports:
+      # AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: ea_project
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+
+
   event-service:
     build:
       context: .
       dockerfile: Dockerfile-event-service
     image: event-service:latest
     ports:
-      - "8080:8080"
+      - "8085:8085"
     depends_on:
       - mysql
 
@@ -17,7 +40,7 @@ services:
       dockerfile: Dockerfile-job-service
     image: job-service:latest
     ports:
-      - "8081:8081"
+      - "8084:8084"
     depends_on:
       - mysql
 
@@ -37,7 +60,7 @@ services:
       dockerfile: Dockerfile-news-service
     image: news-service:latest
     ports:
-      - "8083:8083"
+      - "8086:8086"
     depends_on:
       - mysql
 
@@ -47,7 +70,7 @@ services:
       dockerfile: Dockerfile-student-service
     image: student-service:latest
     ports:
-      - "8084:8080"
+      - "8082:8082"
     depends_on:
       - mysql
 
@@ -57,7 +80,7 @@ services:
       dockerfile: Dockerfile-survey-surveyresponse-service
     image: survey-surveyresponse-service:latest
     ports:
-      - "8085:8080"
+      - "8083:8083"
     depends_on:
       - mysql
 
@@ -67,16 +90,8 @@ services:
       dockerfile: Dockerfile-user-service
     image: user-service:latest
     ports:
-      - "8086:8080"
+      - "8081:8081"
     depends_on:
       - mysql
 
-  mysql:
-    image: mysql:latest
-    environment:
-      MYSQL_DATABASE: ea_project
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 1
-      MYSQL_ROOT_PASSWORD: 1
-    ports:
-      - "3306:3306"
+
