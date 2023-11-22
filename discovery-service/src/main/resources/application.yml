@@ -1,0 +1,10 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+  environment: dev
+  instance:
+    appname: discover-service
+    hostname: localhost
+server:
+  port: 8761
