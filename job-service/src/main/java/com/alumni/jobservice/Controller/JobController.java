@@ -24,7 +24,7 @@ public class JobController {
 
     @PostMapping("")
     public void addJob(HttpServletRequest request, @RequestBody JobDTO job){
-         String userEmail = (String) request.getParameter("email");
+         String userEmail = request.getParameter("email");
          jobService.saveJob(userEmail, job);
     }
 }
