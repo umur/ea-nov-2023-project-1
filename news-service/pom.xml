@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.news</groupId>
-	<artifactId>news</artifactId>
+	<artifactId>news-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>news</name>
-	<description>News microservice</description>
+	<name>news-service</name>
+	<description>News Service</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.4</spring-cloud.version>
