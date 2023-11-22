@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.alumni.EventService.dto.UserFullDetailsDto;
 
 @Component
-@FeignClient("userservice")
+@FeignClient("user-service")
 public interface UserServiceClient {
     @GetMapping("/api/users/profile/{id}")
     UserFullDetailsDto getUserById(@RequestParam Long id);
