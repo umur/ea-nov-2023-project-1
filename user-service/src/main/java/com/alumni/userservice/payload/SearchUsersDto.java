@@ -15,6 +15,7 @@ public class SearchUsersDto {
     private String gradYear;
     private String industry;
     private AddressDto address;
+    private String courseCode;
     //private List<Long> coursesIds;
 
 //    @Override

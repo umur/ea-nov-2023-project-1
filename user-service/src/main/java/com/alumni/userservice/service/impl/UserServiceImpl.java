@@ -3,13 +3,13 @@ package com.alumni.userservice.service.impl;
 import com.alumni.userservice.entity.Address;
 import com.alumni.userservice.entity.User;
 import com.alumni.userservice.exceptions.ResourceNotFoundException;
-import com.alumni.userservice.payload.UserFullDetailsDto;
-import com.alumni.userservice.payload.UserMinimalDto;
+import com.alumni.userservice.payload.*;
 import com.alumni.userservice.repository.AddressRepository;
 import com.alumni.userservice.repository.UserRepository;
 import com.alumni.userservice.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,12 +19,14 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
     private final UserRepository userRepo;
     private final AddressRepository addressRepo;
+    private final WebClient webClient;
 
     public UserServiceImpl(ModelMapper modelMapper, UserRepository userRepo,
-                           AddressRepository addressRepo) {
+                           AddressRepository addressRepo, WebClient webClient) {
         this.modelMapper = modelMapper;
         this.userRepo = userRepo;
         this.addressRepo = addressRepo;
+        this.webClient = webClient;
     }
 
     @Override
@@ -86,12 +88,12 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
-//    @Override
-//    public List<SearchUsersDto> searchUsersDirectory(String query) {
-//        List<User> users = userRepo.searchUsersDirectory(query);
-//        return users.stream().map(u -> modelMapper.map(u, SearchUsersDto.class ))
-//                .collect(Collectors.toList());
-//    }
+    @Override
+    public List<SearchUsersDto> searchUsersDirectory(String query) {
+        List<User> users = userRepo.searchUsersDirectory(query);
+        return users.stream().map(u -> modelMapper.map(u, SearchUsersDto.class ))
+                .collect(Collectors.toList());
+    }
 
     @Override
     public void deleteUserById(Long id) {
@@ -99,6 +101,25 @@ public class UserServiceImpl implements UserService {
                 new ResourceNotFoundException("User", "id", id));
         userRepo.delete(user);
     }
+
+    @Override
+    public APIResponseDto getUserCourse(Long userId) {
+        User user = userRepo.findById(userId).orElseThrow(() ->
+                new ResourceNotFoundException("User", "id", userId));
+
+        CourseDto courseDto = webClient.get()
+                .uri("http://localhost:8808/api/courses/" + user.getCourseCode())
+                .retrieve()
+                .bodyToMono(CourseDto.class)
+                .block();
+
+        APIResponseDto apiResponseDto = new APIResponseDto();
+        apiResponseDto.setUser(modelMapper.map(user, UserMinimalDto.class));
+        apiResponseDto.setCourse(courseDto);
+
+        return apiResponseDto;
+    }
+
 
     // findAllByIdIn
     @Override

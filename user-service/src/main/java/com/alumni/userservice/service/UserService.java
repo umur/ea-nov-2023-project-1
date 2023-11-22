@@ -1,6 +1,7 @@
 package com.alumni.userservice.service;
 
 
+import com.alumni.userservice.payload.APIResponseDto;
 import com.alumni.userservice.payload.SearchUsersDto;
 import com.alumni.userservice.payload.UserFullDetailsDto;
 import com.alumni.userservice.payload.UserMinimalDto;
@@ -22,8 +23,11 @@ public interface UserService {
     List<UserFullDetailsDto> getUsersByAddress(Long addressId);
     List<UserFullDetailsDto> findAllByIdIn(List<Long> ids);
 
-//    List<SearchUsersDto> searchUsersDirectory(String query);
+    // List<SearchUsersDto> searchUsersDirectory(String query);
 
-    void deleteUserById(Long id);
+    public void deleteUserById(Long id);
+
+     List<SearchUsersDto> searchUsersDirectory(String query);
+    public APIResponseDto getUserCourse(Long userId);
 
 } // End of UserService class

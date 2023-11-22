@@ -1,5 +1,6 @@
 package com.alumni.userservice.controller;
 
+import com.alumni.userservice.payload.APIResponseDto;
 import com.alumni.userservice.payload.SearchUsersDto;
 import com.alumni.userservice.payload.UserFullDetailsDto;
 import com.alumni.userservice.payload.UserMinimalDto;
@@ -30,6 +31,7 @@ public class UserController {
     }
 
     // create user REST api (http://localhost:8080/api/users/register)
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/register")
     public ResponseEntity<UserMinimalDto> registerUser(@Valid @RequestBody UserMinimalDto minimalDto) {
         return new ResponseEntity<>(userService.registerUser(minimalDto), HttpStatus.CREATED);
@@ -46,9 +48,15 @@ public class UserController {
     }
 
     // Get user details by ID REST API
-    @GetMapping("/{id}")
+    @GetMapping("/{/full-detail/id}")
     public ResponseEntity<UserFullDetailsDto> getUserProfile(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(userService.getUserById(id));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<APIResponseDto> getUserCourse(@PathVariable(name = ("id")) Long userId){
+        APIResponseDto apiResponseDto = userService.getUserCourse(userId);
+        return new ResponseEntity<>(apiResponseDto, HttpStatus.OK);
     }
 
     // Get users by addresses REST API (http://localhost:8080/api/users/address/1)
@@ -58,10 +66,10 @@ public class UserController {
         return ResponseEntity.ok(userDtos);
     }
 
-//    @GetMapping("/search")
-//    public ResponseEntity<List<SearchUsersDto>> searchUserDirectory(@RequestParam("query") String query){
-//        return ResponseEntity.ok(userService.searchUsersDirectory(query));
-//    }
+    @GetMapping("/search")
+    public ResponseEntity<List<SearchUsersDto>> searchUserDirectory(@RequestParam("query") String query){
+        return ResponseEntity.ok(userService.searchUsersDirectory(query));
+    }
 
     // delete category by {id} REST API
     @PreAuthorize("hasRole('ADMIN')")

@@ -24,7 +24,7 @@ public class UserFullDetailsDto {
     private String educationalDetails;
     private String professionalAchievements;
     private String profilePic;
-    private List<Long> coursesIds;
     private Long addressId;
+    private String courseCode;
 
 }

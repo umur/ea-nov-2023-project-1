@@ -41,6 +41,8 @@ public class User {
     private String professionalAchievements;
     @Column(name = "profile_pic")
     private String profilePic;
+    @Column(name = "course_code")
+    private String courseCode;
 
     @OneToOne
     @JoinColumn(name = "address_id", referencedColumnName = "id")
