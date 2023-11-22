@@ -17,11 +17,10 @@ public class EventDto {
 
     private LocalDateTime eventDate;
 
-    // private EventTypeDto type;
-    private Long typeId;
+    private EventTypeDto type;
 
-    // private List<UserFullDetailsDto> organizers = new ArrayList<>();
-    // private List<UserFullDetailsDto> attendees = new ArrayList<>();
-    // private List<UserFullDetailsDto> rsvpers = new ArrayList<>();
+    private List<UsersOrganizingEventsDto> organizers = new ArrayList<>();
+    private List<UsersAttendingEventsDto> attendees = new ArrayList<>();
+    private List<UsersRsvpingEventsDto> rsvpers = new ArrayList<>();
 
 }

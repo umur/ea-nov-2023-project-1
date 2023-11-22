@@ -27,7 +27,14 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public void save(ApplicationDto applicationDto) {
-        applicationRepo.save(mapper.map(applicationDto, Application.class));
+        var application = mapper.map(applicationDto, Application.class);
+
+        var job = jobRepo.findById(applicationDto.getJobId());
+        if (job.isPresent()) {
+            application.setJob(job.get());
+            applicationRepo.save(application);
+        }
+
     }
 
     @Override
@@ -36,7 +43,11 @@ public class ApplicationServiceImpl implements ApplicationService {
         var res = new ArrayList<ApplicationDto>();
         applications.forEach(application -> {
             var appDto = mapper.map(application, ApplicationDto.class);
-            appDto.setJobId(application.getJob().getId());
+
+            if (application.getJob() != null) {
+                appDto.setJobId(application.getJob().getId());
+            }
+
             res.add(appDto);
         });
         return res;
@@ -50,7 +61,10 @@ public class ApplicationServiceImpl implements ApplicationService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
         var appDto = mapper.map(application, ApplicationDto.class);
-        appDto.setJobId(application.get().getJob().getId());
+
+        if (application.get().getJob() != null) {
+            appDto.setJobId(application.get().getJob().getId());
+        }
 
         return appDto;
     }

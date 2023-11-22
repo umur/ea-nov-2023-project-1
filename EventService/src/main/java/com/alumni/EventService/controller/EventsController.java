@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +33,11 @@ public class EventsController {
     @GetMapping("{id}")
     private EventDto findById(@PathVariable Long id) {
         return eventService.findById(id);
+    }
+
+    @DeleteMapping("{id}")
+    private void deleteyId(@PathVariable Long id) {
+        eventService.delete(id);
     }
 
     @PostMapping
