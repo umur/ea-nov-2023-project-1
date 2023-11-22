@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface JobService {
     void saveJob(String email, JobDTO job);
+    void saveJob(JobDTO job);
+    void saveJob(JobDTO job, Long posterId, Long assignerId);
     List<Job> findAll();
     List<Job> findJobByOrganization(String organization);
 

@@ -1,4 +1,4 @@
-package com.alumni.userservice.Entity;
+package com.alumni.jobservice.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
@@ -13,6 +13,7 @@ import java.util.Date;
 public class Experience extends BaseEntity{
     private Date startDate;
     private Date endDate;
-//    @OneToOne
-//    private Job job;
+    @OneToOne
+    private Job job;
+    private Long userId;
 }
