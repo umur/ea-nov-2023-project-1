@@ -21,6 +21,22 @@ services:
     ports:
       - "3306:3306"
 
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - prometheus-data:/prometheus
+
   event-service:
     build:
       context: .
@@ -105,27 +121,6 @@ services:
       - grafana
       - prometheus
 
-  grafana:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    volumes:
-      - grafana-data:/var/lib/grafana
-
-  prometheus:
-    image: prom/prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - prometheus-data:/prometheus
-
-volumes:
-  grafana-data:
-  prometheus-data:
-
-
   api-gateway:
     build:
       context: .
@@ -154,3 +149,7 @@ volumes:
     image: discovery-server:latest
     ports:
       - "8761:8761"
+
+volumes:
+  grafana-data:
+  prometheus-data:
