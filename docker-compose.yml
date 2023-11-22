@@ -149,12 +149,19 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
-
+    networks:
+      - alumni
+      - users
+      - courses
   zipkin:
     container_name: zipkin
     image: openzipkin/zipkin
     ports:
       - "9411:9411"
+    networks:
+      - alumni
+      - users
+      - courses
 
   eventsdb:
     container_name: eventsdb
