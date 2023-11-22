@@ -106,6 +106,7 @@ services:
       - discovery
       - config
       - apigateway
+      - insightsdb
     networks:
       - alumni
       - insights
@@ -180,7 +181,8 @@ services:
       - userservice
       - prometheus
       - grafana
-
+    volumes:
+      - ./chat-service/logs:/app/logs
     networks:
       - alumni
       - chat
@@ -247,7 +249,7 @@ services:
       - MYSQL_ROOT_PASSWORD=1
     restart: always
     networks:
-      - surveys
+      - survey
 
   eventsdb:
     container_name: eventsdb
@@ -313,6 +315,42 @@ services:
     networks:
       - chat
 
+  elasticsearch:
+    image: elasticsearch:8.11.1
+    mem_limit: 4g
+    ports:
+      - "8005:9200"
+      - "8006:9300"
+    networks:
+      - elk-network
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.17.13
+    ports:
+      - "8007:5000"
+    volumes:
+      - ./chat-service/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./chat-service:/usr/share/logstash/config
+      - ./chat-service/logs:/usr/share/logstash/logs
+      - ./chat-service/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    command: ["-f", "/usr/share/logstash/config/logstash.conf"]
+    depends_on:
+      - elasticsearch
+    networks:
+      - elk-network
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.13
+    ports:
+      - "8008:5601"
+    depends_on:
+      - logstash
+    networks:
+      - elk-network
+
 
 networks:
   alumni:
@@ -330,4 +368,6 @@ networks:
   newsannouncements:
     driver: bridge
   survey:
+    driver: bridge
+  elk-network:
     driver: bridge
