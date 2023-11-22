@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,23 +19,26 @@ public class EventServiceImpl implements EventService {
     private final EventRepository eventRepository;
     private final ModelMapper modelMapper;
     @Override
-    public void create(Event event) {
-
+    public void create(EventDto eventDto) {
+        Event event = modelMapper.map(eventDto , Event.class);
+        eventRepository.save(event);
     }
 
     @Override
     public List<EventDto> findAll() {
-        return null;
+        List<EventDto> eventDtoList = new ArrayList<>();
+        eventRepository.findAll().forEach(e -> eventDtoList.add(modelMapper.map(e, EventDto.class)));
+        return eventDtoList;
     }
 
     @Override
     public EventDto findById(int id) {
-        return null;
+        return modelMapper.map(eventRepository.findById(id), EventDto.class);
     }
 
     @Override
     public void delete(int id) {
-
+        eventRepository.deleteById(id);
     }
 
     @Override

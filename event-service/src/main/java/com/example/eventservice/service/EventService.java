@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface EventService {
-    void create(Event event);
+    void create(EventDto eventDto);
 
     List<EventDto> findAll();
 
