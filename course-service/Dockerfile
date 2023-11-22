@@ -1,9 +1,20 @@
-FROM eclipse-temurin:17
+FROM eclipse-temurin:17-alpine as build
 
 LABEL maintainer="dunkygeoffrey39@gmail.com"
 
-WORKDIR /home/app
+EXPOSE 8808
+ENV PORT=8808
+ENV CONFIG_URI=http://configuration:8001
+ENV EUREKA_URI=http://discovery:8000/eureka
 
-COPY target/springboot-course-service-0.0.1-SNAPSHOT.jar /home/app/restful-course-service1.jar
+ENV USER_DB_URL = localhost:3306
+ENV USER_DB_NAME = coursesdb
+ENV USER_DB_USER = root
+ENV USER_DB_PASSWORD = 1
 
-ENTRYPOINT ["java", "-jar", "restful-course-service1"]
+
+RUN apk add --no-cache maven
+WORKDIR /app
+COPY . /app
+RUN mvn package
+ENTRYPOINT ["java","-jar","/app/target/course-service-0.0.1-SNAPSHOT.jar"]
