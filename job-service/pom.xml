@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>JobService</artifactId>
+	<artifactId>job-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>JobService</name>
-	<description>Demo project for Spring Boot</description>
+	<name>job-service</name>
+	<description>Job Service</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -25,6 +25,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -40,6 +41,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>4.0.2</version>
 		</dependency>
 	</dependencies>
 

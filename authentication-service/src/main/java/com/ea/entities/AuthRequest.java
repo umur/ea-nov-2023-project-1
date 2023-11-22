@@ -1,4 +1,4 @@
-package org.oril.entities;
+package com.ea.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

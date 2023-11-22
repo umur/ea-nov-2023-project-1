@@ -3,8 +3,8 @@ server:
 
 spring:
   application:
-    name: auth-service
+    name: authentication-service
 
 jwt:
   secret: MiAVzqUXy5Tfr1kVIGpPMiAVzqUXy5Tfr1kVIGpP
-  expiration: 86400
+  expiration: 900000
