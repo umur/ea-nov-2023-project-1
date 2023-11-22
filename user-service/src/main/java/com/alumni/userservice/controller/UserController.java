@@ -48,7 +48,7 @@ public class UserController {
     }
 
     // Get user details by ID REST API
-    @GetMapping("/{/full-detail/id}")
+    @GetMapping("/full-detail/{id}")
     public ResponseEntity<UserFullDetailsDto> getUserProfile(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(userService.getUserById(id));
     }

@@ -9,6 +9,6 @@ INSERT INTO courses (name, course_code) VALUES ('Business Administration', 'BA00
 INSERT INTO courses (name, course_code) VALUES ('Statistics', 'ST001');
 INSERT INTO courses (name, course_code) VALUES ('Computer Science', 'Compro');
 INSERT INTO courses (name, course_code) VALUES ('Networking', 'NET01');
-INSERT INTO courses (name, course_code) VALUES ('Sales', SA001);
+INSERT INTO courses (name, course_code) VALUES ('Sales', 'SA001');
 
 -- Courses -- id and name
