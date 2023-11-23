@@ -1,0 +1,81 @@
+version: '3'
+services:
+  api-gateway:
+    container_name: api-gateway
+    image: api-gateway-image:1.0
+    ports:
+      - "8080:8080"
+    depends_on:
+      - configuration-service
+      - service-discovery
+    networks:
+      - ea_bridge
+
+  configuration-service:
+    container_name: configuration-service
+    image: configuration-service-image:1.0
+    ports:
+      - "9876:9876"
+    depends_on:
+      - service-discovery
+    networks:
+      - ea_bridge
+
+  service-discovery:
+    container_name: service-discovery
+    image: service-discovery-image:1.0
+    ports:
+      - "8761:8761"
+    networks:
+      - ea_bridge
+
+#  job-service:
+#    container_name: job-service
+#    image: job-service-image:1.0
+##    ports:
+##      - "8081:8081"
+#    depends_on:
+#      - job-sql
+#    networks:
+#      - ea_bridge
+#
+#  user-service:
+#    container_name: user-service
+#    image: user-service-image:1.0
+##    ports:
+##      - "8082:8082"
+#    depends_on:
+#      - user-sql
+#    networks:
+#      - ea_bridge
+#
+#  user-sql:
+#    container_name: user-sql
+#    image: mysql:8.2
+#    environment:
+#      MYSQL_ROOT_PASSWORD: Grimmyreaper0621*
+#      MYSQL_DATABASE: alumni-user-db
+##    ports:
+##      - "3306:3306"
+#    depends_on:
+#      - configuration-service
+#    networks:
+#      - ea_bridge
+#
+#
+#  job-sql:
+#    container_name: job-sql
+#    image: mysql:8.2
+#    environment:
+#      MYSQL_ROOT_PASSWORD: Grimmyreaper0621*
+#      MYSQL_DATABASE: alumni-job-db
+##    ports:
+##      - "3307:3306"
+#    depends_on:
+#      - configuration-service
+#    networks:
+#      - ea_bridge
+
+networks:
+  ea_bridge:
+    driver: bridge
