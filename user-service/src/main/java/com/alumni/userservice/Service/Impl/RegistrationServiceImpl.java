@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,7 +30,12 @@ public class RegistrationServiceImpl implements RegistrationService {
         user.setProfile(profile);
 
         User temp = userRepo.save(user);
+        receiveMessage(user);
         return entityToUserDTO(temp);
+    }
+    @RabbitListener(queues = "user_queue")
+    public void receiveMessage(User message) {
+        System.out.println("Received message: " + message.getFirstName());
     }
 
     @Override

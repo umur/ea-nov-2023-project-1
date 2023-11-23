@@ -80,6 +80,16 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
+    public void activatePosterJobs(Long userId, boolean isShow) {
+        List<Job> jobs = repository.getJobsByPosterId(userId);
+
+        for (Job job : jobs) {
+            job.setShowYn(isShow);
+            repository.save(job);
+        }
+    }
+
+    @Override
     public List<Job> findJobByOrganization(String organization) {
         return repository.getJobsByOrganization(organization);
     }

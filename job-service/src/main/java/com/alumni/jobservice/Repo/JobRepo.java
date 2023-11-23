@@ -12,6 +12,7 @@ public interface JobRepo extends ListCrudRepository<Job, Long> {
     List<Job> getJobsByOrganization(String organization);
 
     List<Job> getJobsByLocationState(String state);
+    List<Job> getJobsByPosterId(Long userId);
 
     List<Job> getJobsByLocationCity(String city);
     @Query(value="Select a from Job a where a.deleteYn = false "

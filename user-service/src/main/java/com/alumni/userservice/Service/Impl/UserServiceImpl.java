@@ -1,4 +1,7 @@
 package com.alumni.userservice.Service.Impl;
+
+import com.alumni.userservice.Config.RabbitMQConfig;
+import com.alumni.userservice.Dto.MessageDTO;
 import com.alumni.userservice.Dto.TokenDTO;
 import com.alumni.userservice.Entity.Role;
 import com.alumni.userservice.Entity.User;
@@ -6,10 +9,12 @@ import com.alumni.userservice.Repository.UserRepo;
 import com.alumni.userservice.Service.UserService;
 import com.alumni.userservice.Util.Jwt;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.amqp.core.AmqpTemplate;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -20,14 +25,20 @@ import java.util.Optional;
 @Transactional
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+    private final RabbitTemplate rabbitTemplate;
     private final UserRepo repository;
     private Jwt jwtUtil = new Jwt();
+
+    private AmqpTemplate amqpTemplate;
+
+    public void sendMessage(MessageDTO message) {
+        amqpTemplate.convertAndSend("user_exchange", "user.created", message);
+    }
 
     @Override
     public void save(User user) {
         repository.save(user);
     }
-
 
     @Override
     public List<User> findAll() {
@@ -50,6 +61,7 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isPresent()) {
             User user = userOptional.get();
             user.setShowYn(!user.getShowYn());
+            rabbitTemplate.convertAndSend(RabbitMQConfig.topicExchangeName, "foo.bar.baz", "{\"user_id\": " + user.getId() + ",\"show\":" + user.getShowYn() + "}");
             return repository.save(user);
         } else {
             return null;
@@ -85,7 +97,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<?> resetPassword(String email) {
         Optional<User> existingUser = this.findByEmail(email);
-        if(existingUser.isPresent()) {
+        if (existingUser.isPresent()) {
             User user = existingUser.get();
             user.setPassword("12345");
             this.repository.save(user);
@@ -96,7 +108,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseEntity<?> loginUser(String email, String password){
+    public ResponseEntity<?> loginUser(String email, String password) {
         Optional<User> existingUser = this.findByEmail(email);
         if (existingUser.isPresent()) {
             User user = existingUser.get();

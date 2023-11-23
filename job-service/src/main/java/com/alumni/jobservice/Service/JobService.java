@@ -10,6 +10,9 @@ public interface JobService {
     void saveJob(JobDTO job);
     void saveJob(JobDTO job, Long posterId, Long assignerId);
     List<Job> findAll();
+
+    void activatePosterJobs(Long userId, boolean isShow);
+
     List<Job> findJobByOrganization(String organization);
 
     List<Job> findJobByLocationState(String state);
