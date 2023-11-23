@@ -70,6 +70,15 @@ services:
     ports:
       - "9919:9919"
 
+  survey-service:
+    image: dinomov/survey-service
+    depends_on:
+      - registry
+      - mysql
+    restart: always
+    ports:
+      - "8083:8083"
+
   user-service:
     image: dinomov/user-service
     depends_on:

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package com.news.controller;
 
 import com.news.dto.InformationDto;
@@ -40,7 +40,4 @@ public class InformationController {
     @PutMapping("/{id}")
     public void update(@RequestBody InformationDto information){informationService.update(information);
     }
-=======
-package com.news.controller;public class Informationcontroller {
->>>>>>> origin/news
 }

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package com.news.service;
 
 import com.news.dto.InformationDto;
@@ -19,7 +19,4 @@ public interface InformationService {
     List<InformationDto> findAll();
 
     InformationDto findById(int id);
-=======
-package com.news.service;public interface InformationService {
->>>>>>> origin/news
 }
