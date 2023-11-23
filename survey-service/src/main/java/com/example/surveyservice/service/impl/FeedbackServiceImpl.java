@@ -36,9 +36,11 @@ public class FeedbackServiceImpl implements FeedbackService {
         feedback.setQuestion(questionService.getById(feedbackDto.getQuestionAnswers().get(0).getQuestionId()));
         Answer answer= new Answer();
         answer.setContent(feedbackDto.getQuestionAnswers().get(0).getAnswer().getContent());
-        answer.setQuestion(questionService.getById(feedbackDto.getQuestionAnswers().get(0).getQuestionId()));
+//        answer.setQuestion(questionService.getById(feedbackDto.getQuestionAnswers().get(0).getQuestionId()));
         feedback.setAnswer(answer);
         System.out.println("first feedback: "+feedback.toString());
+
+        feedbackRepo.save(feedback);
         return null;
     }
 

@@ -11,11 +11,11 @@ public class Feedback {
     @EmbeddedId
     private FeedbackKey feedbackKey;
 
-    @OneToOne
+    @ManyToOne
     @MapsId("surveyId")
     private Survey survey;
 
-    @OneToOne
+    @ManyToOne
     @MapsId("questionId")
     private Question question;
 

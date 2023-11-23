@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -15,16 +17,20 @@ public class Answer {
 
     private String content;
 
-    @ManyToOne
+    @OneToMany
     @JsonIgnore
-    private Question question;
+    private List<Feedback> feedback;
+
+
+//    @ManyToOne
+//    @JsonIgnore
+//    private Question question;
 
     @Override
     public String toString() {
         return "Answer{" +
                 "id=" + id +
                 ", content='" + content + '\'' +
-                ", question=" + question +
                 '}';
     }
 }

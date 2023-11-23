@@ -19,6 +19,9 @@ public class Survey {
     @OneToMany(mappedBy = "survey",cascade = CascadeType.ALL)
     private List<Question> questions;
 
+    @OneToMany(mappedBy = "survey",cascade = CascadeType.ALL)
+    private List<Feedback> feedbacks;
+
     @Override
     public String toString() {
         return "Survey{" +
