@@ -13,7 +13,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @OpenAPIDefinition(
 		info = @Info(
-				title = "Maharishi assignment - Alumni project final Nov 2023",
+				title = "Maharishi Alumni project -  EA final Nov 2023",
 				description = "RESTful Microservices APIs Documentation",
 				version = "v1.0.0",
 				contact = @Contact(

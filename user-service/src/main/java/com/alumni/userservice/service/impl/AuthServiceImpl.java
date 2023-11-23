@@ -121,6 +121,7 @@ public class AuthServiceImpl implements AuthService {
 
     @EventListener
     public void authenticationListener(AuthenticationFailureBadCredentialsEvent event) {
+
         String username = (String) event.getAuthentication().getPrincipal();
         processLogin(username);
     }

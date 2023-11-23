@@ -44,17 +44,18 @@ public class UserServiceImpl implements UserService {
         User user = modelMapper.map(minimalDto, User.class);
         User newUser = userRepo.save(user);
         // Convert Entity to Dto
+        String username = getLoggedInUserUsername();
+        auditLogService.save(username, AuditAction.CREATE_USER);
         return modelMapper.map(newUser, UserMinimalDto.class);
     }
 
     @Override
     public List<UserFullDetailsDto> findAllUsers() {
         List<User> users = userRepo.findAll();
-        List<UserFullDetailsDto> fullDetailsDtoList = users.stream().map((u) -> modelMapper.map(u, UserFullDetailsDto.class))
-                .toList();
         String username = getLoggedInUserUsername();
         auditLogService.save(username, AuditAction.FETCH_USERS);
-        return fullDetailsDtoList;
+        return users.stream().map((u) -> modelMapper.map(u, UserFullDetailsDto.class))
+                .toList();
     }
 
     @Override
@@ -78,6 +79,9 @@ public class UserServiceImpl implements UserService {
 
         User savedUser = userRepo.save(user);
 
+        String username = getLoggedInUserUsername();
+        auditLogService.save(username, AuditAction.UPDATE_USER_INFO);
+
         return modelMapper.map(savedUser, UserFullDetailsDto.class);
     }
 
@@ -85,6 +89,8 @@ public class UserServiceImpl implements UserService {
     public UserFullDetailsDto getUserById(Long id) {
         User user = userRepo.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("User", "id", id));
+        String username = getLoggedInUserUsername();
+        auditLogService.save(username, AuditAction.FETCH_USER_BY_ID);
         return modelMapper.map(user, UserFullDetailsDto.class);
     }
 
@@ -111,6 +117,8 @@ public class UserServiceImpl implements UserService {
     public void deleteUserById(Long id) {
         User user = userRepo.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("User", "id", id));
+        String username = getLoggedInUserUsername();
+        auditLogService.save(username, AuditAction.DELETE_USER);
         userRepo.delete(user);
     }
 
