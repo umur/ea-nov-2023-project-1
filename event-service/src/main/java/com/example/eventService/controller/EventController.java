@@ -1,9 +1,9 @@
 package com.example.eventService.controller;
 
 import com.example.eventService.dto.EventDto;
-import com.example.eventService.entity.Event;
 import com.example.eventService.service.EventService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/events")
 public class EventController {
+    @Autowired
     private final EventService eventService;
 
     @GetMapping
@@ -25,10 +26,8 @@ public class EventController {
     }
 
     @PostMapping
-    public Event creat(@RequestBody Event event ){
-        System.out.println(event.toString());
-//        event.toString();
-        return eventService.create(event);
+    public void creat(@RequestBody EventDto  eventDto ){
+        eventService.create(eventDto);
     }
 
     @DeleteMapping("/{id}")

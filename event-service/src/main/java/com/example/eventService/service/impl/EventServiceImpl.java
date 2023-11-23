@@ -5,37 +5,40 @@ import com.example.eventService.entity.Event;
 import com.example.eventService.repository.EventRepository;
 import com.example.eventService.service.EventService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.modelmapper.ModelMapper;
 
-@RequiredArgsConstructor
 @Service
+@Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class EventServiceImpl implements EventService {
     private final EventRepository eventRepository;
-    //private final ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
     @Override
-    public Event create(Event event) {
+    public void create(EventDto eventDto) {
+        Event event = modelMapper.map(eventDto , Event.class);
         eventRepository.save(event);
-        System.out.println("impl"+event.toString());
-        return event;
     }
 
     @Override
     public List<EventDto> findAll() {
-        return null;
+        List<EventDto> eventDtoList = new ArrayList<>();
+        eventRepository.findAll().forEach(e -> eventDtoList.add(modelMapper.map(e, EventDto.class)));
+        return eventDtoList;
     }
 
     @Override
     public EventDto findById(int id) {
-        return null;
+        return modelMapper.map(eventRepository.findById(id), EventDto.class);
     }
 
     @Override
     public void delete(int id) {
-
+        eventRepository.deleteById(id);
     }
 
     @Override

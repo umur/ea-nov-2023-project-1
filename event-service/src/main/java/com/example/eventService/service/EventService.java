@@ -1,12 +1,12 @@
 package com.example.eventService.service;
 
 import com.example.eventService.dto.EventDto;
-import com.example.eventService.entity.Event;
+import org.springframework.data.repository.ListCrudRepository;
 
 import java.util.List;
 
 public interface EventService {
-    Event create(Event event);
+    void create(EventDto eventDto);
 
     List<EventDto> findAll();
 

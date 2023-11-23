@@ -1,24 +1,20 @@
-package com.news;
+package com.example.eventService;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
-@EnableDiscoveryClient
 @SpringBootApplication
-public class NewsApplication {
+public class EventApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NewsApplication.class, args);
+		SpringApplication.run(EventApplication.class, args);
 	}
 
 	@Bean
-	public ModelMapper modelMapper() {
+	public ModelMapper modelMapper(){
 		return new ModelMapper();
 	}
-
-
 
 }
