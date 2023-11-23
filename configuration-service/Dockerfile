@@ -8,7 +8,6 @@ ENV APP_VERSION=1.0.0
 RUN apt-get update
 RUN apt-get -y install inetutils-ping
 RUN apt-get install telnet
-RUN apt-get update
 RUN apt-get install -y curl
 
 # Create and set the working directory

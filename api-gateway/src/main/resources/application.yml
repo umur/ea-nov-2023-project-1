@@ -7,14 +7,14 @@ spring:
     gateway:
       routes:
         - id: userService
-          uri: lb://user-service
+          uri: http://user-service:8082
           predicates:
             - Path=/users/**
 #          filters:
 #            - name: CustomHeader
 
         - id: jobService
-          uri: lb://job-service
+          uri: http://job-service:8081
           predicates:
             - Path=/jobs/**
 #          filters:

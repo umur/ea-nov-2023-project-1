@@ -13,7 +13,7 @@ services:
 
   configuration-service:
     container_name: configuration-service
-    image: configuration-service-image:1.0
+    image: saikhanbat/configuration-service-image:first-image
     ports:
       - "9876:9876"
     depends_on:
@@ -28,7 +28,7 @@ services:
 
   service-discovery:
     container_name: service-discovery
-    image: service-discovery-image:1.0
+    image: saikhanbat/service-discovery-image:first-image
     ports:
       - "8761:8761"
     networks:
@@ -48,7 +48,7 @@ services:
 
   user-service:
     container_name: user-service
-    image: user-service-image:1.0
+    image: saikhanbat/user-service-image:first-image
     restart: on-failure
     ports:
       - "8082:8082"
