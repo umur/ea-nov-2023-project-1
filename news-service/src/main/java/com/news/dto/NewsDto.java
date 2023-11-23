@@ -1,9 +1,9 @@
-package com.news.entity.dto;
+package com.news.dto;
 
 import java.time.LocalDateTime;
 
 public class NewsDto {
-    private int id;
+    private Integer id;
     private String content;
     private LocalDateTime dateTime;
 }
