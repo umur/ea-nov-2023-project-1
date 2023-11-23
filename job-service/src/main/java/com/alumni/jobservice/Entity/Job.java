@@ -2,6 +2,7 @@ package com.alumni.jobservice.Entity;
 
 //import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import com.alumni.jobservice.Dto.JobDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
@@ -26,4 +27,13 @@ public class Job extends BaseEntity {
 
     @OneToOne
     private Location location;
+
+    public Job(JobDTO jobDTO){
+        this.posterId = jobDTO.getPosterId();
+        this.title = jobDTO.getTitle();
+        this.description = jobDTO.getDescription();
+        this.organization = jobDTO.getOrganization();
+        this.assignerId = jobDTO.getAssignerId();
+        this.location = new Location(jobDTO.getLocation());
+    }
 }

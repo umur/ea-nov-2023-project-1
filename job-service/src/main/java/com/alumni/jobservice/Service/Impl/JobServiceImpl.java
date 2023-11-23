@@ -1,6 +1,7 @@
 package com.alumni.jobservice.Service.Impl;
 
 import com.alumni.jobservice.Dto.JobDTO;
+import com.alumni.jobservice.Entity.Experience;
 import com.alumni.jobservice.Entity.Job;
 import com.alumni.jobservice.Entity.Location;
 import com.alumni.jobservice.Repo.JobRepo;
@@ -8,10 +9,12 @@ import com.alumni.jobservice.Repo.LocationRepo;
 import com.alumni.jobservice.Service.JobService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -36,20 +39,15 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public void saveJob(JobDTO job) {
-        Job newJob = new Job();
 
-        Location location = new Location();
-        location.setCity(job.getLocation().getCity());
-        location.setState(job.getLocation().getState());
-        location.setZip(job.getLocation().getZip());
-        location.setStreet(job.getLocation().getStreet());
+        Job newJob = new Job();
 
         newJob.setTitle(job.getTitle());
         newJob.setDescription(job.getDescription());
         newJob.setOrganization(job.getOrganization());
         newJob.setPosterId(job.getPosterId());
         newJob.setAssignerId(job.getAssignerId());
-        newJob.setLocation(locationRepo.save(location));
+        newJob.setLocation(locationRepo.save(new Location(job.getLocation())));
 
         repository.save(newJob);
     }
@@ -58,19 +56,13 @@ public class JobServiceImpl implements JobService {
     public void saveJob(JobDTO job, Long posterId, Long assignerId) {
         Job newJob = new Job();
 
-        Location location = new Location();
-        location.setCity(job.getLocation().getCity());
-        location.setState(job.getLocation().getState());
-        location.setZip(job.getLocation().getZip());
-        location.setStreet(job.getLocation().getStreet());
-
         newJob.setTitle(job.getTitle());
         newJob.setDescription(job.getDescription());
         newJob.setOrganization(job.getOrganization());
         newJob.setPosterId(posterId);
         newJob.setAssignerId(assignerId);
 
-        newJob.setLocation(locationRepo.save(location));
+        newJob.setLocation(locationRepo.save(new Location(job.getLocation())));
         repository.save(newJob);
     }
 
@@ -108,4 +100,5 @@ public class JobServiceImpl implements JobService {
     public List<Job> findJobsByFilter(String organization, String state, String city) {
         return repository.getJobsByLocationCityOrLocationStateOrOrganization(city, state, organization);
     }
+
 }
