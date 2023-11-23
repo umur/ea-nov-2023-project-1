@@ -1,18 +1,21 @@
 package com.example.eventService.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class Person {
+@Entity
+public class Person {
     @Id
-    private int personid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String personName;
 
+    @ManyToMany(mappedBy = "participants")
+    private Set<Event> events = new HashSet<>();
 }

@@ -1,5 +1,6 @@
 package com.ea.project.respository;
 
+import com.ea.project.entity.Information;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 
