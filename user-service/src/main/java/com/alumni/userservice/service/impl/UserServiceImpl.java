@@ -151,7 +151,10 @@ public class UserServiceImpl implements UserService {
 
     private String getLoggedInUserUsername(){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        CustomUserDetails userDetails = (CustomUserDetails) auth.getPrincipal();
-        return userDetails.getUsername();
+
+        if(auth.getPrincipal() instanceof CustomUserDetails userDetails) {
+            return userDetails.getUsername();
+        }
+        return auth.getPrincipal().toString();
     }
 } // End of UserServiceImpl class

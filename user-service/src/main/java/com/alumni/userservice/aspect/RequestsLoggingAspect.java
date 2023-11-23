@@ -1,27 +1,17 @@
 package com.alumni.userservice.aspect;
 
-import com.alumni.userservice.entity.AuditAction;
-import com.alumni.userservice.security.CustomUserDetails;
-import com.alumni.userservice.service.AuditLogService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import java.util.logging.Logger;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
 public class RequestsLoggingAspect {
-    private final AuditLogService auditLogService;
     private final Logger LOGGER = Logger.getLogger(getClass().getName());
-
-    public RequestsLoggingAspect(AuditLogService auditLogService) {
-        this.auditLogService = auditLogService;
-    }
 
     // Setup pointcuts
     @Pointcut("execution(* com.alumni.userservice.controller.*.*(..))")
@@ -73,8 +63,11 @@ public class RequestsLoggingAspect {
 
 //    private String getLoggedInUserUsername(){
 //        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        CustomUserDetails userDetails = (CustomUserDetails) auth.getPrincipal();
-//        return userDetails.getUsername();
+//
+//        if(auth.getPrincipal() instanceof CustomUserDetails userDetails) {
+//            return userDetails.getUsername();
+//        }
+//        return auth.getPrincipal().toString();
 //    }
 
 }
