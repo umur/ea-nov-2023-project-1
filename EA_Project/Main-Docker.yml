@@ -1,0 +1,218 @@
+version: '3'
+
+services:
+  rabbitmq:
+    container_name: "rabbitmq"
+    image: rabbitmq:3-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: ea_project
+      MYSQL_ROOT_PASSWORD: root
+
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - prometheus-data:/prometheus
+
+  discovery-server:
+    build:
+      context: ./discovery-server
+      dockerfile: Dockerfile-discovery-server
+    image: discovery-server:latest
+    ports:
+      - "8761:8761"
+
+
+
+
+
+  log-service:
+    build:
+      context: ./Log-Service
+      dockerfile: Dockerfile-log-service
+    image: log-service:latest
+    ports:
+      - "8087:8087"
+    depends_on:
+      - mysql
+      - grafana
+      - prometheus
+
+
+
+
+
+
+
+
+
+
+
+  configuration-service:
+    build:
+      context: ./configuration-service
+      dockerfile: Dockerfile-configuration-service
+    image: configuration-service:latest
+    ports:
+      - "9876:9876"
+    environment:
+        - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+    depends_on:
+      - discovery-server
+    restart: unless-stopped
+
+  api-gateway:
+    build:
+      context: ./api-gatway
+      dockerfile: Dockerfile-api-gateway
+    image: api-gateway:latest
+    ports:
+      - "8089:8089"
+    depends_on:
+      - discovery-server
+      - configuration-service
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+
+  user-service:
+    build:
+      context: ./User-Service
+      dockerfile: Dockerfile-user-service
+    image: user-service:latest
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+      - grafana
+      - prometheus
+      - discovery-server
+      - configuration-service
+
+    restart: unless-stopped
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+  survey-surveyresponse-service:
+    build:
+      context: ./Surevy-surveyresponse-service
+      dockerfile: Dockerfile-survey-surveyresponse-service
+    image: survey-surveyresponse-service:latest
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mysql
+      - grafana
+      - prometheus
+    restart: unless-stopped
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+  student-service:
+    build:
+      context: ./Student-service
+      dockerfile: Dockerfile-student-service
+    image: student-service:latest
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql
+      - grafana
+      - prometheus
+    restart: unless-stopped
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+
+  news-service:
+    build:
+      context: ./News-Service
+      dockerfile: Dockerfile-news-service
+    image: news-service:latest
+    ports:
+      - "8086:8086"
+    depends_on:
+      - mysql
+      - grafana
+      - prometheus
+    restart: unless-stopped
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+
+  event-service:
+    build:
+      context: ./Event-Service
+      dockerfile: Dockerfile-event-service
+    image: event-service:latest
+    ports:
+      - "8085:8085"
+    depends_on:
+      - mysql
+      - grafana
+      - prometheus
+    restart: unless-stopped
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+
+  job-service:
+    build:
+      context: ./Job-Service
+      dockerfile: Dockerfile-job-service
+    image: job-service:latest
+    ports:
+      - "8084:8084"
+    depends_on:
+      - mysql
+      - grafana
+      - prometheus
+    restart: unless-stopped
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+
+  kafka:
+    image: wurstmeister/kafka:2.13-2.8.1
+    ports:
+      - "9092:9092"
+    expose:
+      - "9093"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+  kafka-connect:
+    image: confluentinc/cp-kafka-connect:6.2.0
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: kafka:9092
+      CONNECT_GROUP_ID: connect-group
+      CONNECT_CONFIG_STORAGE_TOPIC: connect-configs
+      CONNECT_OFFSET_STORAGE_TOPIC: connect-offsets
+      CONNECT_STATUS_STORAGE_TOPIC: connect-status
+      CONNECT_KEY_CONVERTER: org.apache.kafka.connect.converters.ByteArrayConverter
+      CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.converters.ByteArrayConverter
+      CONNECT_REST_ADVERTISED_HOST_NAME: kafka-connect
+      CONNECT_PLUGIN_PATH: /usr/share/java
+    volumes:
+      - /path/to/kafka-connect-plugins:/usr/share/java
+
+volumes:
+  grafana-data:
+  prometheus-data:

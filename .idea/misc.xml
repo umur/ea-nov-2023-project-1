@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/EA_Project/News/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/Log_Service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/Log-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/News-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/Event-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/Job-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/User-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/Discovery-Server/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/configuration-service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/api-gatway/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/student-service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/surevy_surveyresponse-service/pom.xml" />
+        <option value="$PROJECT_DIR$/EA_Project/Surevy-surveyresponse-service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_20">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
