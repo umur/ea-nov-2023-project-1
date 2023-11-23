@@ -2,6 +2,7 @@ package com.alumni.jobservice.Service;
 
 import com.alumni.jobservice.Dto.JobDTO;
 import com.alumni.jobservice.Entity.Job;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -17,4 +18,5 @@ public interface JobService {
     List<Job> findJobByLocationCity(String city);
 
     List<Job> findJobsByFilter(String organization, String state, String city);
+
 }
