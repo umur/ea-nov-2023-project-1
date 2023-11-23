@@ -9,5 +9,6 @@ public enum AuditAction {
     CREATE_USER,
 
     UPDATE_USER_INFO,
-    FETCH_USER_BY_ID
+    FETCH_USER_BY_ID,
+    SIGN_UP
 }

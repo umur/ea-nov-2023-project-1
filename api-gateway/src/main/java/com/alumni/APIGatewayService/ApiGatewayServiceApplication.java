@@ -14,11 +14,11 @@ public class ApiGatewayServiceApplication {
 		SpringApplication.run(ApiGatewayServiceApplication.class, args);
 	}
 
-	@Bean
-	public DiscoveryClientRouteDefinitionLocator discoveryClientRouteDefinitionLocator(ReactiveDiscoveryClient rdc,
-			DiscoveryLocatorProperties dlp) {
-		dlp.setLowerCaseServiceId(true);
-		return new DiscoveryClientRouteDefinitionLocator(rdc, dlp);
-	}
+//	@Bean
+//	public DiscoveryClientRouteDefinitionLocator discoveryClientRouteDefinitionLocator(ReactiveDiscoveryClient rdc,
+//			DiscoveryLocatorProperties dlp) {
+//		dlp.setLowerCaseServiceId(true);
+//		return new DiscoveryClientRouteDefinitionLocator(rdc, dlp);
+//	}
 
 }

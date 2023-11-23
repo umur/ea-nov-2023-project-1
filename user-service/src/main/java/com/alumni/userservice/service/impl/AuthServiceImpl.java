@@ -8,6 +8,7 @@ import com.alumni.userservice.payload.LoginDto;
 import com.alumni.userservice.payload.UserMinimalDto;
 import com.alumni.userservice.repository.RoleRepository;
 import com.alumni.userservice.repository.UserRepository;
+import com.alumni.userservice.security.CustomUserDetails;
 import com.alumni.userservice.security.JwtTokenProvider;
 import com.alumni.userservice.service.AuditLogService;
 import com.alumni.userservice.service.AuthService;
@@ -108,6 +109,7 @@ public class AuthServiceImpl implements AuthService {
         user.setUsername(registerDto.getUsername());
         user.setEmail(registerDto.getEmail());
         user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
+        user.setCourseCode(registerDto.getCourseCode());
 
         Set<Role> roles = new HashSet<>();
         // Whenever, user registers, we assign a default role ROLE_USER
@@ -115,7 +117,8 @@ public class AuthServiceImpl implements AuthService {
         roles.add(userRole);
         user.setRoles(roles);
         userRepo.save(user);
-
+        String username = getLoggedInUserUsername();
+        auditLogService.save(username, AuditAction.UPDATE_USER_INFO);
         return "User registered successfully!";
     }
 
@@ -124,6 +127,15 @@ public class AuthServiceImpl implements AuthService {
 
         String username = (String) event.getAuthentication().getPrincipal();
         processLogin(username);
+    }
+
+    private String getLoggedInUserUsername(){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if(auth.getPrincipal() instanceof CustomUserDetails userDetails) {
+            return userDetails.getUsername();
+        }
+        return auth.getPrincipal().toString();
     }
 
 }

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.util.Set;
 
@@ -44,9 +45,9 @@ public class User {
     private String profilePic;
     @Column(name = "course_code")
     private String courseCode;
-    @Column(name = "failed_login_count")
+    @Column(name = "failed_login_attempts", columnDefinition = "integer default 0")
     private int failedLoginAttempts;
-
+    @Column(columnDefinition = "boolean default true")
     private boolean accountNonLocked;
 
     @OneToOne

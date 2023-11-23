@@ -21,7 +21,7 @@ public class AuthController {
         this.authService = authService;
     }
 
-    @PostMapping(value = {"/login", "/signin"})
+    @PostMapping("/login")
     public ResponseEntity<JWTAuthResponse> login(@Valid @RequestBody LoginDto loginDto){
         String token = authService.login(loginDto);
 
@@ -32,7 +32,7 @@ public class AuthController {
     }
 
     // Build Register REST API
-    @PostMapping(value = {"/register", "/signup"})
+    @PostMapping("/signup")
     public ResponseEntity<String> register(@RequestBody UserMinimalDto registerDto){
         String response = authService.register(registerDto);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
