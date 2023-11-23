@@ -1,0 +1,148 @@
+version: '3.8'
+
+services:
+  alumni-db:
+    image: mysql
+    restart: always
+    ports:
+      - "3307:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root@1234
+#      MYSQL_DATABASE: alumni-db
+#      MYSQL_USER: admin
+#      MYSQL_PASSWORD: root@1234
+
+  business-db:
+    image: mysql
+    restart: always
+    ports:
+      - "3308:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root@1234
+#      MYSQL_DATABASE: business-db
+#      MYSQL_USER: admin
+#      MYSQL_PASSWORD: root@1234
+
+  education-db:
+    image: mysql
+    restart: always
+    ports:
+      - "3309:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root@1234
+#      MYSQL_DATABASE: education-db
+#      MYSQL_USER: admin
+#      MYSQL_PASSWORD: root@1234
+
+  event-db:
+    image: mysql
+    restart: always
+    ports:
+      - "3310:3306"
+    #    environment:
+    #      MYSQL_ROOT_PASSWORD: root@1234
+    #      MYSQL_DATABASE: event-db
+    #      MYSQL_USER: admin
+    #      MYSQL_PASSWORD: root@1234
+
+  feedback-db:
+    image: mysql
+    restart: always
+    ports:
+      - "3311:3306"
+    #    environment:
+    #      MYSQL_ROOT_PASSWORD: root@1234
+    #      MYSQL_DATABASE: feedback-db
+    #      MYSQL_USER: admin
+    #      MYSQL_PASSWORD: root@1234
+
+  publication-db:
+    image: mysql
+    restart: always
+    ports:
+      - "3312:3306"
+    #    environment:
+    #      MYSQL_ROOT_PASSWORD: root@1234
+    #      MYSQL_DATABASE: publication-db
+    #      MYSQL_USER: admin
+    #      MYSQL_PASSWORD: root@1234
+
+  alumni-app:
+    image: user-image
+    build: ./user-service
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - alumni-db
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://alumni-db:3306/alumni-db?createDatabaseIfNotExist=true
+    #      SPRING_DATASOURCE_USERNAME: root
+    #      SPRING_DATASOURCE_PASSWORD: root@1234
+
+  business-app:
+    image: business-image
+    build: ./business-service
+    restart: always
+    ports:
+      - "8081:8080"
+    depends_on:
+      - business-db
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://business-db:3306/business-db?createDatabaseIfNotExist=true
+    #      SPRING_DATASOURCE_USERNAME: root
+    #      SPRING_DATASOURCE_PASSWORD: root@1234
+
+  education-app:
+    image: education-image
+    build: ./education-service
+    restart: always
+    ports:
+      - "8082:8080"
+    depends_on:
+      - education-db
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://education-db:3306/education-db?createDatabaseIfNotExist=true
+    #      SPRING_DATASOURCE_USERNAME: root
+    #      SPRING_DATASOURCE_PASSWORD: root@1234
+
+
+  event-app:
+    image: user-image
+    build: ./event-service
+    restart: always
+    ports:
+      - "8084:8080"
+    depends_on:
+      - alumni-db
+    #    environment:
+    #      SPRING_DATASOURCE_URL: jdbc:mysql://event-db:3306/event-db?createDatabaseIfNotExist=true
+    #      SPRING_DATASOURCE_USERNAME: root
+    #      SPRING_DATASOURCE_PASSWORD: root@1234
+
+
+  feedback-app:
+    image: user-image
+    build: ./feedback-service
+    restart: always
+    ports:
+      - "8085:8080"
+    depends_on:
+      - alumni-db
+    #    environment:
+    #      SPRING_DATASOURCE_URL: jdbc:mysql://feedback-db:3306/feedback-db?createDatabaseIfNotExist=true
+    #      SPRING_DATASOURCE_USERNAME: root
+    #      SPRING_DATASOURCE_PASSWORD: root@1234
+
+  publication-app:
+    image: user-image
+    build: ./publication-service
+    restart: always
+    ports:
+      - "8086:8080"
+    depends_on:
+      - alumni-db
+    #    environment:
+    #      SPRING_DATASOURCE_URL: jdbc:mysql://publication-db:3306/publication-db?createDatabaseIfNotExist=true
+    #      SPRING_DATASOURCE_USERNAME: root
+    #      SPRING_DATASOURCE_PASSWORD: root@1234

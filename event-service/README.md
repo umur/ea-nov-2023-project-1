@@ -64,5 +64,15 @@ The Alumni Management System is a comprehensive web-based application designed t
 * Remember to respect the code honor submission policy. All written code must be original. Presenting something as one’s own work when it came from another source is plagiarism and is forbidden.
     
 * Plagiarism is a very serious thing in all American academic institutions and is guarded against vigilantly by every professor.
- 
+
+#### Task Division
+----
+![task division](documentation/ea_project.drawio.png)
+
+
+#### Notes
+----
+https://docs.google.com/document/d/16Ty0FzlVFkHHI_-WvXmfhPF04K_XxOth-sXajyRYD_8/edit
+
+
 

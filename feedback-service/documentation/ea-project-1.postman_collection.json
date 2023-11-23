@@ -1,0 +1,841 @@
+{
+	"info": {
+		"_postman_id": "8a4ed4fd-5f12-4407-89b7-51888a93d91d",
+		"name": "ea-project-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3658032"
+	},
+	"item": [
+		{
+			"name": "getAllCompanies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/companies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOpenJobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/open_jobs",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"open_jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCompanyById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/companies/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOpenJobById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/open_jobs/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"open_jobs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOpenJobByState",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/open_jobs/searchByState?state=IA",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"open_jobs",
+						"searchByState"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "IA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOpenJobByCity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/open_jobs/searchByCity?city=Fairfield",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"open_jobs",
+						"searchByCity"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Fairfield"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOpenJobByCompanyName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/open_jobs/searchByCompanyName?companyName=TechCorp Inc",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"open_jobs",
+						"searchByCompanyName"
+					],
+					"query": [
+						{
+							"key": "companyName",
+							"value": "TechCorp Inc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEduExperienceByAlumniId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/alumni/1/edu_experience",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"1",
+						"edu_experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProfExperienceByAlumniId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/alumni/2/prof_experiences",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"2",
+						"prof_experiences"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProfExperienceByAlumniIdAndId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/alumni/2/prof_experiences/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"2",
+						"prof_experiences",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postCompany",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"company2\",\r\n    \"industry\": \"i2\",\r\n    \"address\": {\r\n        \"street\": \"str2\",\r\n        \"city\": \"c2\",\r\n        \"state\": \"st2\",\r\n        \"zip\": \"z2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/companies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postOpenJob",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Job Opportunity at FinanceX Ltd\",\r\n  \"openDate\": \"2023-11-09T12:00:00\",  // Replace with the actual date and time\r\n  \"creatorAlumniId\": 2,  // Replace with the actual creator alumni ID\r\n  \"applicantIds\": [1]  // Replace with the actual list of applicant alumni IDs\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/open_jobs",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"open_jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postEduExperience",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"universityId\": 2,\r\n  \"degree\": \"Bachelor of Science in Computer Science\",\r\n  \"startDate\": \"2020-09-01\",\r\n  \"endDate\": \"2024-05-31\",\r\n  \"courseIdList\": [2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumni/2/edu_experience",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"2",
+						"edu_experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postProfExperience",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"companyId\": 2,  // Replace with the actual company ID\r\n  \"startDate\": \"2023-01-01\",  // Replace with the actual start date\r\n  \"endDate\": \"2023-12-31\"  // Replace with the actual end date\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumni/2/prof_experiences",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"2",
+						"prof_experiences"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putCompany",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"company2\",\r\n    \"industry\": \"i2\",\r\n    \"address\": {\r\n        \"street\": \"str2\",\r\n        \"city\": \"c2\",\r\n        \"state\": \"st2\",\r\n        \"zip\": \"z2\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/companies/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putOpenJob",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Job Opportunity at FinanceX Ltd\",\r\n  \"openDate\": \"2023-11-09T12:00:00\",  // Replace with the actual date and time\r\n  \"creatorAlumniId\": 3,  // Replace with the actual creator alumni ID\r\n  \"applicantIds\": [1,2]  // Replace with the actual list of applicant alumni IDs\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/open_jobs/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"open_jobs",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putEduExperience",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"universityId\": 1,\r\n  \"degree\": \"Bachelor of Science in Computer Science 2\",\r\n  \"startDate\": \"2020-09-01\",\r\n  \"endDate\": \"2024-05-31\",\r\n  \"courseIdList\": [1]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumni/2/edu_experience",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"2",
+						"edu_experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putProfExperience",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"companyId\": 1,  // Replace with the actual company ID\r\n  \"startDate\": \"2023-01-01\",  // Replace with the actual start date\r\n  \"endDate\": \"2023-12-31\"  // Replace with the actual end date\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/alumni/2/prof_experiences/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"2",
+						"prof_experiences",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCompany",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/companies/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"companies",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteOpenJob",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/open_jobs/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"open_jobs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEduExperience",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/alumni/2/edu_experience",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"2",
+						"edu_experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProfExperience",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/alumni/2/prof_experiences/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"2",
+						"prof_experiences",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Feedbacks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/feedbacks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feedbacks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Feedback",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/feedbacks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feedbacks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Feedback",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/feedbacks/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feedbacks",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Feedback",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/feedbacks/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feedbacks",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Feedback by Alumni ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/feedbacks/alumni-id?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feedbacks",
+						"alumni-id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"New Event\",\r\n  \"eventType\": {\r\n    \"name\": \"EventType Name\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/events/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Updated Event\",\r\n  \"eventType\": {\r\n    \"name\": \"Updated EventType Name\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/events/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alumni",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/alumni",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mail\": \"updated@example.com\",\n    \"password\": \"newpassword\",\n    \"phone\": \"9876543210\",\n    \"profilePicture\": \"https://updatedexample.com/profile.jpg\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/alumni/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"street\": \"123 Main St\",\n    \"city\": \"Example City\",\n    \"state\": \"CA\",\n    \"postalCode\": \"12345\",\n    \"country\": \"USA\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/alumni/address",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alumni",
+						"address"
+					]
+				}
+			},
+			"response": []
+		}
+
+	]
+}
