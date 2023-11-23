@@ -1,7 +1,7 @@
-package com.example.eventService.controller;
+package com.event.controller;
 
-import com.example.eventService.dto.EventDto;
-import com.example.eventService.service.EventService;
+import com.event.dto.EventDto;
+import com.event.service.EventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

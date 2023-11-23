@@ -1,9 +1,15 @@
 server:
-  port: 9191
+  port: 8088
 
 spring:
   application:
-    name: news-service
+    name: event-service
+  config:
+    import: configserver:http://localhost:9296
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:9296
 
   datasource:
     url: jdbc:mysql://localhost:3307/alumni-db?createDatabaseIfNotExist=true
@@ -20,3 +26,5 @@ spring:
       properties:
         hibernate:
           dialect: org.hibernate.dialect.MySQL8Dialect
+
+

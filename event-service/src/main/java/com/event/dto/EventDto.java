@@ -1,17 +1,14 @@
-package com.example.eventService.entity;
+package com.event.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.event.entity.Person;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 
-@Entity
 @Getter
 @Setter
-public class Event {
-    @Id
+public class EventDto {
     private int id;
     private String eventName;
     private String sponsor;

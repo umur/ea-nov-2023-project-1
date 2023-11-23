@@ -1,7 +1,6 @@
-package com.example.eventService.service;
+package com.event.service;
 
-import com.example.eventService.dto.EventDto;
-import org.springframework.data.repository.ListCrudRepository;
+import com.event.dto.EventDto;
 
 import java.util.List;
 

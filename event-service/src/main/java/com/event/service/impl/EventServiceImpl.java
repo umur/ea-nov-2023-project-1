@@ -1,9 +1,9 @@
-package com.example.eventService.service.impl;
+package com.event.service.impl;
 
-import com.example.eventService.dto.EventDto;
-import com.example.eventService.entity.Event;
-import com.example.eventService.repository.EventRepository;
-import com.example.eventService.service.EventService;
+import com.event.repository.EventRepository;
+import com.event.dto.EventDto;
+import com.event.entity.Event;
+import com.event.service.EventService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

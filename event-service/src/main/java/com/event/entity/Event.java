@@ -1,14 +1,18 @@
-package com.example.eventService.dto;
+package com.event.entity;
 
-import com.example.eventService.entity.Person;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 
+@Entity
 @Getter
 @Setter
-public class EventDto {
+public class Event {
+    @Id
     private int id;
     private String eventName;
     private String sponsor;
@@ -16,5 +20,6 @@ public class EventDto {
     private String description;
     private String type;
 
+    @OneToMany(mappedBy = "event")
     private List<Person> attendance;
 }

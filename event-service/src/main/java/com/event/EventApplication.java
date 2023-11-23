@@ -1,4 +1,4 @@
-package com.example.eventService;
+package com.event;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
