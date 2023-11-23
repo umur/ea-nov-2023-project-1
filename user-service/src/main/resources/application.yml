@@ -4,18 +4,11 @@ server:
 spring:
   application:
     name: user-service
-  config:
-    import: configserver:http://localhost:9296
-  cloud:
-    config:
-      enabled: true
-      uri: http://localhost:9296
 
   datasource:
     url: jdbc:mysql://localhost:3307/alumni-db?createDatabaseIfNotExist=true
     username: root
     password: developer
-    driver-class-name: com.mysql.cj.jdbc.Driver
 
     jpa:
       defer-datasource-initialization: true
@@ -25,7 +18,7 @@ spring:
 
       properties:
         hibernate:
-          dialect: org.hibernate.dialect.MySQL8Dialect
+          dialect: org.hibernate.dialect.MySQL5Dialect
 
 jwt:
   secret: MiAVzqUXy5Tfr1kVIGpPMiAVzqUXy5Tfr1kVIGpP

@@ -1,34 +1,47 @@
 version: "3.8"
 
+networks:
+  ea-services: {}
+
 services:
 
   rabbitmq:
     image: rabbitmq:3-management
     hostname: message-broker
+    networks:
+      - ea-services
     ports:
-      - "5672:5672"
+      - "5674:5672"
       - "15672:15672" # Admin UI (http://localhost:15672  .. admin:admin)
     environment:
       RABBITMQ_DEFAULT_USER: admin
       RABBITMQ_DEFAULT_PASS: admin
 
   mysql:
-    image: mysql:5.7.18
-    # Set max_allowed_packet to 512M for provisioning
-    command: --max-allowed-packet=512M --performance-schema=FALSE --transaction-isolation=READ-COMMITTED --init-connect='SET collation_connection=utf8_bin' --init-connect='SET NAMES utf8;' --character-set-server=utf8 --collation-server=utf8_bin --lower-case-table-names=2 --max-connections=500
-    container_name: demo_mysql
+    image: mysql
+    networks:
+      - ea-services
     environment:
-      - MYSQL_ROOT_PASSWORD=root
+      MYSQL_DATABASE: "alumni-db"
+      MYSQL_ROOT_PASSWORD: "developer"
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_TCP_PORT: "3307"
     ports:
-      - "3307:3306"
+      - "3307:3307"
+    expose:
+      - "3307"
 
   registry:
     image: dinomov/discovery-service
     ports:
       - "8761:8761"
+    networks:
+      - ea-services
 
   config:
     image: dinomov/configuration-service
+    networks:
+      - ea-services
     depends_on:
       - registry
     restart: always
@@ -37,6 +50,8 @@ services:
 
   gateway:
     image: dinomov/api-gateway
+    networks:
+      - ea-services
     depends_on:
       - registry
     restart: always
@@ -45,7 +60,10 @@ services:
 
   event-service:
     image: dinomov/event-service
+    networks:
+      - ea-services
     depends_on:
+      - config
       - registry
       - mysql
     restart: always
@@ -54,7 +72,10 @@ services:
 
   job-service:
     image: dinomov/job-service
+    networks:
+      - ea-services
     depends_on:
+      - config
       - registry
       - mysql
     restart: always
@@ -63,7 +84,10 @@ services:
 
   news-service:
     image: dinomov/news-service
+    networks:
+      - ea-services
     depends_on:
+      - config
       - registry
       - mysql
     restart: always
@@ -72,7 +96,10 @@ services:
 
   survey-service:
     image: dinomov/survey-service
+    networks:
+      - ea-services
     depends_on:
+      - config
       - registry
       - mysql
     restart: always
@@ -81,7 +108,10 @@ services:
 
   user-service:
     image: dinomov/user-service
+    networks:
+      - ea-services
     depends_on:
+      - config
       - registry
       - mysql
     restart: always
