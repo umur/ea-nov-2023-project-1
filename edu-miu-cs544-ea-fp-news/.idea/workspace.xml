@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ncc-kashif-server:war" />
+      <artifact name="ncc-kashif-server:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c62f5b3d-b221-4ec4-a451-2b32897d388c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ayl8POC8hVjAlyLXWasXFVkFwU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="sql.rename.search.for.storage.occurrences" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="qa.gov.ncc.kashif.helper.security" />
+      <recent name="qa.gov.ncc.kashif.service.impl" />
+      <recent name="qa.gov.ncc.kashif.service" />
+      <recent name="qa.gov.ncc.kashif.helper.authentication" />
+      <recent name="qa.gov.ncc.kashif.helper.filter" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/edu/miu/ea/rest/model" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/scripts" />
+      <recent name="$PROJECT_DIR$/.idea" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/SamplesCollectionReport" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.miu.ea.rest.model.dto" />
+      <recent name="edu.miu.ea.rest.model" />
+      <recent name="qa.gov.ncc.kashif.model.domain" />
+      <recent name="qa.gov.ncc.kashif.helper.converter" />
+      <recent name="qa.gov.ncc.kashif.helper" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/scripts/old" />
+      <recent name="$PROJECT_DIR$/src/main/java/qa/gov/ncc/kashif/helper/todelete" />
+      <recent name="$PROJECT_DIR$/src/main/java/qa/gov/ncc/kashif/model/lookup/todelete" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.App - Dev">
+    <configuration name="App - Prod" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="edu-miu-cs544-ea-fp-news" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.miu.ea.ap.Application" />
+      <option name="ACTIVE_PROFILES" value="prod" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.App - Dev" />
+      <item itemvalue="Spring Boot.App - Prod" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.13869537" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Not Started" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c62f5b3d-b221-4ec4-a451-2b32897d388c" name="Default Changelist" comment="" />
+      <created>1587715558311</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587715558311</updated>
+      <workItem from="1587715573042" duration="3193000" />
+      <workItem from="1587949144705" duration="1531000" />
+      <workItem from="1588099687490" duration="21767000" />
+      <workItem from="1588175760303" duration="4206000" />
+      <workItem from="1588179987899" duration="600000" />
+      <workItem from="1588447532872" duration="11008000" />
+      <workItem from="1588523888881" duration="682000" />
+      <workItem from="1588528783817" duration="11589000" />
+      <workItem from="1588598840355" duration="17104000" />
+      <workItem from="1588641901738" duration="1560000" />
+      <workItem from="1588670733883" duration="104000" />
+      <workItem from="1588670891125" duration="1487000" />
+      <workItem from="1588672573341" duration="7639000" />
+      <workItem from="1588696693876" duration="19616000" />
+      <workItem from="1588753625266" duration="12231000" />
+      <workItem from="1588932446524" duration="26494000" />
+      <workItem from="1588975887083" duration="6125000" />
+      <workItem from="1589030222037" duration="831000" />
+      <workItem from="1589066397670" duration="4199000" />
+      <workItem from="1589094542795" duration="1152000" />
+      <workItem from="1589096990821" duration="1270000" />
+      <workItem from="1589099247437" duration="3425000" />
+      <workItem from="1589126836617" duration="1711000" />
+      <workItem from="1589178176197" duration="1400000" />
+      <workItem from="1589181413862" duration="2472000" />
+      <workItem from="1589184353446" duration="1818000" />
+      <workItem from="1589392343254" duration="2040000" />
+      <workItem from="1589443908139" duration="13000" />
+      <workItem from="1589456093854" duration="4387000" />
+      <workItem from="1589471878936" duration="646000" />
+      <workItem from="1589482531247" duration="624000" />
+      <workItem from="1589564146332" duration="22260000" />
+      <workItem from="1589628812832" duration="377000" />
+      <workItem from="1589709203800" duration="294000" />
+      <workItem from="1589710171826" duration="148000" />
+      <workItem from="1590176780789" duration="13531000" />
+      <workItem from="1590309578972" duration="17941000" />
+      <workItem from="1590440774875" duration="799000" />
+      <workItem from="1590450907394" duration="1051000" />
+      <workItem from="1590561920524" duration="618000" />
+      <workItem from="1590567329820" duration="299000" />
+      <workItem from="1590588536835" duration="516000" />
+      <workItem from="1590590710375" duration="516000" />
+      <workItem from="1590591388822" duration="40000" />
+      <workItem from="1590591451586" duration="104000" />
+      <workItem from="1590591611090" duration="155000" />
+      <workItem from="1590591793698" duration="306000" />
+      <workItem from="1590592192342" duration="33000" />
+      <workItem from="1590592249865" duration="54000" />
+      <workItem from="1590592409275" duration="40035000" />
+      <workItem from="1590831063595" duration="2400000" />
+      <workItem from="1590855828202" duration="15590000" />
+      <workItem from="1590929672226" duration="2419000" />
+      <workItem from="1590965067378" duration="404000" />
+      <workItem from="1591043565997" duration="497000" />
+      <workItem from="1591127335068" duration="1913000" />
+      <workItem from="1591187662588" duration="1086000" />
+      <workItem from="1591306190705" duration="18138000" />
+      <workItem from="1591359955716" duration="4201000" />
+      <workItem from="1591376976408" duration="1400000" />
+      <workItem from="1591441689600" duration="3306000" />
+      <workItem from="1591456855237" duration="117000" />
+      <workItem from="1591457050459" duration="5826000" />
+      <workItem from="1591509872418" duration="34000" />
+      <workItem from="1591556283047" duration="5092000" />
+      <workItem from="1591603345671" duration="32358000" />
+      <workItem from="1591646654031" duration="10227000" />
+      <workItem from="1592038815282" duration="10251000" />
+      <workItem from="1592061792022" duration="841000" />
+      <workItem from="1592063527268" duration="1193000" />
+      <workItem from="1592071208757" duration="4466000" />
+      <workItem from="1592325967838" duration="9177000" />
+      <workItem from="1592508881678" duration="12223000" />
+      <workItem from="1592677837855" duration="43873000" />
+      <workItem from="1592807475246" duration="5942000" />
+      <workItem from="1592830928595" duration="69000" />
+      <workItem from="1592843900997" duration="22412000" />
+      <workItem from="1592921462371" duration="19808000" />
+      <workItem from="1593069861220" duration="35748000" />
+      <workItem from="1593239694476" duration="15525000" />
+      <workItem from="1593439442918" duration="2286000" />
+      <workItem from="1593515477756" duration="327000" />
+      <workItem from="1593515810620" duration="9073000" />
+      <workItem from="1593601330828" duration="14111000" />
+      <workItem from="1593672888324" duration="25358000" />
+      <workItem from="1593702400802" duration="4886000" />
+      <workItem from="1593708818301" duration="1157000" />
+      <workItem from="1593721566214" duration="32667000" />
+      <workItem from="1593799998747" duration="2534000" />
+      <workItem from="1593826755161" duration="141000" />
+      <workItem from="1593826963743" duration="15472000" />
+      <workItem from="1593905466246" duration="7870000" />
+      <workItem from="1593916618786" duration="927000" />
+      <workItem from="1593951003469" duration="2983000" />
+      <workItem from="1594066545414" duration="1440000" />
+      <workItem from="1594140218497" duration="1592000" />
+      <workItem from="1594308525436" duration="14030000" />
+      <workItem from="1594459000125" duration="13290000" />
+      <workItem from="1594563523253" duration="4916000" />
+      <workItem from="1595362654128" duration="13000" />
+      <workItem from="1595522977130" duration="6789000" />
+      <workItem from="1595605930182" duration="7835000" />
+      <workItem from="1595961371938" duration="2949000" />
+      <workItem from="1596276834516" duration="4940000" />
+      <workItem from="1596471606503" duration="1075000" />
+      <workItem from="1596473215907" duration="3092000" />
+      <workItem from="1596652188363" duration="1801000" />
+      <workItem from="1596735558186" duration="34568000" />
+      <workItem from="1597077608923" duration="5345000" />
+      <workItem from="1597170401752" duration="571000" />
+      <workItem from="1597246870352" duration="1041000" />
+      <workItem from="1597421748199" duration="4821000" />
+      <workItem from="1597428292389" duration="16476000" />
+      <workItem from="1598190393857" duration="44697000" />
+      <workItem from="1598536412015" duration="10698000" />
+      <workItem from="1598705876298" duration="75067000" />
+      <workItem from="1699443907408" duration="922000" />
+      <workItem from="1699446212743" duration="3605000" />
+      <workItem from="1699459661685" duration="1047000" />
+      <workItem from="1699622346057" duration="6714000" />
+      <workItem from="1699629174243" duration="9000" />
+      <workItem from="1699629290329" duration="166000" />
+      <workItem from="1700691580115" duration="2035000" />
+      <workItem from="1700694200391" duration="100000" />
+      <workItem from="1700695669893" duration="311000" />
+      <workItem from="1700696865118" duration="5277000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="455" y="203" key="#Notifications" timestamp="1699622353153">
+      <screen x="30" y="23" width="1650" height="1027" />
+    </state>
+    <state x="455" y="203" key="#Notifications/30.23.1650.1027@30.23.1650.1027" timestamp="1699622353153" />
+    <state x="455" y="203" key="#SQL_Dialects" timestamp="1699448589220">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state x="455" y="203" key="#SQL_Dialects/29.23.1651.1027@29.23.1651.1027" timestamp="1699448589220" />
+    <state x="318" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1700695848913">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state x="318" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/29.23.1651.1027@29.23.1651.1027" timestamp="1700695848913" />
+    <state x="319" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/30.23.1650.1027@30.23.1650.1027" timestamp="1699624014274" />
+    <state x="591" y="329" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1700695847026">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state x="591" y="329" key="#com.intellij.ide.util.TreeClassChooserDialog/29.23.1651.1027@29.23.1651.1027" timestamp="1700695847026" />
+    <state x="592" y="329" key="#com.intellij.ide.util.TreeClassChooserDialog/30.23.1650.1027@30.23.1650.1027" timestamp="1699623420903" />
+    <state x="394" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1699627938607">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state x="394" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/29.23.1651.1027@29.23.1651.1027" timestamp="1699627938607" />
+    <state x="593" y="292" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1700695810315">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state x="593" y="292" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/29.23.1651.1027@29.23.1651.1027" timestamp="1700695810315" />
+    <state width="1359" height="358" key="GridCell.Tab.0.bottom" timestamp="1700717746085">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.0.bottom/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746085" />
+    <state width="1359" height="256" key="GridCell.Tab.0.bottom/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510265" />
+    <state width="1359" height="358" key="GridCell.Tab.0.center" timestamp="1700717746084">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.0.center/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746084" />
+    <state width="1359" height="256" key="GridCell.Tab.0.center/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510265" />
+    <state width="1359" height="358" key="GridCell.Tab.0.left" timestamp="1700717746084">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.0.left/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746084" />
+    <state width="1359" height="256" key="GridCell.Tab.0.left/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510264" />
+    <state width="1359" height="358" key="GridCell.Tab.0.right" timestamp="1700717746085">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.0.right/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746085" />
+    <state width="1359" height="256" key="GridCell.Tab.0.right/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510265" />
+    <state width="1359" height="358" key="GridCell.Tab.1.bottom" timestamp="1700717746086">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.1.bottom/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746086" />
+    <state width="1359" height="256" key="GridCell.Tab.1.bottom/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510267" />
+    <state width="1359" height="358" key="GridCell.Tab.1.center" timestamp="1700717746086">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.1.center/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746086" />
+    <state width="1359" height="256" key="GridCell.Tab.1.center/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510266" />
+    <state width="1359" height="358" key="GridCell.Tab.1.left" timestamp="1700717746085">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.1.left/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746085" />
+    <state width="1359" height="256" key="GridCell.Tab.1.left/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510266" />
+    <state width="1359" height="358" key="GridCell.Tab.1.right" timestamp="1700717746086">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.1.right/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746086" />
+    <state width="1359" height="256" key="GridCell.Tab.1.right/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510266" />
+    <state width="1359" height="358" key="GridCell.Tab.2.bottom" timestamp="1700717746088">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.2.bottom/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746088" />
+    <state width="1359" height="256" key="GridCell.Tab.2.bottom/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510268" />
+    <state width="1359" height="358" key="GridCell.Tab.2.center" timestamp="1700717746087">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.2.center/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746087" />
+    <state width="1359" height="256" key="GridCell.Tab.2.center/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510267" />
+    <state width="1359" height="358" key="GridCell.Tab.2.left" timestamp="1700717746087">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.2.left/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746087" />
+    <state width="1359" height="256" key="GridCell.Tab.2.left/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510267" />
+    <state width="1359" height="358" key="GridCell.Tab.2.right" timestamp="1700717746087">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state width="1359" height="358" key="GridCell.Tab.2.right/29.23.1651.1027@29.23.1651.1027" timestamp="1700717746087" />
+    <state width="1359" height="256" key="GridCell.Tab.2.right/30.23.1650.1027@30.23.1650.1027" timestamp="1699624510268" />
+    <state x="343" y="119" key="SettingsEditor" timestamp="1700691585687">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state x="343" y="119" key="SettingsEditor/29.23.1651.1027@29.23.1651.1027" timestamp="1700691585687" />
+    <state x="344" y="119" key="SettingsEditor/30.23.1650.1027@30.23.1650.1027" timestamp="1699622363396" />
+    <state x="443" y="267" width="828" height="538" key="find.popup" timestamp="1700702118221">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state x="443" y="267" width="828" height="538" key="find.popup/29.23.1651.1027@29.23.1651.1027" timestamp="1700702118221" />
+    <state x="444" y="267" width="828" height="538" key="find.popup/30.23.1650.1027@30.23.1650.1027" timestamp="1699623573361" />
+    <state x="562" y="151" key="refactoring.ChangeSignatureDialog" timestamp="1699628045223">
+      <screen x="29" y="23" width="1651" height="1027" />
+    </state>
+    <state x="562" y="151" key="refactoring.ChangeSignatureDialog/29.23.1651.1027@29.23.1651.1027" timestamp="1699628045223" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ncc_kashif_server$App___Remote.ic" NAME="App - Remote Coverage Results" MODIFIED="1598638808440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
