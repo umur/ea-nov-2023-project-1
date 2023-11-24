@@ -1,8 +1,8 @@
 package com.alumni.courseservice.controller;
 
+import com.alumni.courseservice.service.CourseService;
 import com.alumni.courseservice.payload.CourseDto;
 import com.alumni.courseservice.publisher.CourseProducer;
-import com.alumni.courseservice.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

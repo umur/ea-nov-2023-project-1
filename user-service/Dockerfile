@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-alpine as build
+FROM openjdk:17-alpine as build
 
 LABEL maintainer="dunkygeoffrey39@gmail.com"
 
